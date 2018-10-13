@@ -1,3 +1,9 @@
+Reusable components i.e. buttons, etc go in `src/components`
+
+Each individual screen goes in its own folder in `src/screens`
+
+All pages are linked in the `BrowserRouter` in `src/App.js` to their corresponding URLs
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
