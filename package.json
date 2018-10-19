@@ -5,11 +5,8 @@
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-<<<<<<< HEAD
     "react-redux": "^5.0.7",
-=======
     "react-draggable": "^3.0.5",
->>>>>>> cc5da8e17d194fd5e962862f0e94f744a3e7e082
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4"
   },
