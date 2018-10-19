@@ -1,3 +1,11 @@
+## Getting Started
+
+To get started, run the following commands inside the cloned directory:
+- `npm install` // this installs dependencies
+- `npm start` // this starts the development server and opens a new tab with the dev site URL
+
+All your changes will hotload assuming you have the dev server running, meaning as soon as you hit save you should see the changes applied automatically in the site.
+
 Reusable components i.e. buttons, etc go in `src/components`
 
 Each individual screen goes in its own folder in `src/screens`
