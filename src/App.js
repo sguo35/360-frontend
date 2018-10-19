@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import HelloWorld from './HelloWorld';
+import DraggablePane from './DraggablePane';
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter style={{width : '100%', height : '100%'}}>
         <Switch>
-          <Route path="/" component={HelloWorld} />
+          <Route path="/" component={DraggablePane} />
         </Switch>
       </BrowserRouter>
     );
