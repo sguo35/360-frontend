@@ -22,10 +22,10 @@ class PromptFillIn extends Component {
 
   render () {
     return (
-      <div>
-       <input type="text" style={{display : 'flex'}} placeholder={this.props.placeholder} value={this.state.value} onChange={this.handleChange}></input>
+      <span>
+       <input type="text" placeholder={this.props.placeholder} value={this.state.value} onChange={this.handleChange}></input>
        <p className="prompt-element prompt-element__hint">{this.hintText()}</p>
-      </div>
+      </span>
     );
   }
 }

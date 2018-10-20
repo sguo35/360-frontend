@@ -17,7 +17,11 @@ class PromptUI extends Component {
         },
         {
           type : 'text',
-          value :'\u00A0did a really great job of tying in all of the needed things, like when she\u00A0'
+          value :'\u00A0did a  of the needed things, like when she\u00A0'
+        },
+        {
+          type : 'text',
+          value :'test oweorbwotb'
         },
         {
           type : 'fillIn',
@@ -46,17 +50,20 @@ class PromptUI extends Component {
     switch (element.type) {
       case 'gradedName':
         if (this.state.startedEditing) {
-          nextElement = <p className="prompt-element prompt-element__name" {...opts}>{element.value}</p>;
+          nextElement = <span className="prompt-element prompt-element__name" {...opts}>{element.value}</span>;
         } else {
-          nextElement = <p className="prompt-element prompt-element__name" {...opts}>{element.placeholder}</p>;
+          nextElement = <span className="prompt-element prompt-element__name" {...opts}>{element.placeholder}</span>;
         }
         break;
       case 'fillIn':
-        nextElement = <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
+        nextElement = (
+            <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}>
+            </PromptFillIn>
+          );
         break;
       case 'text':
       default:
-        nextElement = <p className="prompt-element prompt-element__text" {...opts}>{element.value}</p>
+        nextElement = <span className="prompt-element prompt-element__text" {...opts}>{element.value}</span>
         break;
     }
     return nextElement;
@@ -64,11 +71,9 @@ class PromptUI extends Component {
 
   render () {
     return (
-      <span>
-        <div className="prompt-oval">
-            {this.state.elements.map(this.yieldElement)}
-        </div>
-      </span>
+      <div className="prompt-oval">
+          {this.state.elements.map(this.yieldElement)}
+      </div>
     );
   }
 }

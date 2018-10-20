@@ -1,17 +1,13 @@
 .prompt-oval {
-  min-height: 100px;
-  width : 500px;
+  width: 400px;
   border: 1px solid;
   border-radius: 15px;
   padding: 15px 15px 5px;
   margin: 5px;
-  display: flex;
-  flex-flow: row wrap;
-  word-break: break-all;
 }
 
 .prompt-element {
-  display:inline;
+  display: inline;
   margin: 0px;
 }
 
