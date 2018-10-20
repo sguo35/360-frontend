@@ -1,0 +1,36 @@
+.Rate-parent-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%
+}
+
+.Rate-left-container {
+    display: flex;
+    flex-direction: column
+}
+
+.Rate-right-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row
+}
+
+.Rate-edit-pane {
+    flex-grow: 10
+}
+
+.Rate-select-panel {
+    width: 20%;
+    height: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.select-panel-card {
+    flex-grow: 1;
+    height: 100%
+}
