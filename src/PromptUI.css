@@ -1,0 +1,12 @@
+.prompt-oval {
+  border: 1px solid;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 5px;
+  display: flex;
+  word-break: break-word;
+}
+
+.prompt-element {
+  margin: 0px;
+}

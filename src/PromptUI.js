@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import './PromptUI.css';
+
+import PromptFillIn from './PromptFillIn';
 
 class PromptUI extends Component {
   constructor (props) {
@@ -10,23 +13,34 @@ class PromptUI extends Component {
       ]
     };
     this.yieldElement = this.yieldElement.bind(this);
+    this.startedEditing = this.startedEditing.bind(this);
     this.createMessage();
   }
 
-  yieldElement (element) {
+  startedEditing () {
+    this.startedEditing = true;
+  }
+
+  yieldElement (element, index) {
     let nextElement;
+    var opts = {
+      key : index
+    };
+
     switch (element.type) {
       case 'gradedName':
         if (this.state.startedEditing) {
-          nextElement = <p className="prompt-element__name" key={element.id}>{element.value}</p>;
+          nextElement = <p className="prompt-element prompt-element__name" {...opts}>{element.value}</p>;
         } else {
-          nextElement = <p className="prompt-element__name" key={element.id}>{element.hint}</p>;
+          nextElement = <p className="prompt-element prompt-element__name" {...opts}>{element.hint}</p>;
         }
         break;
       case 'fillIn':
+        nextElement = <PromptFillIn hint={element.hint}></PromptFillIn>;
         break;
       case 'text':
-        nextElement = <p className="prompt-element__text" key={element.id}>{element.value}</p>
+      default:
+        nextElement = <p className="prompt-element prompt-element__text" {...opts}>{element.value}</p>
         break;
     }
     this.state.elements.push(nextElement);
@@ -36,24 +50,20 @@ class PromptUI extends Component {
     //Basically we grab this from wherever we store Kelly's templates
     let messageTemplate = [
       {
-        id : 0,
         type : 'gradedName',
         hint : 'An outstanding student',
         value : this.state.gradedName
       },
       {
-        id : 1,
         type : 'text',
-        value : 'did a really great job of tying in all of the needed things, like when she'
+        value :'\u00A0did a really great job of tying in all of the needed things, like when she\u00A0'
       },
       {
-        id : 2,
         type : 'fillIn',
         hint : 'did a lot of great work',
         value : ''
       },
       {
-        id : 3,
         type : 'text',
         value : '.'
       }
@@ -62,17 +72,9 @@ class PromptUI extends Component {
   }
 
   render () {
-    let style = {
-      border : '1px solid',
-      borderRadius : 15,
-      padding : '5px 10px',
-      margin : 5,
-      display : 'flex',
-      wordBreak : 'break-word'
-    };
     return (
       <span>
-        <div className="prompt-oval" style={style}>
+        <div className="prompt-oval">
           {this.state.elements}
         </div>
       </span>
