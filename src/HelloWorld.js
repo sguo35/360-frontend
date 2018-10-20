@@ -5,8 +5,8 @@ class HelloWorld extends Component {
   render() {
     return (
       <div style={{margin : 20, display:'flex', flexFlow : 'row wrap'}}>
-        <PromptUI></PromptUI>
-        <PromptUI></PromptUI>
+        <PromptUI gradedName='Bobert'></PromptUI>
+        <PromptUI gradedName='Bobert'></PromptUI>
       </div>
     );
   }
