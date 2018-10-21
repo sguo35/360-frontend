@@ -1,7 +1,11 @@
 import React from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu, Icon, Button } from 'antd';
 
 export default class RateLeft extends React.Component {
+  onLogoClick = () => {
+    alert("Go to dashboard")
+  }
+
   render() {
     return (
       <div className="Rate-left-container">
@@ -17,22 +21,25 @@ export default class RateLeft extends React.Component {
           }}
         >
           <Icon type='redo' style={{
-            fontSize: 48,
+            fontSize: 36,
             marginTop: '35%',
             marginLeft: '41%',
             marginRight: '50%',
-            marginBottom: 30
-          }} />
+            marginBottom: 30,
+            cursor: 'pointer'
+          }} onClick={this.onLogoClick} />
           <p style={{
             textAlign: 'center',
             marginBottom: '35%',
-            fontSize: 18,
-          }}>360 Factors</p>
+            fontSize: 13,
+            letterSpacing: '10px',
+            cursor: 'pointer'
+          }} onClick={this.onLogoClick}>360FACTORS</p>
 
           <Menu.Item key='1' style={{
             height: 100,
             display: 'flex',
-            justifyContent: 'space-around',
+            justifyContent: 'flex-start',
             padding: 15
           }}>
             <Icon type='user' theme='outlined' style={{
@@ -43,13 +50,13 @@ export default class RateLeft extends React.Component {
             <p style={{
               margin: 20,
               marginTop: 15
-            }}>Person 1</p>
+            }}>Matt Hallac</p>
           </Menu.Item>
 
           <Menu.Item key='2' style={{
             height: 100,
             display: 'flex',
-            justifyContent: 'space-around',
+            justifyContent: 'flex-start',
             padding: 15
           }}>
             <Icon type='user' theme='outlined' style={{
@@ -60,13 +67,13 @@ export default class RateLeft extends React.Component {
             <p style={{
               margin: 20,
               marginTop: 15
-            }}>Person 2</p>
+            }}>Jaiveer Singh</p>
           </Menu.Item>
 
           <Menu.Item key='3' style={{
             height: 100,
             display: 'flex',
-            justifyContent: 'space-around',
+            justifyContent: 'flex-start',
             padding: 15
           }}>
             <Icon type='user' theme='outlined' style={{
@@ -77,13 +84,13 @@ export default class RateLeft extends React.Component {
             <p style={{
               margin: 20,
               marginTop: 15
-            }}>Person 3</p>
+            }}>Kelly Han</p>
           </Menu.Item>
 
           <Menu.Item key='4' style={{
             height: 100,
             display: 'flex',
-            justifyContent: 'space-around',
+            justifyContent: 'flex-start',
             padding: 15
           }}>
             <Icon type='user' theme='outlined' style={{
@@ -94,7 +101,7 @@ export default class RateLeft extends React.Component {
             <p style={{
               margin: 20,
               marginTop: 15
-            }}>Person 4</p>
+            }}>Alexander Manes</p>
           </Menu.Item>
         </Menu>
       </div>
