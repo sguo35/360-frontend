@@ -21,6 +21,7 @@
   color: grey;
   min-width: 500px;
   text-decoration: underline;
+  padding-left: 1px;
 }
 
 [contentEditable=true]:empty:before{
