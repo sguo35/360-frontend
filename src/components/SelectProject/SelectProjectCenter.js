@@ -100,7 +100,7 @@ export default class SelectProjectCenter extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='calendar' theme='outlined' style={{
+            }}><Icon type='project' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -114,7 +114,7 @@ export default class SelectProjectCenter extends React.Component {
               <p style={{
                 margin: 20,
                 marginTop: 15
-              }}>Events</p>
+              }}>Project 3</p>
             </div>
           </Menu.Item>
 
