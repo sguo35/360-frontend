@@ -37,71 +37,115 @@ export default class RateLeft extends React.Component {
           }} onClick={this.onLogoClick}>360FACTORS</p>
 
           <Menu.Item key='1' style={{
-            height: 100,
+            height: '10%',
             display: 'flex',
             justifyContent: 'flex-start',
             padding: 15
           }}>
-            <Icon type='user' theme='outlined' style={{
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}><Icon type='user' theme='outlined' style={{
               fontSize: 32,
-              marginLeft: 12,
-              marginTop: 18
+              marginLeft: 12
             }} />
-            <p style={{
-              margin: 20,
-              marginTop: 15
-            }}>Matt Hallac</p>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}>
+              <p style={{
+                margin: 20,
+                marginTop: 15
+              }}>Matt Hallac</p>
+            </div>
           </Menu.Item>
 
           <Menu.Item key='2' style={{
-            height: 100,
+            height: '10%',
             display: 'flex',
             justifyContent: 'flex-start',
             padding: 15
           }}>
-            <Icon type='user' theme='outlined' style={{
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}><Icon type='user' theme='outlined' style={{
               fontSize: 32,
-              marginLeft: 12,
-              marginTop: 18
+              marginLeft: 12
             }} />
-            <p style={{
-              margin: 20,
-              marginTop: 15
-            }}>Jaiveer Singh</p>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}>
+              <p style={{
+                margin: 20,
+                marginTop: 15
+              }}>Matt Hallac</p>
+            </div>
           </Menu.Item>
 
           <Menu.Item key='3' style={{
-            height: 100,
+            height: '10%',
             display: 'flex',
             justifyContent: 'flex-start',
             padding: 15
           }}>
-            <Icon type='user' theme='outlined' style={{
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}><Icon type='user' theme='outlined' style={{
               fontSize: 32,
-              marginLeft: 12,
-              marginTop: 18
+              marginLeft: 12
             }} />
-            <p style={{
-              margin: 20,
-              marginTop: 15
-            }}>Kelly Han</p>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}>
+              <p style={{
+                margin: 20,
+                marginTop: 15
+              }}>Matt Hallac</p>
+            </div>
           </Menu.Item>
 
           <Menu.Item key='4' style={{
-            height: 100,
+            height: '10%',
             display: 'flex',
             justifyContent: 'flex-start',
             padding: 15
           }}>
-            <Icon type='user' theme='outlined' style={{
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}><Icon type='user' theme='outlined' style={{
               fontSize: 32,
-              marginLeft: 12,
-              marginTop: 18
+              marginLeft: 12
             }} />
-            <p style={{
-              margin: 20,
-              marginTop: 15
-            }}>Alexander Manes</p>
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}>
+              <p style={{
+                margin: 20,
+                marginTop: 15
+              }}>Matt Hallac</p>
+            </div>
           </Menu.Item>
         </Menu>
       </div>
