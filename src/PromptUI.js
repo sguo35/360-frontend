@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {CSSTransition} from 'react-transition-group';
+import {Icon, Tag} from 'antd';
 import './PromptUI.css';
 
 import PromptFillIn from './PromptFillIn';
@@ -75,11 +75,17 @@ class PromptUI extends Component {
 
   render () {
     return (
-      <div className="prompt-oval">
-          {this.state.elements.map(this.yieldElement)}
-      </div>
+      <Tag closable={true}className="prompt-oval">
+        {this.yieldElement(this.state.elements[2])}
+      </Tag>
     );
   }
 }
+// <div className="prompt-oval">
+//   <Icon type='close' style={{float:'right'}}></Icon>
+//   <div>
+//
+//   </div>
+// </div>
 
 export default PromptUI;
