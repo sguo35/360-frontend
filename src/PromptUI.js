@@ -10,6 +10,7 @@ class PromptUI extends Component {
     this.state = {
       gradedName : props.gradedName,
       startedEditing : false,
+      closing : false,
       elements : [
         {
           type : 'gradedName',
@@ -44,6 +45,10 @@ class PromptUI extends Component {
     };
   }
 
+  handleClose = () => {
+    this.setState({closing : true});
+  }
+
   startEditing = () => {
     this.setState({startedEditing : true});
   }
@@ -73,10 +78,25 @@ class PromptUI extends Component {
     return nextElement;
   }
 
+
+
   render () {
+    let tagStyle = {
+      whiteSpace: 'normal',
+      overflow: 'hidden',
+      display: 'inline-flex'
+    };
+    if (!this.state.closing) {
+      tagStyle['height'] = 'auto';
+    }
+
     return (
-      <Tag closable={true}className="prompt-oval">
-        {this.yieldElement(this.state.elements[2])}
+      <Tag closable='true'
+        onClose={this.handleClose}
+        style={tagStyle}>
+        <div className="prompt-oval">
+          {this.state.elements.map(this.yieldElement)}
+        </div>
       </Tag>
     );
   }
