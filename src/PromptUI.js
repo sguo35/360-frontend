@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {CSSTransition} from 'react-transition-group';
 import './PromptUI.css';
 
 import PromptFillIn from './PromptFillIn';
@@ -17,17 +18,23 @@ class PromptUI extends Component {
         },
         {
           type : 'text',
-          value :'\u00A0did a  of the needed things, \u00A0'
+          value :'\u00A0was willing to go above and beyond in their work output, including\u00A0'
         },
         {
           type : 'fillIn',
-          placeholder : 'did a lot of great work',
+          placeholder : 'producing a high quality product that exceeded expectations',
           hint : 'example of great work',
           value : ''
         },
         {
           type : 'text',
-          value :'test oweorbwotb'
+          value : '. They were also really good at\u00A0'
+        },
+        {
+          type : 'fillIn',
+          placeholder : 'producing a high quality product that exceeded expectations',
+          hint : 'example of great work',
+          value : ''
         },
         {
           type : 'text',

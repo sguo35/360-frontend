@@ -7,9 +7,20 @@ class PromptFillIn extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      console.log('do validate');
+      event.preventDefault();
+    }
+  }
+
   handleChange(event) {
-    this.setState({value: event.target.value});
-    this.props.startEditing();
+    console.log(event.nativeEvent.data);
+    if(event.nativeEvent.data != null)
+    {
+      this.setState({value: event.target.value});
+      this.props.startEditing();
+    }
   }
 
   hintText() {
@@ -23,8 +34,7 @@ class PromptFillIn extends Component {
   render () {
     return (
       <span className="prompt-element prompt-element__fillIn">
-        <div className="block_left">like when she&nbsp;</div>
-        <div contentEditable={true} placeholder={this.props.placeholder} value={this.state.value} onInput={this.handleChange}></div>
+        <span contentEditable={true} placeholder={this.props.placeholder} value={this.state.value} onKeyPress={this.handleKeyPress} onInput={this.handleChange}></span>
       </span>
     );
   }

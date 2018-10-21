@@ -14,7 +14,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route path="/" component={Rate} />
+            <Route path="/" component={HelloWorld} />
           </Switch>
         </BrowserRouter>
       </Provider>
