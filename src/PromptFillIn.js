@@ -8,7 +8,7 @@ class PromptFillIn extends Component {
   }
 
   handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === 'Paste') {
       console.log('do validate');
       event.preventDefault();
     }
@@ -34,7 +34,17 @@ class PromptFillIn extends Component {
   render () {
     return (
       <span className="prompt-element prompt-element__fillIn">
-        <span contentEditable={true} placeholder={this.props.placeholder} value={this.state.value} onKeyPress={this.handleKeyPress} onInput={this.handleChange}></span>
+        <span
+          contentEditable={true}
+          placeholder={this.props.placeholder}
+          value={this.state.value}
+          onKeyPress={this.handleKeyPress}
+          onInput={this.handleChange}
+          onPaste={(event) => {event.preventDefault()}}
+          onCut={(event) => {event.preventDefault()}}
+          onCopy={(event) => {event.preventDefault()}}
+        >
+        </span>
       </span>
     );
   }
