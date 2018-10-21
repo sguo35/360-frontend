@@ -8,7 +8,9 @@ import './Rate.css';
 export default class RateRight extends React.Component {
   render = () => {
     return (
-      <div className="Rate-right-container">
+      <div className="Rate-right-container" style={{
+        padding: 10
+      }}>
         <EditPane />
         <SelectPanel />
       </div>

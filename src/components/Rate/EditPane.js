@@ -6,14 +6,14 @@ export default class EditPane extends React.Component {
   render() {
     return (
       <div className="Rate-edit-pane">
-        <Card 
-        style={{
-          margin: 20,
-          marginRight: 10,
-          marginTop: 10,
-          height: 85,
-          backgroundColor: '#001529'
-        }} >
+        <Card
+          style={{
+            margin: 20,
+            marginRight: 10,
+            marginTop: 10,
+            height: 85,
+            backgroundColor: '#001529'
+          }} >
           <p style={{
             fontSize: 20,
             textAlign: 'center',
@@ -24,7 +24,8 @@ export default class EditPane extends React.Component {
           margin: 20,
           marginRight: 10,
           marginTop: 10,
-          height: '25%'
+          flexGrow: 2,
+          marginBottom: 10
         }}>
           <p style={{
             color: 'rgb(200, 200, 200)',
