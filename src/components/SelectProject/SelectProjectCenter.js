@@ -44,7 +44,7 @@ export default class SelectProjectCenter extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='file-text' theme='outlined' style={{
+            }}><Icon type='hourglass' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -72,7 +72,7 @@ export default class SelectProjectCenter extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='file-text' theme='outlined' style={{
+            }}><Icon type='redo' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -100,7 +100,7 @@ export default class SelectProjectCenter extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='file-text' theme='outlined' style={{
+            }}><Icon type='calendar' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -128,7 +128,7 @@ export default class SelectProjectCenter extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='file-text' theme='outlined' style={{
+            }}><Icon type='trophy' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
