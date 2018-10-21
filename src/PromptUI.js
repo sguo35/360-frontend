@@ -17,17 +17,17 @@ class PromptUI extends Component {
         },
         {
           type : 'text',
-          value :'\u00A0did a  of the needed things, like when she\u00A0'
-        },
-        {
-          type : 'text',
-          value :'test oweorbwotb'
+          value :'\u00A0did a  of the needed things, \u00A0'
         },
         {
           type : 'fillIn',
           placeholder : 'did a lot of great work',
           hint : 'example of great work',
           value : ''
+        },
+        {
+          type : 'text',
+          value :'test oweorbwotb'
         },
         {
           type : 'text',
@@ -56,10 +56,7 @@ class PromptUI extends Component {
         }
         break;
       case 'fillIn':
-        nextElement = (
-            <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}>
-            </PromptFillIn>
-          );
+        nextElement = <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
         break;
       case 'text':
       default:

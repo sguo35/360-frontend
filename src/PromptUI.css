@@ -1,8 +1,8 @@
 .prompt-oval {
-  width: 400px;
+  max-width: 600;
   border: 1px solid;
   border-radius: 15px;
-  padding: 15px 15px 5px;
+  padding: 15px 15px;
   margin: 5px;
 }
 
@@ -14,4 +14,16 @@
 .prompt-element__hint {
   color: grey;
   font-size: 10px;
+}
+
+.prompt-element__fillIn {
+  color: grey;
+}
+
+[contentEditable=true]:empty:before{
+  content:attr(placeholder)
+}
+
+.block_left {
+  color: black;
 }
