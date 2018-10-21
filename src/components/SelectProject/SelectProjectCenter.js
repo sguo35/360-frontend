@@ -1,7 +1,7 @@
 import React from 'react';
-import { Menu, Icon, Button, Tag } from 'antd';
+import { Menu, Icon, Button } from 'antd';
 
-export default class RateLeft extends React.Component {
+export default class SelectProjectCenter extends React.Component {
   onLogoClick = () => {
     alert("Go to dashboard")
   }
@@ -11,8 +11,6 @@ export default class RateLeft extends React.Component {
       <div className="Rate-left-container">
         <Menu
           onClick={() => { }}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
           mode='vertical'
           theme='dark'
           style={{
@@ -46,7 +44,7 @@ export default class RateLeft extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='user' theme='outlined' style={{
+            }}><Icon type='hourglass' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -60,7 +58,7 @@ export default class RateLeft extends React.Component {
               <p style={{
                 margin: 20,
                 marginTop: 15
-              }}>Matt Hallac</p>
+              }}>Attendy</p>
             </div>
           </Menu.Item>
 
@@ -74,7 +72,7 @@ export default class RateLeft extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='user' theme='outlined' style={{
+            }}><Icon type='redo' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -88,7 +86,7 @@ export default class RateLeft extends React.Component {
               <p style={{
                 margin: 20,
                 marginTop: 15
-              }}>Matt Hallac</p>
+              }}>360</p>
             </div>
           </Menu.Item>
 
@@ -102,7 +100,7 @@ export default class RateLeft extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='user' theme='outlined' style={{
+            }}><Icon type='project' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -116,7 +114,7 @@ export default class RateLeft extends React.Component {
               <p style={{
                 margin: 20,
                 marginTop: 15
-              }}>Matt Hallac</p>
+              }}>Project 3</p>
             </div>
           </Menu.Item>
 
@@ -130,7 +128,7 @@ export default class RateLeft extends React.Component {
               display: 'flex',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}><Icon type='user' theme='outlined' style={{
+            }}><Icon type='trophy' theme='outlined' style={{
               fontSize: 32,
               marginLeft: 12
             }} />
@@ -144,21 +142,9 @@ export default class RateLeft extends React.Component {
               <p style={{
                 margin: 20,
                 marginTop: 15
-              }}>Matt Hallac</p>
+              }}>Final Project</p>
             </div>
           </Menu.Item>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'center'
-          }}>
-            <Button style={{
-              fontSize: 12,
-              marginTop: 25,
-              backgroundColor: '#f5222d',
-              borderColor: '#f5222d'
-            }} type='primary'>Due on 11/1/18 at 11:59 pm</Button>
-          </div>
         </Menu>
       </div>
     )
