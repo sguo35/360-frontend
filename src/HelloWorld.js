@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PromptUI from './PromptUI'
+import Prompt from './components/Prompt/Prompt'
 
 class HelloWorld extends Component {
   render() {
     return (
       <div style={{margin : 20, display:'flex', flexFlow : 'row wrap'}}>
-        <PromptUI gradedName='Bobert'></PromptUI>
-        <PromptUI gradedName='Bobert'></PromptUI>
+        <Prompt gradedName='Bobert'></Prompt>
+        <Prompt gradedName='Bobert'></Prompt>
       </div>
     );
   }

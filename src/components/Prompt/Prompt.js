@@ -64,7 +64,7 @@ class PromptUI extends Component {
         if (this.state.startedEditing) {
           nextElement = <span className="prompt-element prompt-element__name" {...opts}>{element.value}</span>;
         } else {
-          nextElement = <span className="prompt-element prompt-element__name" {...opts}>{element.placeholder}</span>;
+          nextElement = <span className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
         }
         break;
       case 'fillIn':
@@ -101,11 +101,5 @@ class PromptUI extends Component {
     );
   }
 }
-// <div className="prompt-oval">
-//   <Icon type='close' style={{float:'right'}}></Icon>
-//   <div>
-//
-//   </div>
-// </div>
 
 export default PromptUI;
