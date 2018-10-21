@@ -6,60 +6,58 @@ export default class EditPane extends React.Component {
   render() {
     return (
       <div className="Rate-edit-pane">
-        <Card
-          style={{
-            margin: 20,
-            marginRight: 10,
-            marginTop: 10,
-            height: 85,
-            backgroundColor: '#001529'
-          }} >
-          <p style={{
-            fontSize: 20,
-            textAlign: 'center',
-            color: 'white'
-          }}><b>Rate Matt's engagement on the Attendy project.</b></p>
-        </Card>
         <div style={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: 'column',
           height: '100%',
-          marginRight: 10,
-          marginBottom: 0,
-          marginLeft: 20
+          marginRight: 0,
+          marginBottom: 10,
+          marginLeft: 20,
+          marginTop: 10
         }}>
           <div style={{
             display: 'flex',
-            flexDirection: 'column',
-            paddingTop: 10,
-            paddingBottom: 10,
-            marginRight: -30,
+            flexDirection: 'row',
+            paddingLeft: 10,
+            paddingRight: 10,
+            marginBottom: -13,
+            marginLeft: -10,
             zIndex: 1
           }}>
-            <Button block type='disabled' style={{ flexGrow: 1 }} icon='left' />
+            <Button block type='disabled' style={{ flexGrow: 1 }} icon='up' />
           </div>
           <Card style={{
             margin: 20,
             marginRight: 10,
             marginTop: 10,
+            marginLeft: 0,
             flexGrow: 2,
             marginBottom: 10
           }}>
+            <h1>Engagement</h1>
             <p style={{
               color: 'rgb(200, 200, 200)',
               userSelect: 'none',
               MozUserSelect: 'none',
               WebkitUserSelect: 'none'
             }}>Select a choice on the right side to start giving feedback.</p>
+            <p style={{
+              color: 'red',
+              userSelect: 'none',
+              MozUserSelect: 'none',
+              WebkitUserSelect: 'none',
+              fontSize: 12
+            }}>Additional feedback required.</p>
           </Card>
           <div style={{
             display: 'flex',
-            flexDirection: 'column',
-            paddingTop: 10,
-            paddingBottom: 10,
-            marginLeft: -13
+            flexDirection: 'row',
+            paddingLeft: 10,
+            paddingRight: 10,
+            marginTop: -20,
+            marginLeft: -10
           }}>
-            <Button block type='primary' style={{ flexGrow: 1 }} icon='right' />
+            <Button block type='primary' style={{ flexGrow: 1 }} icon='down' />
           </div>
         </div>
       </div>

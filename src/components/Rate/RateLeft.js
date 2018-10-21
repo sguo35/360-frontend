@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Icon, Button } from 'antd';
+import { Menu, Icon, Button, Tag } from 'antd';
 
 export default class RateLeft extends React.Component {
   onLogoClick = () => {
@@ -147,6 +147,18 @@ export default class RateLeft extends React.Component {
               }}>Matt Hallac</p>
             </div>
           </Menu.Item>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center'
+          }}>
+            <Button style={{
+              fontSize: 12,
+              marginTop: 25,
+              backgroundColor: '#f5222d',
+              borderColor: '#f5222d'
+            }} type='primary'>Due on 11/1/18 at 11:59 pm</Button>
+          </div>
         </Menu>
       </div>
     )
