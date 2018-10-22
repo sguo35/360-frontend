@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux';
+import { paneReducer } from './paneReducer';
 
 export const rootReducer = combineReducers({
-    reducer: null
+    pane: paneReducer
 });

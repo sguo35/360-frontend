@@ -4,12 +4,22 @@ import { Card, Tag, Button } from 'antd';
 import Brief from './Brief';
 import Prompt from '../Prompt/Prompt';
 
-export default class EditPane extends React.Component {
+import { connect } from 'react-redux';
+import { store } from '../../redux/store';
+
+
+export default 
+connect(null, null)(
+class EditPane extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       prompts: []
     };
+    store.dispatch({
+      type: 'INIT_ADD_PROMPT',
+      payload: this.addPrompt
+    })
   }
 
   addPrompt = () => {
@@ -87,4 +97,4 @@ export default class EditPane extends React.Component {
       </div>
     )
   }
-}
+})
