@@ -8,14 +8,42 @@ export default class EditPane extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      prompts: []
+      prompts: [],
+      nextReady: false
     };
   }
 
+  getInstructions = () => {
+    let text, color;
+    switch (this.state.prompts.length) {
+      case 0:
+        text = "Click a choice on the right side to start giving feedback.";
+        color = 'grey';
+        break;
+      case 1:
+        text = 'One more prompt required.';
+        color = '#f5222d';
+        break;
+      default:
+        text = 'Continue when ready.';
+        color = '#52c41a';
+    }
+    return (
+      <p onClick={this.addPrompt} style={{
+        color: color,
+        userSelect: 'none',
+        MozUserSelect: 'none',
+        WebkitUserSelect: 'none'
+      }}>
+        {text}
+      </p>
+    );
+  }
+
   addPrompt = () => {
-    console.log(this.state);
     this.setState({
-      prompts : this.state.prompts.concat([1])
+      prompts: this.state.prompts.concat([1]),
+      nextReady: this.state.prompts.length > 0
     });
   }
 
@@ -53,21 +81,9 @@ export default class EditPane extends React.Component {
             }}
           >
             <h1>Engagement</h1>
-            <p style={{
-              color: 'rgb(200, 200, 200)',
-              userSelect: 'none',
-              MozUserSelect: 'none',
-              WebkitUserSelect: 'none'
-            }}>Select a choice on the right side to start giving feedback.</p>
-            <p onClick={this.addPrompt} style={{
-              color: 'red',
-              userSelect: 'none',
-              MozUserSelect: 'none',
-              WebkitUserSelect: 'none',
-              fontSize: 12
-            }}>
-              One more prompt required.
-            </p>
+            {
+              this.getInstructions()
+            }
             {
               this.state.prompts.map( prompt => {
                   return (<Prompt gradedName="Alex"></Prompt>)
@@ -81,7 +97,7 @@ export default class EditPane extends React.Component {
             marginTop: -20,
             marginLeft: -10
           }}>
-            <Button block type='primary' style={{ flexGrow: 1 }} icon='down' />
+            <Button block type={this.state.nextReady ? 'primary' : 'disabled'}  style={{ flexGrow: 1 }} icon={this.state.nextReady ? 'down' : 'close'} />
           </div>
         </div>
       </div>
