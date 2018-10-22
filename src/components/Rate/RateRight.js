@@ -5,16 +5,22 @@ import SelectPanel from './SelectPanel';
 import './Rate.css';
 
 import { Progress } from 'antd';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 export default class RateRight extends React.Component {
+  onDragEnd = () => {
+    
+  }
   render = () => {
     return (
-      <div className="Rate-right-container" style={{
-        padding: 10
-      }}>
-        <EditPane />
-        <SelectPanel />
-      </div>
+      <DragDropContext onDragEnd={this.onDragEnd}>
+        <div className="Rate-right-container" style={{
+          padding: 10
+        }}>
+          <EditPane />
+          <SelectPanel />
+        </div>
+      </DragDropContext>
     )
   }
 }

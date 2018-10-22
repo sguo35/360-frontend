@@ -1,0 +1,33 @@
+.prompt-oval {
+  padding: 10px 10px;
+}
+
+.prompt-element {
+  display: inline;
+  margin: 0px;
+  font-size: 14px;
+}
+
+.prompt-element__hint {
+  color: grey;
+  font-size: 10px;
+}
+
+.prompt-element__name-placeholder {
+  color: #52c41a;
+}
+
+.prompt-element__fillIn {
+  color: grey;
+  min-width: 500px;
+  text-decoration: underline;
+  padding-left: 1px;
+}
+
+[contentEditable=true]:empty:before{
+  content:attr(placeholder)
+}
+
+.block_left {
+  color: black;
+}

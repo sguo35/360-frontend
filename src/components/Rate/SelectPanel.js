@@ -4,6 +4,8 @@ import './Rate.css';
 import { Card, Tag, Divider } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
 
+import Brief from "./Brief";
+
 export default class SelectPanel extends React.Component {
   render = () => {
     return (
@@ -22,66 +24,9 @@ export default class SelectPanel extends React.Component {
               width: '100%',
               height: '25vh'
             }}>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
+              <Brief></Brief>
+              <Brief></Brief>
+
             </Scrollbars>
 
             <Divider />
