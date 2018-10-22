@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Card, Tag, Button } from 'antd';
-import { Droppable } from 'react-beautiful-dnd';
 import Brief from './Brief';
 import Prompt from '../Prompt/Prompt';
 
@@ -43,47 +42,37 @@ export default class EditPane extends React.Component {
           }}>
             <Button block type='disabled' style={{ flexGrow: 1 }} icon='up'/>
           </div>
-          <Droppable droppableId="canvas">
-            {provided => (
-              <div
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-                style={{
-                  height: '100%'
-                }}
-              >
-                <Card
-                  style={{
-                    margin: 20,
-                    marginRight: 10,
-                    marginTop: 10,
-                    marginLeft: 0,
-                    height:'100%',
-                    marginBottom: 10
-                  }}
-                >
-                  <h1>Engagement</h1>
-                  <p style={{
-                    color: 'rgb(200, 200, 200)',
-                    userSelect: 'none',
-                    MozUserSelect: 'none',
-                    WebkitUserSelect: 'none'
-                  }}>Select a choice on the right side to start giving feedback.</p>
-                  <p onClick={this.addPrompt} style={{
-                    color: 'red',
-                    userSelect: 'none',
-                    MozUserSelect: 'none',
-                    WebkitUserSelect: 'none',
-                    fontSize: 12
-                  }}>Additional feedback required.</p>
-                  {
-                    this.state.prompts.map( prompt => {
-                        return (<Prompt></Prompt>)
-                  })}
-                </Card>
-              </div>
-            )}
-          </Droppable>
+          <Card
+            style={{
+              margin: 20,
+              marginRight: 10,
+              marginTop: 10,
+              marginLeft: 0,
+              height:'100%',
+              marginBottom: 10
+            }}
+          >
+            <h1>Engagement</h1>
+            <p style={{
+              color: 'rgb(200, 200, 200)',
+              userSelect: 'none',
+              MozUserSelect: 'none',
+              WebkitUserSelect: 'none'
+            }}>Select a choice on the right side to start giving feedback.</p>
+            <p onClick={this.addPrompt} style={{
+              color: 'red',
+              userSelect: 'none',
+              MozUserSelect: 'none',
+              WebkitUserSelect: 'none',
+              fontSize: 12
+            }}>
+              One more prompt required.
+            </p>
+            {
+              this.state.prompts.map( prompt => {
+                  return (<Prompt gradedName="Alex"></Prompt>)
+            })}
+          </Card>
           <div style={{
             display: 'flex',
             flexDirection: 'row',

@@ -13,7 +13,7 @@ export default class Brief extends Component {
   }
 
   handleClick = () => {
-    
+
   }
 
   render () {
