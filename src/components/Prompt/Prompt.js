@@ -8,38 +8,25 @@ class Prompt extends Component {
   constructor (props) {
     super(props);
     this.state = {
-      gradedName : props.gradedName,
       startedEditing : false,
       closing : false,
       elements : [
         {
-          type : 'gradedName',
-          placeholder : 'An outstanding student',
-          value : props.gradedName
+          "type" : "gradedName",
+          "placeholder" : "Outstanding Student"
         },
         {
-          type : 'text',
-          value :'\u00A0was willing to go above and beyond in their work output, including\u00A0'
+          "type" : "text",
+          "value" :"\u00A0stepped out of their comfort zone by taking on the challenge of\u00A0"
         },
         {
-          type : 'fillIn',
-          placeholder : 'producing a high quality product that exceeded expectations',
-          hint : 'example of great work',
-          value : ''
+          "type" : "fillIn",
+          "placeholder" : "learning to write JSON",
+          "value" : ""
         },
         {
-          type : 'text',
-          value : '. They were also really good at\u00A0'
-        },
-        {
-          type : 'fillIn',
-          placeholder : 'producing a high quality product that exceeded expectations',
-          hint : 'example of great work',
-          value : ''
-        },
-        {
-          type : 'text',
-          value : '.'
+          "type" : "text",
+          "value" : ", efficiently learning and working on a new skill even though it may have been new or hard for them."
         }
       ]
     };
@@ -62,7 +49,7 @@ class Prompt extends Component {
     switch (element.type) {
       case 'gradedName':
         if (this.state.startedEditing) {
-          nextElement = <span className="prompt-element prompt-element__name" {...opts}>{element.value}</span>;
+          nextElement = <span className="prompt-element prompt-element__name" {...opts}>{this.props.gradedName}</span>;
         } else {
           nextElement = <span className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
         }
@@ -78,20 +65,19 @@ class Prompt extends Component {
     return nextElement;
   }
 
-
-
   render () {
     let tagStyle = {
       whiteSpace: 'normal',
       overflow: 'hidden',
-      display: 'inline-flex'
+      display: 'inline-flex',
+      marginBottom: 15
     };
     if (!this.state.closing) {
       tagStyle['height'] = 'auto';
     }
 
     return (
-      <Tag closable='true'
+      <Tag className="prompt-tag" closable='true'
         onClose={this.handleClose}
         style={tagStyle}>
         <div className="prompt-oval">

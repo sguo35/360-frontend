@@ -2,6 +2,10 @@
   padding: 10px 10px;
 }
 
+.prompt-tag {
+  margin-bottom: 20px;
+}
+
 .prompt-element {
   display: inline;
   margin: 0px;
