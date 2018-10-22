@@ -153,6 +153,7 @@ export default class RateLeft extends React.Component {
             justifyContent: 'center'
           }}>
             <Button style={{
+              cursor: 'auto',
               fontSize: 12,
               marginTop: 25,
               backgroundColor: '#f5222d',
@@ -164,4 +165,3 @@ export default class RateLeft extends React.Component {
     )
   }
 }
-

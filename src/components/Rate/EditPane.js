@@ -1,9 +1,26 @@
 import React from 'react';
 
 import { Card, Tag, Button } from 'antd';
+import { Droppable } from 'react-beautiful-dnd';
+import Brief from './Brief';
+import Prompt from '../Prompt/Prompt';
 
 export default class EditPane extends React.Component {
-  render() {
+  constructor (props) {
+    super(props);
+    this.state = {
+      prompts: []
+    };
+  }
+
+  addPrompt = () => {
+    console.log(this.state);
+    this.setState({
+      prompts : this.state.prompts.concat([1])
+    });
+  }
+
+  render = () => {
     return (
       <div className="Rate-edit-pane">
         <div style={{
@@ -24,31 +41,49 @@ export default class EditPane extends React.Component {
             marginLeft: -10,
             zIndex: 1
           }}>
-            <Button block type='disabled' style={{ flexGrow: 1 }} icon='up' />
+            <Button block type='disabled' style={{ flexGrow: 1 }} icon='up'/>
           </div>
-          <Card style={{
-            margin: 20,
-            marginRight: 10,
-            marginTop: 10,
-            marginLeft: 0,
-            flexGrow: 2,
-            marginBottom: 10
-          }}>
-            <h1>Engagement</h1>
-            <p style={{
-              color: 'rgb(200, 200, 200)',
-              userSelect: 'none',
-              MozUserSelect: 'none',
-              WebkitUserSelect: 'none'
-            }}>Select a choice on the right side to start giving feedback.</p>
-            <p style={{
-              color: 'red',
-              userSelect: 'none',
-              MozUserSelect: 'none',
-              WebkitUserSelect: 'none',
-              fontSize: 12
-            }}>Additional feedback required.</p>
-          </Card>
+          <Droppable droppableId="canvas">
+            {provided => (
+              <div
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+                style={{
+                  height: '100%'
+                }}
+              >
+                <Card
+                  style={{
+                    margin: 20,
+                    marginRight: 10,
+                    marginTop: 10,
+                    marginLeft: 0,
+                    height:'100%',
+                    marginBottom: 10
+                  }}
+                >
+                  <h1>Engagement</h1>
+                  <p style={{
+                    color: 'rgb(200, 200, 200)',
+                    userSelect: 'none',
+                    MozUserSelect: 'none',
+                    WebkitUserSelect: 'none'
+                  }}>Select a choice on the right side to start giving feedback.</p>
+                  <p onClick={this.addPrompt} style={{
+                    color: 'red',
+                    userSelect: 'none',
+                    MozUserSelect: 'none',
+                    WebkitUserSelect: 'none',
+                    fontSize: 12
+                  }}>Additional feedback required.</p>
+                  {
+                    this.state.prompts.map( prompt => {
+                        return (<Prompt></Prompt>)
+                  })}
+                </Card>
+              </div>
+            )}
+          </Droppable>
           <div style={{
             display: 'flex',
             flexDirection: 'row',

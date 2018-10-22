@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {Icon, Tag} from 'antd';
+import {Tag} from 'antd';
 import './PromptUI.css';
 
 import PromptFillIn from './PromptFillIn';
 
-class PromptUI extends Component {
+class Prompt extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -102,4 +102,4 @@ class PromptUI extends Component {
   }
 }
 
-export default PromptUI;
+export default Prompt;

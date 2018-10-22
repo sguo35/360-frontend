@@ -3,6 +3,9 @@ import './Rate.css';
 
 import { Card, Tag, Divider } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
+import {Droppable} from 'react-beautiful-dnd';
+
+import Brief from "./Brief";
 
 export default class SelectPanel extends React.Component {
   render = () => {
@@ -22,67 +25,15 @@ export default class SelectPanel extends React.Component {
               width: '100%',
               height: '25vh'
             }}>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
-              <Tag color='green' onClick={() => console.log('clicked')} style={{
-                marginBottom: 10,
-                userSelect: 'none',
-                MozUserSelect: 'none',
-                WebkitUserSelect: 'none'
-              }}>participated actively</Tag>
             </Scrollbars>
+            <Droppable droppableId="wordbank-good">
+              {provided => (
+                <div ref={provided.innerRef} {...provided.droppableProps}>
+                  <Brief></Brief>
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
 
             <Divider />
 
