@@ -9,26 +9,37 @@ import { store } from '../../redux/store';
 
 
 export default
-connect(null, null)(
+connect((state) => {
+  return {
+    studentIndex: state.pane.studentIndex,
+    prompts: state.pane.prompts
+  }
+}, (dispatch) => {
+  return {
+    setStudentIndex: (index) => dispatch({
+      type: "SET_STUDENT_INDEX",
+      index: index
+    })
+  }
+})(
 class EditPane extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       students: ['Alex', 'Matt', 'Kelly', 'Jeff'],
-      studentIndex: 3,
-      questionIndex: 2,
-      prompts: [],
-      nextReady: false
+      questionIndex: 0,
+      nextReady: false,
+      opacity: 1
     };
-    store.dispatch({
-      type: 'INIT_ADD_PROMPT',
-      payload: this.addPrompt
-    })
+  }
+
+  _submit = () => {
+    alert("submitted!")
   }
 
   getInstructions = () => {
     let text, color;
-    switch (this.state.prompts.length) {
+    switch (this.props.prompts.length) {
       case 0:
         text = "Click a choice on the right side to start giving feedback.";
         color = 'grey';
@@ -42,7 +53,7 @@ class EditPane extends React.Component {
         color = '#52c41a';
     }
     return (
-      <p onClick={this.addPrompt} style={{
+      <p style={{
         color: color,
         userSelect: 'none',
         MozUserSelect: 'none',
@@ -53,25 +64,18 @@ class EditPane extends React.Component {
     );
   }
 
-  addPrompt = (prompt) => {
-    this.setState({
-      prompts: this.state.prompts.concat([prompt.id]),
-      nextReady: this.state.prompts.length > 0
-    });
-  }
-
   getQuestionHeader = () => {
     let text = ['Leadership', 'Productivity', 'Engagement'][this.state.questionIndex];
-    return <h1>{text}</h1>;
+    return <h1 style={{ transition: '1s linear'}}>{text}</h1>;
   }
 
   renderBottomButton = () => {
     let type = 'primary', icon = 'down', text = '';
     let style = { flexGrow: 1 };
-    if (!this.state.nextReady) {
+    if (this.props.prompts.length < 2) {
       type = 'disabled';
       icon = 'close';
-    } else if (this.state.questionIndex == 2 && this.state.studentIndex == this.state.students.length - 1) {
+    } else if (this.state.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
       icon = '';
       text = 'Submit';
       style['backgroundColor'] = '#52c41a';
@@ -81,7 +85,34 @@ class EditPane extends React.Component {
       text = 'Next Student';
     }
     return (
-      <Button block type={type} style={style} icon={icon}>
+      <Button block type={type} style={style} icon={icon} onClick={() => {
+        if (this.props.prompts.length < 2) {
+          return;
+        }
+
+        if (this.state.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+          this._submit();
+          return;
+        }
+
+        if (this.state.questionIndex == 2) {
+          this.props.setStudentIndex(this.props.studentIndex + 1)
+          this.setState({
+            questionIndex: 0
+          })
+          return
+        }
+
+        this.setState({
+          questionIndex: this.state.questionIndex == 2 ? this.state.questionIndex : this.state.questionIndex + 1,
+          opacity: 0
+        })
+        setTimeout(() => {
+          this.setState({
+            opacity: 1
+          })
+        }, 400)
+      }}>
         {text}
       </Button>
     );
@@ -89,7 +120,7 @@ class EditPane extends React.Component {
 
   renderTopButton = () => {
     let type = 'primary', icon = 'up', text = '';
-    if (this.state.questionIndex == 0 && this.state.studentIndex == 0) {
+    if (this.state.questionIndex == 0 && this.props.studentIndex == 0) {
       icon = 'close';
       type = 'disabled';
     } else if (this.state.questionIndex == 0) {
@@ -97,7 +128,29 @@ class EditPane extends React.Component {
       text = 'Previous Student';
     }
     return (
-      <Button block type={type}  style={{ flexGrow: 1 }} icon={icon}>
+      <Button block type={type}  style={{ flexGrow: 1 }} icon={icon} onClick={() => {
+        if (this.state.questionIndex == 0 && this.props.studentIndex == 0) {
+          return;
+        }
+
+        if (this.state.questionIndex == 0) {
+          this.props.setStudentIndex(this.props.studentIndex - 1)
+          this.setState({
+            questionIndex: 2
+          })
+          return
+        }
+
+        this.setState({
+          questionIndex: this.state.questionIndex == 0 ? this.state.questionIndex : this.state.questionIndex - 1,
+          opacity: 0
+        })
+        setTimeout(() => {
+          this.setState({
+            opacity: 1
+          })
+        }, 400)
+      }}>
         {text}
       </Button>
     );
@@ -122,7 +175,9 @@ class EditPane extends React.Component {
           marginRight: 0,
           marginBottom: 10,
           marginLeft: 20,
-          marginTop: 10
+          marginTop: 10,
+          opacity: this.state.opacity,
+          transition: 'opacity 0.5s'
         }}>
           <div style={{
             display: 'flex',
@@ -152,8 +207,8 @@ class EditPane extends React.Component {
               this.getInstructions()
             }
             {
-              this.state.prompts.map( prompt => {
-                  return (<Prompt gradedName={this.state.students[this.state.studentIndex]}></Prompt>)
+              this.props.prompts.map((p) => {
+                  return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p}/>)
             })}
           </Card>
           <div style={{

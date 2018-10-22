@@ -4,35 +4,30 @@ import './PromptUI.css';
 
 import PromptFillIn from './PromptFillIn';
 
+import { connect } from 'react-redux';
+
+export default
+connect(null, (dispatch) => {
+  return {
+    deletePrompt: (prompt) => dispatch({
+      type: "DELETE_PROMPT_FROM_STORE",
+      payload: prompt
+    })
+  }
+})(
 class Prompt extends Component {
   constructor (props) {
     super(props);
     this.state = {
       startedEditing : false,
       closing : false,
-      elements : [
-        {
-          "type" : "gradedName",
-          "placeholder" : "Outstanding Student"
-        },
-        {
-          "type" : "text",
-          "value" :"\u00A0stepped out of their comfort zone by taking on the challenge of\u00A0"
-        },
-        {
-          "type" : "fillIn",
-          "placeholder" : "learning to write JSON",
-          "value" : ""
-        },
-        {
-          "type" : "text",
-          "value" : ", efficiently learning and working on a new skill even though it may have been new or hard for them."
-        }
-      ]
+      elements : this.props.prompt ? this.props.prompt.elements : []
     };
   }
 
-  handleClose = () => {
+  handleClose = (event) => {
+    event.preventDefault()
+    this.props.deletePrompt(this.props.prompt)
     this.setState({closing : true});
   }
 
@@ -70,22 +65,20 @@ class Prompt extends Component {
       whiteSpace: 'normal',
       overflow: 'hidden',
       display: 'inline-flex',
-      marginBottom: 15
+      marginBottom: 15,
+      height: 'auto'
     };
-    if (!this.state.closing) {
-      tagStyle['height'] = 'auto';
-    }
 
     return (
-      <Tag className="prompt-tag" closable='true'
-        onClose={this.handleClose}
-        style={tagStyle}>
+      <Tag className="prompt-tag"
+        visible={true}
+        style={tagStyle} key={this.props.prompt.uniqueId}>
         <div className="prompt-oval">
           {this.state.elements.map(this.yieldElement)}
         </div>
+        <span onClick={this.handleClose}>x</span>
       </Tag>
     );
   }
 }
-
-export default Prompt;
+)

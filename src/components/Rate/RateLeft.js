@@ -1,7 +1,15 @@
 import React from 'react';
 import { Menu, Icon, Button, Tag } from 'antd';
 
-export default class RateLeft extends React.Component {
+import { connect } from 'react-redux';
+
+export default 
+connect((state) => {
+  return {
+    studentIndex: state.pane.studentIndex
+  }
+})(
+class RateLeft extends React.Component {
   onLogoClick = () => {
     alert("Go to dashboard")
   }
@@ -11,8 +19,7 @@ export default class RateLeft extends React.Component {
       <div className="Rate-left-container">
         <Menu
           onClick={() => { }}
-          defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          selectedKeys={[(this.props.studentIndex + 1).toString()]}
           mode='vertical'
           theme='dark'
           style={{
@@ -164,4 +171,4 @@ export default class RateLeft extends React.Component {
       </div>
     )
   }
-}
+})

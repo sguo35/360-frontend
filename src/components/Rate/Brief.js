@@ -7,9 +7,12 @@ const uuidv4 = require('uuid/v4');
 let i = 0;
 
 export default
-connect((state) => {
+connect(null, (dispatch) => {
   return {
-    addPrompt: state.pane.addPrompt
+    addPromptToStore: (prompt) => dispatch({
+      type: "ADD_PROMPT_TO_STORE",
+      payload: prompt
+    })
   }
 })(
 class Brief extends Component {
@@ -21,8 +24,11 @@ class Brief extends Component {
     i += 1;
   }
 
-  handleClick = () => {
-    this.props.addPrompt(this.props.prompt.id)
+  handleClick = (event) => {
+    event.preventDefault()
+    const prompt = JSON.parse(JSON.stringify(this.props.prompt))
+    prompt['uniqueId'] = uuidv4()
+    this.props.addPromptToStore(prompt)
   }
 
   render() {
@@ -51,7 +57,7 @@ class Brief extends Component {
         userSelect: 'none',
         MozUserSelect: 'none',
         WebkitUserSelect: 'none'
-      }}>
+      }} >
         {this.props.prompt.shortForm}
       </Tag>
     );
