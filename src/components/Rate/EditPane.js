@@ -103,9 +103,18 @@ class EditPane extends React.Component {
     );
   }
 
+  handleWheel = (event) => {
+    event.preventDefault()
+    if (event.deltaY > 50) {
+      console.log("up");
+    } else if (event.deltaY < -50) {
+      console.log("down");
+    }
+  }
+
   render = () => {
     return (
-      <div onWheel={(event) => console.log(event.deltaY)} className="Rate-edit-pane">
+      <div onWheel={this.handleWheel} className="Rate-edit-pane">
         <div style={{
           display: 'flex',
           flexDirection: 'column',
