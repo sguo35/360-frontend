@@ -5,6 +5,7 @@ import HelloWorld from './HelloWorld';
 import Rate from './components/Rate/Rate';
 import SelectProject from './components/SelectProject/SelectProject';
 import Login from './components/Login/Login';
+import Dash from './components/Dash/Dash';
 
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
@@ -16,7 +17,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Dash} />
             <Route path="/selectProject/:info" component={SelectProject} />
             <Route path="/project/:projectId" component={Rate} />
           </Switch>
