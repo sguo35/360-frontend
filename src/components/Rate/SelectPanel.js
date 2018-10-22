@@ -3,7 +3,6 @@ import './Rate.css';
 
 import { Card, Tag, Divider } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
-import {Droppable} from 'react-beautiful-dnd';
 
 import Brief from "./Brief";
 
@@ -25,15 +24,10 @@ export default class SelectPanel extends React.Component {
               width: '100%',
               height: '25vh'
             }}>
+              <Brief></Brief>
+              <Brief></Brief>
+
             </Scrollbars>
-            <Droppable droppableId="wordbank-good">
-              {provided => (
-                <div ref={provided.innerRef} {...provided.droppableProps}>
-                  <Brief></Brief>
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
 
             <Divider />
 
