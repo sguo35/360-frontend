@@ -87,11 +87,11 @@ export default
       addPrompt = (prompt) => {
         const prompts = [...this.state.prompts, prompt]
         promptComponents = prompts.map((p, index) => {
-          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p} 
+          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p}
            updateEdit={(edit) => {
             let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
             promptResponses[index] = edit
-            this.setState({ 
+            this.setState({
               promptResponses: promptResponses
             })
           }}
