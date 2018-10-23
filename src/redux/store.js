@@ -6,9 +6,10 @@ export const store = createStore(rootReducer, {
     addPrompt: () => { },
     studentIndex: 0,
     prompts: [],
-    deletePrompt: () => {}
+    deletePrompt: () => {},
+    questionIndex: 0
   },
   account: {
-    
+
   }
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

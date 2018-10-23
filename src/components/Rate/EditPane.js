@@ -12,7 +12,8 @@ let promptComponents = [];
 export default
   connect((state) => {
     return {
-      studentIndex: state.pane.studentIndex
+      studentIndex: state.pane.studentIndex,
+      questionIndex: state.pane.questionIndex
     }
   }, (dispatch) => {
     return {
@@ -27,6 +28,10 @@ export default
       initAddPrompt: (func) => dispatch({
         type: "INIT_ADD_PROMPT",
         payload: func
+      }),
+      setquestionIndex: (index) => dispatch({
+        type: "SET_QUESTION_INDEX",
+        index: index
       })
     }
   })(
@@ -35,7 +40,6 @@ export default
         super(props);
         this.state = {
           students: ['Matt', 'Kelly', 'Jaiveer', 'Alex'],
-          questionIndex: 0,
           nextReady: false,
           opacity: 1,
           prompts: [],
@@ -127,7 +131,7 @@ export default
       }
 
       getQuestionHeader = () => {
-        let text = ['Leadership', 'Productivity', 'Engagement'][this.state.questionIndex];
+        let text = ['Leadership', 'Productivity', 'Engagement'][this.props.questionIndex];
         return <h1 style={{ transition: '1s linear' }}>{text}</h1>;
       }
 
@@ -137,12 +141,12 @@ export default
         if (this.state.prompts.length < 2) {
           type = 'disabled';
           icon = 'close';
-        } else if (this.state.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+        } else if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
           icon = '';
           text = 'Submit';
           style['backgroundColor'] = '#52c41a';
           style['borderColor'] = '#52c41a';
-        } else if (this.state.questionIndex == 2) {
+        } else if (this.props.questionIndex == 2) {
           icon = '';
           text = 'Next Student';
         }
@@ -152,7 +156,7 @@ export default
               return;
             }
 
-            if (this.state.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+            if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
               this._submit();
               return;
             }
@@ -167,19 +171,18 @@ export default
 
             message.info("Responses saved.")
 
-            if (this.state.questionIndex == 2) {
+            if (this.props.questionIndex == 2) {
               this.props.setStudentIndex(this.props.studentIndex + 1)
               promptComponents = []
+              this.props.setquestionIndex(0)
               this.setState({
-                questionIndex: 0,
                 prompts: [],
                 responses: []
               })
               return
             }
-
+            this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
             this.setState({
-              questionIndex: this.state.questionIndex == 2 ? this.state.questionIndex : this.state.questionIndex + 1,
               opacity: 0,
               prompts: [],
               responses: []
@@ -198,29 +201,26 @@ export default
 
       renderTopButton = () => {
         let type = 'primary', icon = 'up', text = '';
-        if (this.state.questionIndex == 0 && this.props.studentIndex == 0) {
+        if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
           icon = 'close';
           type = 'disabled';
-        } else if (this.state.questionIndex == 0) {
+        } else if (this.props.questionIndex == 0) {
           icon = '';
           text = 'Previous Student';
         }
         return (
           <Button block type={type} style={{ flexGrow: 1 }} icon={icon} onClick={async () => {
-            if (this.state.questionIndex == 0 && this.props.studentIndex == 0) {
+            if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
               return;
             }
 
-            if (this.state.questionIndex == 0) {
+            if (this.props.questionIndex == 0) {
               this.props.setStudentIndex(this.props.studentIndex - 1)
-              this.setState({
-                questionIndex: 2
-              })
+              this.props.setquestionIndex(2)
               return
             }
-
+            this.props.setquestionIndex(this.props.questionIndex == 0 ? this.props.questionIndex : this.props.questionIndex - 1)
             this.setState({
-              questionIndex: this.state.questionIndex == 0 ? this.state.questionIndex : this.state.questionIndex - 1,
               opacity: 0
             })
             setTimeout(() => {
