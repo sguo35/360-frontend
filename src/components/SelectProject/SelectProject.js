@@ -7,6 +7,9 @@ export default class SelectProject extends React.Component {
     async fetchProjects(email) {
         const projects = await fetch("https://stephentorr.es/getAccount", {
             method: "POST",
+            headers: {
+                "Content-Type": 'application/json'
+            },
             body: JSON.stringify({ email: email })
         })
         store.dispatch({

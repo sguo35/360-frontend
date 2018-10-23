@@ -161,13 +161,22 @@ export default
               return;
             }
 
-            await fetch("https://stephentorr.es/", {
+            try {
+              await fetch("https://stephentorr.es/updateProjectGrade", {
               method: "POST",
               body: JSON.stringify({
                 prompts: this.state.prompts,
                 responses: this.state.responses
-              })
+              }),
+              headers: {
+                "Content-Type": "application/json"
+              }
             })
+            } catch(e) {
+              console.log(e)
+            }
+
+            
 
             message.info("Responses saved.")
 
