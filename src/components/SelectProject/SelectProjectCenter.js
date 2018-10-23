@@ -4,7 +4,6 @@ import { Menu, Icon, Button } from 'antd';
 import { serverUrl } from '../../constants';
 
 let projects = require('../../projects.json')
-projects = JSON.parse(projects)
 
 export default class SelectProjectCenter extends React.Component {
   onLogoClick = () => {
