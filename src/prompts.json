@@ -454,7 +454,7 @@
       {
         "id": "promptL0",
         "ovalTemplate": "oval3",
-        "shortForm": "Does what others are unwilling",
+        "shortForm": "Does what others are unwilling to do",
         "elements": [
           {
             "type": "gradedName",
@@ -1222,6 +1222,3 @@
       }
     ]
   }
-  
-  
-  
