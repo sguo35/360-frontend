@@ -236,6 +236,7 @@ export default
       }
 
       render = () => {
+        console.log(JSON.stringify(this.state.promptResponses))
         return (
           <div onWheel={this.handleWheel} className="Rate-edit-pane">
             <div style={{
