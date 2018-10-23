@@ -39,7 +39,7 @@ const samples = prmpts.ovalVariants.map((variant) => {
   return out
 })
 
-export default 
+export default
 connect((state) => {
   return {
     questionIndex: state.pane.questionIndex
@@ -71,9 +71,10 @@ class SelectPanel extends React.Component {
               </Brief>
               )
             })}
-              
+
 
             </Scrollbars>
+
 
             <Divider />
 

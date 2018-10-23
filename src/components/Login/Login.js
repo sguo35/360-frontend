@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Icon } from 'antd';
+import { serverUrl } from '../../constants';
 
 export default class Login extends React.Component {
     render() {
@@ -27,8 +28,11 @@ export default class Login extends React.Component {
             <Button type='primary' style={{
                 marginTop: 25
             }} onClick={async () => {
-                let url = await fetch('http://localhost:3000/oauth', {
-                    method: 'POST'
+                let url = await fetch(`${serverUrl}/oauth`, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
                 });
                 url = await url.json();
                 window.location.href = url.url;

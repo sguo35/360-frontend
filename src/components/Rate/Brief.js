@@ -44,18 +44,22 @@ class Brief extends Component {
     return (
       <Tag color={color} onClick={this.handleClick} style={{
         marginBottom: 10,
+        width : '100%',
         whiteSpace: 'normal',
         overflow: 'hidden',
         display: 'inline-flex',
         height: 'auto',
         lineHeight: 1,
         padding: 5,
-        textAlign: 'center',
         userSelect: 'none',
         MozUserSelect: 'none',
         WebkitUserSelect: 'none'
       }} >
-        {this.props.prompt.shortForm}
+        <p style={{
+          textAlign: 'center',
+          width: '100%',
+          margin: 0
+        }}>{this.props.prompt.shortForm}</p>
       </Tag>
     );
   }

@@ -5,8 +5,11 @@ import Brief from './Brief';
 import Prompt from '../Prompt/Prompt';
 import debounce from 'lodash/throttle';
 
+
 import { connect } from 'react-redux';
 import { store } from '../../redux/store';
+
+import { serverUrl } from '../../constants';
 
 let promptComponents = [];
 
@@ -147,13 +150,21 @@ export default
           return;
         }
 
-        await fetch("http://localhost:3000/", {
+
+        try {
+          await fetch(`${serverUrl}/updateProjectGrade`, {
           method: "POST",
           body: JSON.stringify({
             prompts: this.state.prompts,
             responses: this.state.responses
-          })
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          }
         })
+        } catch(e) {
+          console.log(e)
+        }
 
         message.info("Responses saved.")
 
@@ -197,7 +208,58 @@ export default
           text = 'Next Student';
         }
         return (
-          <Button block type={type} style={style} icon={icon} onClick={this.onBottomButtonClick}>
+          <Button block type={type} style={style} icon={icon} onClick={async () => {
+            if (this.state.prompts.length < 2) {
+              return;
+            }
+
+            if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+              this._submit();
+              return;
+            }
+
+            try {
+              await fetch(`${serverUrl}/updateProjectGrade`, {
+              method: "POST",
+              body: JSON.stringify({
+                prompts: this.state.prompts,
+                responses: this.state.responses
+              }),
+              headers: {
+                "Content-Type": "application/json"
+              }
+            })
+            } catch(e) {
+              console.log(e)
+            }
+
+
+
+            message.info("Responses saved.")
+
+            if (this.props.questionIndex == 2) {
+              this.props.setStudentIndex(this.props.studentIndex + 1)
+              promptComponents = []
+              this.props.setquestionIndex(0)
+              this.setState({
+                prompts: [],
+                responses: []
+              })
+              return
+            }
+            this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
+            this.setState({
+              opacity: 0,
+              prompts: [],
+              responses: []
+            })
+            promptComponents = []
+            setTimeout(() => {
+              this.setState({
+                opacity: 1
+              })
+            }, 400)
+          }}>
             {text}
           </Button>
         );

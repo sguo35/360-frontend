@@ -132,11 +132,12 @@ export default
                     {!this.state.unlocked[i] ? (<div style={{
                       display: 'flex',
                       justifyContent: 'center',
-                      flexDirection: 'column'
+                      flexDirection: 'column',
+                      marginLeft: 'auto'
                     }}>
-                      <Icon type='lock' />
+                      <Icon style={{margin : 0}} type='lock' />
                     </div>) : null}
-                    
+
                   </Menu.Item>)
                 }
                 return arr
