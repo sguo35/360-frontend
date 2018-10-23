@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import ContentEditable from "react-contenteditable";
 
 class PromptFillIn extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = { value: this.props.placeholder };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -15,12 +16,9 @@ class PromptFillIn extends Component {
   }
 
   handleChange(event) {
-    console.log(event.nativeEvent.data);
-    if(event.nativeEvent.data != null)
-    {
-      this.setState({value: event.target.value});
-      this.props.startEditing();
-    }
+    this.props.startEditing();
+    this.props.edit(this.props.idx, event.target.value)
+    this.setState({ value: event.target.value });
   }
 
   hintText() {
@@ -31,20 +29,34 @@ class PromptFillIn extends Component {
     }
   }
 
-  render () {
+  render() {
     return (
       <span className="prompt-element prompt-element__fillIn">
-        <span
-          contentEditable={true}
-          placeholder={this.props.placeholder}
-          value={this.state.value}
-          onKeyPress={this.handleKeyPress}
-          onInput={this.handleChange}
-          onPaste={(event) => {event.preventDefault()}}
-          onCut={(event) => {event.preventDefault()}}
-          onCopy={(event) => {event.preventDefault()}}
+        <ContentEditable
+          onChange={this.handleChange}
+          onPaste={(event) => { event.preventDefault() }}
+          onCut={(event) => { event.preventDefault() }}
+          onCopy={(event) => { event.preventDefault() }}
+          onClick={() => {
+            this.setState({
+              value: this.state.value !== this.props.placeholder ? this.state.value : ''
+            })
+          }}
+          onBlur={() => {
+            this.setState({
+              value: this.state.value === '' ? this.props.placeholder : this.state.value
+            })
+          }}
+          html={this.state.value}
+          tagName="span"
+          style={{
+            color: this.state.value ? 'grey' : 'rgb(200, 200, 200)',
+            display: 'inline-block',
+            textDecoration: 'underline',
+            minWidth: this.state.value === '' ? 100 : 0
+          }}
         >
-        </span>
+        </ContentEditable>
       </span>
     );
   }

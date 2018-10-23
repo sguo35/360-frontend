@@ -17,7 +17,8 @@ export default
         super(props);
         this.state = {
           startedEditing: false,
-          closing: false
+          closing: false,
+          filled: {}
         };
       }
 
@@ -30,6 +31,17 @@ export default
 
       startEditing = () => {
         this.setState({ startedEditing: true });
+      }
+
+      edit = (idx, val) => {
+        console.log(val)
+        console.log("EDIT")
+        const obj = {...this.state.filled }
+        obj[idx.toString()] = val
+        this.setState({
+          filled: obj
+        })
+        console.log(this.state.filled)
       }
 
       yieldElement = (element, index) => {
@@ -47,7 +59,7 @@ export default
             }
             break;
           case 'fillIn':
-            nextElement = <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
+            nextElement = <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing} edit={this.edit} idx={index}></PromptFillIn>;
             break;
           case 'text':
           default:
