@@ -17,7 +17,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Dash} />
+            <Route exact path="/" component={Login} />
             <Route exact path="/dashboard" component={Dash} />
             <Route path="/selectProject/:info" component={SelectProject} />
             <Route path="/project/:projectId" component={Rate} />
