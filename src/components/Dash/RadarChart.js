@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RadarChart from 'react-svg-radar-chart';
 import 'react-svg-radar-chart/build/css/index.css';
-
+import './Radar.css';
 
 export default class Radar extends Component{
   constructor(props){
@@ -16,7 +16,7 @@ export default class Radar extends Component{
           engagement: 0.2,
           productivity: 0.7,
         },
-        meta: { color: '#4786ef' }
+        meta: { color: '#002766' }
       },
       {
         data: {
@@ -24,7 +24,7 @@ export default class Radar extends Component{
           productivity: .85,
           engagement: 0.5,
         },
-        meta: { color: '#e2e52b' }
+        meta: { color: '#1890ff' }
       }
     ];
 

@@ -32,6 +32,7 @@ export default class Wordcloud extends Component{
     wordCountKey={WORD_COUNT_KEY}
     wordKey={WORD_KEY}
     fontFamily='Segoe UI, sans-serif'
+    colors={['#91d5ff', '#69c0ff', '#40a9ff', '#1890ff', '#096dd9', '#0050b3', '#003a8c', '#002766']}
     height={height}
     width={width}
     scale='sqrt'

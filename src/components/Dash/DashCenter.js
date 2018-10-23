@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { store } from '../../redux/store';
 
 import Wordcloud from './Wordcloud';
-
+import Radar from './RadarChart';
 
 export default class DashCenter extends React.Component {
   constructor (props) {
@@ -19,6 +19,11 @@ export default class DashCenter extends React.Component {
           <Card style={{width:'50%'}}>
             <div style={{display:'inline-block', margin: 'auto'}}>
               <Wordcloud text={text}></Wordcloud>
+            </div>
+          </Card>
+          <Card style={{width:'50%'}}>
+            <div style={{display:'inline-block', margin: 'auto'}}>
+              <Radar></Radar>
             </div>
           </Card>
       </div>
