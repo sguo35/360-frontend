@@ -39,7 +39,7 @@ export default class SelectProjectCenter extends React.Component {
             letterSpacing: '10px',
             cursor: 'pointer'
           }} onClick={this.onLogoClick}>360FACTORS</p>
-          {projects.map((idx, project) => {
+          {projects['projects'].map((idx, project) => {
             return (
               <Menu.Item key={project['projectName']} style={{
                 height: '10%',
