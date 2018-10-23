@@ -41,3 +41,9 @@
   flex-grow: 2;
   margin: auto;
 }
+
+.thumb-vertical {
+  background-color: #FFFFFF;
+  opacity: 0.5;
+  border-radius: 5px;
+}

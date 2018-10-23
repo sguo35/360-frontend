@@ -33,7 +33,8 @@ export default class DashCenter extends React.Component {
     allProductivity = Math.sqrt(allProductivity);
 
     return (
-      <Scrollbars style={{
+      <Scrollbars autoHide={true} renderThumbVertical={props => <div {...props} className="thumb-vertical"/>}
+      style={{
         width: '100%',
         height: '100%'
       }}>
@@ -68,10 +69,13 @@ export default class DashCenter extends React.Component {
         </Row>
         <Row gutter={16} type="flex" justify="center" style={{marginBottom : 16}}>
           <Col span={20}>
-            <Card>
-              <h1 style={{fontSize:30, textAlign: 'center', margin: 0, height:1000}}>
-                Comments here
+            <Card style={{height:400}}>
+              <h1 style={{fontSize:30, textAlign: 'center', marginBottom: 20}}>
+                Team Member Feedback
               </h1>
+              <p style={{textAlign: 'center'}}>
+                Nobody has submitted feedback for you yet.
+              </p>
             </Card>
           </Col>
         </Row>
