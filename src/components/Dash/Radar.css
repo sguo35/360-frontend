@@ -1,0 +1,44 @@
+#You-legend{
+  color: #1890ff;
+}
+
+#Team-legend{
+  color: #002766;
+}
+
+#Legend{
+  text-align: center;
+  font-size: 30px;
+  font-family: Segoe UI, sans-serif;
+}
+
+#Radar-format{
+  text-align: center;
+}
+
+.shape {
+  fill-opacity: 0.5;
+  stroke: #002766;
+}
+
+.shape:hover {
+  fill-opacity:1;
+}
+
+.scale {
+  fill: #FFFFFF;
+  stroke: #999;
+  stroke-width: 0;
+}
+
+.axis {
+  stroke: #555;
+  stroke-width: 0.2;
+}
+
+.caption {
+  fill: #444;
+  font-weight: 500;
+  font-family: Segoe UI, sans-serif;
+  font-size: 14px;
+}
