@@ -3,9 +3,11 @@ import React from 'react';
 import SelectProjectCenter from './SelectProjectCenter';
 import { store } from '../../redux/store';
 
+import { serverUrl } from '../../constants';
+
 export default class SelectProject extends React.Component {
     async fetchProjects(email) {
-        const projects = await fetch("https://stephentorr.es/getAccount", {
+        const projects = await fetch(`${serverUrl}/getAccount`, {
             method: "POST",
             headers: {
                 "Content-Type": 'application/json'

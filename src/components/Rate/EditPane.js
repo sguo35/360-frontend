@@ -8,6 +8,8 @@ import throttle from 'lodash/throttle';
 import { connect } from 'react-redux';
 import { store } from '../../redux/store';
 
+import { serverUrl } from '../../constants';
+
 let promptComponents = [];
 
 export default
@@ -146,13 +148,20 @@ export default
           return;
         }
 
-        await fetch("http://localhost:3000/", {
+        try {
+          await fetch(`${serverUrl}/updateProjectGrade`, {
           method: "POST",
           body: JSON.stringify({
             prompts: this.state.prompts,
             responses: this.state.responses
-          })
+          }),
+          headers: {
+            "Content-Type": "application/json"
+          }
         })
+        } catch(e) {
+          console.log(e)
+        }
 
         message.info("Responses saved.")
 
@@ -207,7 +216,7 @@ export default
             }
 
             try {
-              await fetch("https://stephentorr.es/updateProjectGrade", {
+              await fetch(`${serverUrl}/updateProjectGrade`, {
               method: "POST",
               body: JSON.stringify({
                 prompts: this.state.prompts,
