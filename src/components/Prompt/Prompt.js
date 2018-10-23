@@ -47,7 +47,7 @@ export default
             }
             break;
           case 'fillIn':
-            nextElement = <PromptFillIn  key={Math.random()} placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
+            nextElement = <PromptFillIn  key={Math.random()} placeholder={element.placeholder} hint={element.hint} startEditing={this.state.startedEditing}></PromptFillIn>;
             break;
           case 'text':
           default:
