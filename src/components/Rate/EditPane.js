@@ -161,7 +161,7 @@ export default
               return;
             }
 
-            await fetch("http://localhost:3000/", {
+            await fetch("https://stephentorr.es/", {
               method: "POST",
               body: JSON.stringify({
                 prompts: this.state.prompts,
