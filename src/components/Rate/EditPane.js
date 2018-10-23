@@ -147,7 +147,7 @@ export default
           text = 'Next Student';
         }
         return (
-          <Button block type={type} style={style} icon={icon} onClick={() => {
+          <Button block type={type} style={style} icon={icon} onClick={async () => {
             if (this.state.prompts.length < 2) {
               return;
             }
@@ -157,18 +157,32 @@ export default
               return;
             }
 
+            await fetch("http://localhost:3000/", {
+              method: "POST",
+              body: JSON.stringify({
+                prompts: this.state.prompts,
+                responses: this.state.responses
+              })
+            })
+
             if (this.state.questionIndex == 2) {
               this.props.setStudentIndex(this.props.studentIndex + 1)
+              promptComponents = []
               this.setState({
-                questionIndex: 0
+                questionIndex: 0,
+                prompts: [],
+                responses: []
               })
               return
             }
 
             this.setState({
               questionIndex: this.state.questionIndex == 2 ? this.state.questionIndex : this.state.questionIndex + 1,
-              opacity: 0
+              opacity: 0,
+              prompts: [],
+              responses: []
             })
+            promptComponents = []
             setTimeout(() => {
               this.setState({
                 opacity: 1
@@ -202,14 +216,6 @@ export default
               })
               return
             }
-
-            await fetch("http://localhost:3000/", {
-              method: "POST",
-              body: JSON.stringify({
-                prompts: this.state.prompts,
-                responses: this.state.responses
-              })
-            })
 
             this.setState({
               questionIndex: this.state.questionIndex == 0 ? this.state.questionIndex : this.state.questionIndex - 1,
