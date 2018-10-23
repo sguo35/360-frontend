@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, Tag, Button } from 'antd';
+import { Card, Tag, Button, message } from 'antd';
 import Brief from './Brief';
 import Prompt from '../Prompt/Prompt';
 
@@ -34,7 +34,7 @@ export default
       constructor(props) {
         super(props);
         this.state = {
-          students: ['Alex', 'Matt', 'Kelly', 'Jeff'],
+          students: ['Matt', 'Kelly', 'Jaiveer', 'Alex'],
           questionIndex: 0,
           nextReady: false,
           opacity: 1,
@@ -46,7 +46,7 @@ export default
       }
 
       _submit = () => {
-        alert("submitted!")
+        message.success("Submitted!")
       }
 
       deletePrompt = (prompt) => {
@@ -164,6 +164,8 @@ export default
                 responses: this.state.responses
               })
             })
+
+            message.info("Responses saved.")
 
             if (this.state.questionIndex == 2) {
               this.props.setStudentIndex(this.props.studentIndex + 1)

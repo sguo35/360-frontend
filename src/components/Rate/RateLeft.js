@@ -3,6 +3,8 @@ import { Menu, Icon, Button, Tag } from 'antd';
 
 import { connect } from 'react-redux';
 
+const testNames = [0, 'Matt Halloc', 'Kelly Han', 'Jaiveer Singh', 'Alexander Manes']
+
 export default
   connect((state) => {
     return {
@@ -125,7 +127,7 @@ export default
                       <p style={{
                         margin: 20,
                         marginTop: 15
-                      }}>Matt Hallac</p>
+                      }}>{testNames[i]}</p>
                     </div>
                     {!this.state.unlocked[i] ? (<div style={{
                       display: 'flex',
