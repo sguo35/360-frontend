@@ -29,9 +29,9 @@ const samples = prmpts.ovalVariants.map((variant) => {
 
   let category;
   if (promptTemplateLookup[variant.ovalTemplate].category === "productivity") {
-    category = 1
-  } else if (promptTemplateLookup[variant.ovalTemplate].category === "leadership") {
     category = 2
+  } else if (promptTemplateLookup[variant.ovalTemplate].category === "leadership") {
+    category = 1
   } else {
     category = 3
   }
