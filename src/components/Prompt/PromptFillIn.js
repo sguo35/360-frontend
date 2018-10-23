@@ -51,7 +51,7 @@ class PromptFillIn extends Component {
           tagName="span"
           style={{
             color: this.state.value ? 'grey' : 'rgb(200, 200, 200)',
-            display: 'inline-block',
+            display: this.state.value ==='' ? 'inline-block' : 'inline',
             textDecoration: 'underline',
             minWidth: this.state.value === '' ? 100 : 0
           }}

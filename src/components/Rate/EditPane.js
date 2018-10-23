@@ -38,7 +38,8 @@ export default
           questionIndex: 0,
           nextReady: false,
           opacity: 1,
-          prompts: []
+          prompts: [],
+          promptResponses: []
         };
         this.props.initDeletePrompt(this.deletePrompt)
         this.props.initAddPrompt(this.addPrompt)
@@ -52,8 +53,19 @@ export default
         prompt = JSON.parse(JSON.stringify(prompt))
         console.log(prompt.shortForm)
         let prompts = JSON.parse(JSON.stringify(this.state.prompts))
+        let index = 0
+
+        for (let i = 0; i < prompts.length; i++) {
+          if (prompts[i].uniqueId === prompt.uniqueId) {
+            index = i
+          }
+        }
+
         prompts = prompts.filter((p) => p.uniqueId !== prompt.uniqueId)
         console.log(prompts.filter((p) => p.uniqueId !== prompt.uniqueId).map((p) => p.shortForm))
+
+        let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
+        promptResponses.splice(index, 1)
 
         const comps = []
         console.log("PROMPTS LENGTH" + prompts.length)
@@ -62,18 +74,28 @@ export default
         }
         promptComponents = comps;
         this.setState({
-          prompts: prompts
+          prompts: prompts,
+          promptResponses: promptResponses
         })
         console.log(promptComponents)
       }
 
       addPrompt = (prompt) => {
         const prompts = [...this.state.prompts, prompt]
-        promptComponents = prompts.map((p) => {
-          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p} />)
+        promptComponents = prompts.map((p, index) => {
+          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p} 
+           updateEdit={(edit) => {
+            let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
+            promptResponses[index] = edit
+            this.setState({ 
+              promptResponses: promptResponses
+            })
+          }}
+          />)
         })
         this.setState({
-          prompts: prompts
+          prompts: prompts,
+          promptResponses: this.state.promptResponses.concat([{}])
         })
       }
 
@@ -168,7 +190,7 @@ export default
           text = 'Previous Student';
         }
         return (
-          <Button block type={type} style={{ flexGrow: 1 }} icon={icon} onClick={() => {
+          <Button block type={type} style={{ flexGrow: 1 }} icon={icon} onClick={async () => {
             if (this.state.questionIndex == 0 && this.props.studentIndex == 0) {
               return;
             }
@@ -180,6 +202,14 @@ export default
               })
               return
             }
+
+            await fetch("http://localhost:3000/", {
+              method: "POST",
+              body: JSON.stringify({
+                prompts: this.state.prompts,
+                responses: this.state.responses
+              })
+            })
 
             this.setState({
               questionIndex: this.state.questionIndex == 0 ? this.state.questionIndex : this.state.questionIndex - 1,

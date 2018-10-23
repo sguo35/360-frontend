@@ -42,6 +42,7 @@ export default
           filled: obj
         })
         console.log(this.state.filled)
+        this.props.updateEdit(obj)
       }
 
       yieldElement = (element, index) => {
