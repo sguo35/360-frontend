@@ -1,7 +1,8 @@
 export const paneReducer = (state = {
   addPrompt: () => { },
   studentIndex: 0,
-  prompts: []
+  prompts: [],
+  deletePrompt: () => {}
 }, action) => {
   switch (action.type) {
     case "INIT_ADD_PROMPT":
@@ -10,6 +11,11 @@ export const paneReducer = (state = {
         addPrompt: action.payload
       }
       break;
+    case "INIT_DELETE_PROMPT":
+      return {
+        ...state,
+        deletePrompt: action.payload
+      }
     case "SET_STUDENT_INDEX":
       return {
         ...state,

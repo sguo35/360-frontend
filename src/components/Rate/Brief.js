@@ -7,12 +7,9 @@ const uuidv4 = require('uuid/v4');
 let i = 0;
 
 export default
-connect(null, (dispatch) => {
+connect((state) => {
   return {
-    addPromptToStore: (prompt) => dispatch({
-      type: "ADD_PROMPT_TO_STORE",
-      payload: prompt
-    })
+    addPrompt: state.pane.addPrompt
   }
 })(
 class Brief extends Component {
@@ -28,7 +25,7 @@ class Brief extends Component {
     event.preventDefault()
     const prompt = JSON.parse(JSON.stringify(this.props.prompt))
     prompt['uniqueId'] = uuidv4()
-    this.props.addPromptToStore(prompt)
+    this.props.addPrompt(prompt)
   }
 
   render() {

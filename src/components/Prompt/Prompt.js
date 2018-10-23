@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Tag} from 'antd';
+import React, { Component } from 'react';
+import { Tag } from 'antd';
 import './PromptUI.css';
 
 import PromptFillIn from './PromptFillIn';
@@ -7,78 +7,75 @@ import PromptFillIn from './PromptFillIn';
 import { connect } from 'react-redux';
 
 export default
-connect(null, (dispatch) => {
-  return {
-    deletePrompt: (prompt) => dispatch({
-      type: "DELETE_PROMPT_FROM_STORE",
-      payload: prompt
-    })
-  }
-})(
-class Prompt extends Component {
-  constructor (props) {
-    super(props);
-    this.state = {
-      startedEditing : false,
-      closing : false,
-      elements : this.props.prompt ? this.props.prompt.elements : []
-    };
-  }
-
-  handleClose = (event) => {
-    event.preventDefault()
-    this.props.deletePrompt(this.props.prompt)
-    this.setState({closing : true});
-  }
-
-  startEditing = () => {
-    this.setState({startedEditing : true});
-  }
-
-  yieldElement = (element, index) => {
-    let nextElement;
-    var opts = {
-      key : index
-    };
-
-    switch (element.type) {
-      case 'gradedName':
-        if (this.state.startedEditing) {
-          nextElement = <span className="prompt-element prompt-element__name" {...opts}>{this.props.gradedName}</span>;
-        } else {
-          nextElement = <span className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
-        }
-        break;
-      case 'fillIn':
-        nextElement = <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
-        break;
-      case 'text':
-      default:
-        nextElement = <span className="prompt-element prompt-element__text" {...opts}>{element.value}</span>
-        break;
+  connect((state) => {
+    return {
+      deletePrompt: state.pane.deletePrompt
     }
-    return nextElement;
-  }
+  })(
+    class Prompt extends Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          startedEditing: false,
+          closing: false
+        };
+      }
 
-  render () {
-    let tagStyle = {
-      whiteSpace: 'normal',
-      overflow: 'hidden',
-      display: 'inline-flex',
-      marginBottom: 15,
-      height: 'auto'
-    };
+      handleClose = (event) => {
+        console.log("TEST1")
+        this.props.deletePrompt(this.props.prompt)
+        this.setState({ closing: true });
+        console.log("TEST2")
+      }
 
-    return (
-      <Tag className="prompt-tag"
-        visible={true}
-        style={tagStyle} key={this.props.prompt.uniqueId}>
-        <div className="prompt-oval">
-          {this.state.elements.map(this.yieldElement)}
-        </div>
-        <span onClick={this.handleClose}>x</span>
-      </Tag>
-    );
-  }
-}
-)
+      startEditing = () => {
+        this.setState({ startedEditing: true });
+      }
+
+      yieldElement = (element, index) => {
+        let nextElement;
+        var opts = {
+          key: index
+        };
+
+        switch (element.type) {
+          case 'gradedName':
+            if (this.state.startedEditing) {
+              nextElement = <span key={Math.random()} className="prompt-element prompt-element__name" {...opts}>{this.props.gradedName}</span>;
+            } else {
+              nextElement = <span  key={Math.random()} className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
+            }
+            break;
+          case 'fillIn':
+            nextElement = <PromptFillIn  key={Math.random()} placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
+            break;
+          case 'text':
+          default:
+            nextElement = <span  key={Math.random()} className="prompt-element prompt-element__text" {...opts}>{element.value}</span>
+            break;
+        }
+        return nextElement;
+      }
+
+      render() {
+        let tagStyle = {
+          whiteSpace: 'normal',
+          overflow: 'hidden',
+          display: 'inline-flex',
+          marginBottom: 15,
+          height: 'auto'
+        };
+
+
+        return (
+          <Tag className="prompt-tag" closable
+            onClose={this.handleClose} afterClose={() => this.setState({ closing: false })}
+            style={tagStyle} key={this.props.prompt.uniqueId}>
+            <div className="prompt-oval">
+              {(this.props.prompt ? this.props.prompt.elements : []).map(this.yieldElement)}
+            </div>
+          </Tag>
+        );
+      }
+    }
+  )

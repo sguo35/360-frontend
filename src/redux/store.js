@@ -5,6 +5,7 @@ export const store = createStore(rootReducer, {
   pane: {
     addPrompt: () => { },
     studentIndex: 0,
-    prompts: []
+    prompts: [],
+    deletePrompt: () => {}
   }
 }, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
