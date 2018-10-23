@@ -13,19 +13,49 @@ export default class DashCenter extends React.Component {
     super(props);
   }
   render = () => {
-    let text = "Jaiveer actively communicates outside of meetings, and is easy to get ahold of. Jaiveer is always ready to meet and will take time off of his schedule and this benefits our team in terms of teamwork and getting stuff done. Jaiveer offers great insight and perspective to team goals and discussions such as when he/she proposed to angle our project towards an easier implementation for the user, moving the team forward. Jaiveer stepped out of their comfort zone by taking on the challenge of AngularJS, efficiently learning and working on a new skill even though it may have been new or hard for them.Jaiveer’s quality of work is outstanding because he/she takes whatever amount of time to create a quality product .The execution of the website created as well as the Attendy app and its functions shows extraordinary effort and thought, and it is delivered in a timely manner. Jaiveer consistently  sets up team meetings and listens to others, which is something not many others are willing to take on or do. It is beneficial to the team because it propels the team forward because it builds a sense of trust. Jaiveer is always looking to push himself technically and this tendency to create and develop in this manner benefits our progress/team dynamic by expanding what our team is capable of accomplishing and what we can incorporate."
+    let cardStyle = {
+      alignItems: 'center',
+      margin: 20
+    };
+    let text = "Gwynevere actively communicates outside of emailings, and is easy to get ahold of. Gwynevere is always ready to email and will take simple off of his schedule and this clean our cloud in terms of cloud transparent and getting stuff done. Gwynevere offers great insight and perspective to cloud goals and discussions such as when he/she proposed to angle our project towards an easier implementation for the user, moving the forward. Gwynevere stepped out of their comfort zone by taking on the challenge of AngularJS, efficiently learning and transparenting on a new skill even though it may have been new or hard for them.Gwynevere’s engagement of transparent is outstanding because he/she takes whatever amount of simple to create a engagement product .The execution of the website created as well as the Attendy app and its functions shows extraordinary effort and thought, and it is delivered in a simple improvement. Gwynevere consistently  sets up email and listens to others, which is something not many others are willing to take on or do. It is beneficial to the because it propels the cloud forward because it builds a sense of trust. Gwynevere is always looking to push himself technically and this tendency to create and develop in this improvement clean our progress/cloud dynamic by expanding what our cloud is capable of accomplishing and what we can incorporate.";
+    var personLeadership = .6;
+    var personEngagement = .7;
+    var personProductivity = .3;
+    var allLeadership = .9;
+    var allEngagement = .2;
+    var allProductivity = .6;
+
+    personLeadership = Math.sqrt(personLeadership);
+    personEngagement = Math.sqrt(personEngagement);
+    personProductivity = Math.sqrt(personProductivity);
+    allLeadership = Math.sqrt(allLeadership);
+    allEngagement = Math.sqrt(allEngagement);
+    allProductivity = Math.sqrt(allProductivity);
+
     return (
       <div className="Dash-center-pane">
-          <Card style={{width:'50%'}}>
-            <div style={{display:'inline-block', margin: 'auto'}}>
-              <Wordcloud text={text}></Wordcloud>
-            </div>
+        <div className="Dash-header">
+          <Card>
+            <h1 style={{fontSize:50, textAlign: 'center', margin: 0}}>
+              Welcome Gwynevere
+            </h1>
           </Card>
-          <Card style={{width:'50%'}}>
-            <div style={{display:'inline-block', margin: 'auto'}}>
-              <Radar></Radar>
-            </div>
+        </div>
+        <div className="Dash-graph-row">
+          <Card style={cardStyle}>
+            <Wordcloud text={text}></Wordcloud>
           </Card>
+          <Card style={cardStyle}>
+            <Radar
+              myLeadership={personLeadership}
+              myEngagement={personEngagement}
+              myProductivity={personProductivity}
+              teamLeadership={allLeadership}
+              teamEngagement={allEngagement}
+              teamProductivity={allProductivity}
+            ></Radar>
+          </Card>
+        </div>
       </div>
     )
   }

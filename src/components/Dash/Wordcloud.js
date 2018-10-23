@@ -25,7 +25,7 @@ export default class Wordcloud extends Component{
 
   render(){
     const width = 400; // default width
-    const height = width / 4 * 3; // 4:3 ratio
+    const height = 400; // 4:3 ratio
     return (
         <ReactWordCloud
     words={this.makeWordValues()}
