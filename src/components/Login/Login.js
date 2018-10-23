@@ -29,7 +29,10 @@ export default class Login extends React.Component {
                 marginTop: 25
             }} onClick={async () => {
                 let url = await fetch(`${serverUrl}/oauth`, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
                 });
                 url = await url.json();
                 window.location.href = url.url;
