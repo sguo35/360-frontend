@@ -1,16 +1,23 @@
 import React from 'react';
 import { Menu, Icon, Button } from 'antd';
 
+import { serverUrl } from '../../constants';
+
+let projects = require('../../projects.json')
+projects = JSON.parse(projects)
+
 export default class SelectProjectCenter extends React.Component {
   onLogoClick = () => {
-    alert("Go to dashboard")
+    window.location.href = serverUrl
   }
 
   render() {
     return (
       <div className="Rate-left-container">
         <Menu
-          onClick={() => { }}
+          onClick={({ item, key, keyPath }) => { 
+            window.location.href = serverUrl + "/project/:" + key
+          }}
           mode='vertical'
           theme='dark'
           style={{
@@ -33,118 +40,38 @@ export default class SelectProjectCenter extends React.Component {
             letterSpacing: '10px',
             cursor: 'pointer'
           }} onClick={this.onLogoClick}>360FACTORS</p>
-
-          <Menu.Item key='1' style={{
-            height: '10%',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            padding: 15
-          }}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}><Icon type='hourglass' theme='outlined' style={{
-              fontSize: 32,
-              marginLeft: 12
-            }} />
-            </div>
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}>
-              <p style={{
-                margin: 20,
-                marginTop: 15
-              }}>Attendy</p>
-            </div>
-          </Menu.Item>
-
-          <Menu.Item key='2' style={{
-            height: '10%',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            padding: 15
-          }}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}><Icon type='redo' theme='outlined' style={{
-              fontSize: 32,
-              marginLeft: 12
-            }} />
-            </div>
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}>
-              <p style={{
-                margin: 20,
-                marginTop: 15
-              }}>360</p>
-            </div>
-          </Menu.Item>
-
-          <Menu.Item key='3' style={{
-            height: '10%',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            padding: 15
-          }}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}><Icon type='project' theme='outlined' style={{
-              fontSize: 32,
-              marginLeft: 12
-            }} />
-            </div>
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}>
-              <p style={{
-                margin: 20,
-                marginTop: 15
-              }}>Project 3</p>
-            </div>
-          </Menu.Item>
-
-          <Menu.Item key='4' style={{
-            height: '10%',
-            display: 'flex',
-            justifyContent: 'flex-start',
-            padding: 15
-          }}>
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}><Icon type='trophy' theme='outlined' style={{
-              fontSize: 32,
-              marginLeft: 12
-            }} />
-            </div>
-
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              flexDirection: 'column'
-            }}>
-              <p style={{
-                margin: 20,
-                marginTop: 15
-              }}>Final Project</p>
-            </div>
-          </Menu.Item>
+          {projects.map((idx, project) => {
+            return (
+              <Menu.Item key={project['projectName']} style={{
+                height: '10%',
+                display: 'flex',
+                justifyContent: 'flex-start',
+                padding: 15
+              }}>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flexDirection: 'column'
+                }}><Icon type='hourglass' theme='outlined' style={{
+                  fontSize: 32,
+                  marginLeft: 12
+                }} />
+                </div>
+    
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  flexDirection: 'column'
+                }}>
+                  <p style={{
+                    margin: 20,
+                    marginTop: 15
+                  }}>{project['projectName']}</p>
+                </div>
+              </Menu.Item>
+            )
+          })}
+          
         </Menu>
       </div>
     )
