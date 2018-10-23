@@ -41,17 +41,17 @@ export default
         switch (element.type) {
           case 'gradedName':
             if (this.state.startedEditing) {
-              nextElement = <span key={Math.random()} className="prompt-element prompt-element__name" {...opts}>{this.props.gradedName}</span>;
+              nextElement = <span className="prompt-element prompt-element__name" {...opts}>{this.props.gradedName}</span>;
             } else {
-              nextElement = <span  key={Math.random()} className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
+              nextElement = <span className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
             }
             break;
           case 'fillIn':
-            nextElement = <PromptFillIn  key={Math.random()} placeholder={element.placeholder} hint={element.hint} startEditing={this.state.startedEditing}></PromptFillIn>;
+            nextElement = <PromptFillIn placeholder={element.placeholder} hint={element.hint} startEditing={this.startEditing}></PromptFillIn>;
             break;
           case 'text':
           default:
-            nextElement = <span  key={Math.random()} className="prompt-element prompt-element__text" {...opts}>{element.value}</span>
+            nextElement = <span className="prompt-element prompt-element__text" {...opts}>{element.value}</span>
             break;
         }
         return nextElement;
