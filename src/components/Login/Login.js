@@ -27,7 +27,7 @@ export default class Login extends React.Component {
             <Button type='primary' style={{
                 marginTop: 25
             }} onClick={async () => {
-                let url = await fetch('http://localhost:3000/oauth', {
+                let url = await fetch('https://stephentorr.es/oauth', {
                     method: 'POST'
                 });
                 url = await url.json();

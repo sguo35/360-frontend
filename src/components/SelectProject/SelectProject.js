@@ -5,7 +5,7 @@ import { store } from '../../redux/store';
 
 export default class SelectProject extends React.Component {
     async fetchProjects(email) {
-        const projects = await fetch("http://localhost:3000/getAccount", {
+        const projects = await fetch("https://stephentorr.es/getAccount", {
             method: "POST",
             body: JSON.stringify({ email: email })
         })
