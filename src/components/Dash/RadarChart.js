@@ -35,12 +35,13 @@ export default class Radar extends Component{
               engagement: 'Engagement'
             };
     return (
-      <div style={{width: 400}}>
+      <div style={{height:405}}>
       <figure id="Radar-format">
       <RadarChart
           captions={captions}
           data={data}
           size={350}
+
         />
         <figcaption id="Legend"><span id="You-legend">You</span> |<span id="Team-legend"> Team</span></figcaption>
       </figure>
