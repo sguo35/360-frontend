@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, Tag, Button, Icon, Row, Col } from 'antd';
+import { Card, Tag, Button, Icon, Row, Col, Tabs } from 'antd';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 import { connect } from 'react-redux';
@@ -8,6 +8,8 @@ import { store } from '../../redux/store';
 
 import Wordcloud from './Wordcloud';
 import Radar from './RadarChart';
+
+const TabPane = Tabs.TabPane;
 
 export default class DashCenter extends React.Component {
   constructor (props) {
@@ -42,7 +44,7 @@ export default class DashCenter extends React.Component {
         <Row gutter={16} type="flex" justify="center" style={{marginBottom : 16}}>
           <Col span={20}>
             <Card>
-              <h1 style={{fontSize:50, textAlign: 'center', margin: 0}}>
+              <h1 style={{ textAlign: 'center', margin: 0}}>
                 Welcome <span style={{color:'#096dd9'}}>Gwynevere</span>
               </h1>
             </Card>
@@ -69,13 +71,32 @@ export default class DashCenter extends React.Component {
         </Row>
         <Row gutter={16} type="flex" justify="center" style={{marginBottom : 16}}>
           <Col span={20}>
-            <Card style={{height:400}}>
-              <h1 style={{fontSize:30, textAlign: 'center', marginBottom: 20}}>
+            <Card>
+              <h2 style={{textAlign: 'center', marginBottom: 20}}>
                 Team Member Feedback
-              </h1>
-              <p style={{textAlign: 'center'}}>
-                Nobody has submitted feedback for you yet.
-              </p>
+              </h2>
+              <Tabs tabPosition="left" size="large">
+                <TabPane tab={<p style={{width: 120}}>Leadership</p>} key="1">
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                </TabPane>
+                <TabPane tab={<p style={{width: 120}}>Productivity</p>} key="2">
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                </TabPane>
+                <TabPane tab={<p style={{width: 120}}>Engagement</p>} key="3">
+                <div>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                  <p>This is a feedback about a certain characteristic of Matt. Matt is a really great example of that precise characteristic, which is why I took the time to write this sentence.</p>
+                </div>
+                </TabPane>
+              </Tabs>
             </Card>
           </Col>
         </Row>

@@ -304,8 +304,10 @@ export default
 
       handleWheel = (event) => {
         if (event.deltaY > 10) {
+          console.log('scroll down');
           this.onBottomButtonClick();
         } else if (event.deltaY < -10) {
+          console.log('scroll up');
           this.onTopButtonClick();
         }
       };
