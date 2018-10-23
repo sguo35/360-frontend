@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, Tag, Button, message } from 'antd';
 import Brief from './Brief';
 import Prompt from '../Prompt/Prompt';
+import debounce from 'lodash/throttle';
 
 import { connect } from 'react-redux';
 import { store } from '../../redux/store';
@@ -46,8 +47,9 @@ export default
           promptResponses: []
         };
         this.props.initDeletePrompt(this.deletePrompt)
-        this.props.initAddPrompt(this.addPrompt)
+        this.props.initAddPrompt(this.addPrompt);
       }
+
 
       _submit = () => {
         message.success("Submitted!")
@@ -87,11 +89,11 @@ export default
       addPrompt = (prompt) => {
         const prompts = [...this.state.prompts, prompt]
         promptComponents = prompts.map((p, index) => {
-          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p} 
+          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p}
            updateEdit={(edit) => {
             let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
             promptResponses[index] = edit
-            this.setState({ 
+            this.setState({
               promptResponses: promptResponses
             })
           }}
@@ -135,6 +137,50 @@ export default
         return <h1 style={{ transition: '1s linear' }}>{text}</h1>;
       }
 
+      onBottomButtonClick = async () => {
+        if (this.state.prompts.length < 2) {
+          return;
+        }
+
+        if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+          this._submit();
+          return;
+        }
+
+        await fetch("http://localhost:3000/", {
+          method: "POST",
+          body: JSON.stringify({
+            prompts: this.state.prompts,
+            responses: this.state.responses
+          })
+        })
+
+        message.info("Responses saved.")
+
+        if (this.props.questionIndex == 2) {
+          this.props.setStudentIndex(this.props.studentIndex + 1)
+          promptComponents = []
+          this.props.setquestionIndex(0)
+          this.setState({
+            prompts: [],
+            responses: []
+          })
+          return
+        }
+        this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
+        this.setState({
+          opacity: 0,
+          prompts: [],
+          responses: []
+        })
+        promptComponents = []
+        setTimeout(() => {
+          this.setState({
+            opacity: 1
+          })
+        }, 400)
+      }
+
       renderBottomButton = () => {
         let type = 'primary', icon = 'down', text = '';
         let style = { flexGrow: 1 };
@@ -151,52 +197,31 @@ export default
           text = 'Next Student';
         }
         return (
-          <Button block type={type} style={style} icon={icon} onClick={async () => {
-            if (this.state.prompts.length < 2) {
-              return;
-            }
-
-            if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
-              this._submit();
-              return;
-            }
-
-            await fetch("http://localhost:3000/", {
-              method: "POST",
-              body: JSON.stringify({
-                prompts: this.state.prompts,
-                responses: this.state.responses
-              })
-            })
-
-            message.info("Responses saved.")
-
-            if (this.props.questionIndex == 2) {
-              this.props.setStudentIndex(this.props.studentIndex + 1)
-              promptComponents = []
-              this.props.setquestionIndex(0)
-              this.setState({
-                prompts: [],
-                responses: []
-              })
-              return
-            }
-            this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
-            this.setState({
-              opacity: 0,
-              prompts: [],
-              responses: []
-            })
-            promptComponents = []
-            setTimeout(() => {
-              this.setState({
-                opacity: 1
-              })
-            }, 400)
-          }}>
+          <Button block type={type} style={style} icon={icon} onClick={this.onBottomButtonClick}>
             {text}
           </Button>
         );
+      }
+
+      onTopButtonClick = async () => {
+        if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
+          return;
+        }
+
+        if (this.props.questionIndex == 0) {
+          this.props.setStudentIndex(this.props.studentIndex - 1)
+          this.props.setquestionIndex(2)
+          return
+        }
+        this.props.setquestionIndex(this.props.questionIndex == 0 ? this.props.questionIndex : this.props.questionIndex - 1)
+        this.setState({
+          opacity: 0
+        })
+        setTimeout(() => {
+          this.setState({
+            opacity: 1
+          })
+        }, 400)
       }
 
       renderTopButton = () => {
@@ -209,44 +234,33 @@ export default
           text = 'Previous Student';
         }
         return (
-          <Button block type={type} style={{ flexGrow: 1 }} icon={icon} onClick={async () => {
-            if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
-              return;
-            }
-
-            if (this.props.questionIndex == 0) {
-              this.props.setStudentIndex(this.props.studentIndex - 1)
-              this.props.setquestionIndex(2)
-              return
-            }
-            this.props.setquestionIndex(this.props.questionIndex == 0 ? this.props.questionIndex : this.props.questionIndex - 1)
-            this.setState({
-              opacity: 0
-            })
-            setTimeout(() => {
-              this.setState({
-                opacity: 1
-              })
-            }, 400)
-          }}>
+          <Button block type={type} style={{ flexGrow: 1 }} icon={icon} onClick={this.onTopButtonClick}>
             {text}
           </Button>
         );
       }
 
       handleWheel = (event) => {
-        event.preventDefault()
-        if (event.deltaY > 50) {
-          console.log("up");
-        } else if (event.deltaY < -50) {
-          console.log("down");
+        if (event.deltaY > 10) {
+          this.onBottomButtonClick();
+        } else if (event.deltaY < -10) {
+          this.onTopButtonClick();
+        }
+      };
+
+      debounceEventHandler(...args) {
+        const debounced = debounce(...args)
+        return function(e) {
+          e.persist()
+          e.preventDefault();
+          return debounced(e)
         }
       }
 
       render = () => {
         console.log(JSON.stringify(this.state.promptResponses))
         return (
-          <div onWheel={this.handleWheel} className="Rate-edit-pane">
+          <div onWheel={this.debounceEventHandler(this.handleWheel, 750, {leading: true})} className="Rate-edit-pane">
             <div style={{
               display: 'flex',
               flexDirection: 'column',
