@@ -37,7 +37,7 @@ export default class DashCenter extends React.Component {
         <div className="Dash-header">
           <Card>
             <h1 style={{fontSize:50, textAlign: 'center', margin: 0}}>
-              Welcome Gwynevere
+              Welcome <span style={{color:'#096dd9'}}>Gwynevere</span>
             </h1>
           </Card>
         </div>
