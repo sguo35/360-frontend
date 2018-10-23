@@ -4,6 +4,16 @@ import SelectProjectCenter from './SelectProjectCenter';
 import { store } from '../../redux/store';
 
 export default class SelectProject extends React.Component {
+    async fetchProjects(email) {
+        const projects = await fetch("http://localhost:3000/getAccount", {
+            method: "POST",
+            body: JSON.stringify({ email: email })
+        })
+        store.dispatch({
+            type: "INIT_ACCOUNT_INFO",
+            payload: await projects.json()
+        })
+    }
     render() {
         console.log(this.props);
         if (this.props.match.params.info && this.props.location) {
