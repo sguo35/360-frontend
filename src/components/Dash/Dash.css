@@ -1,0 +1,49 @@
+.Dash-parent-container {
+    display: flex;
+    flex: row wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.Dash-left-container {
+    display: flex;
+    flex-direction: column
+}
+
+.Dash-right-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.Dash-center-pane {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: 'hidden';
+  flex-grow: 1;
+}
+
+.Dash-header {
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px 10px;
+}
+
+.Dash-graph-row {
+  display: flex;
+  justify-content: center;
+}
+
+.Dash-scroll {
+  flex-grow: 2;
+  margin: auto;
+}
+
+.thumb-vertical {
+  background-color: #FFFFFF;
+  opacity: 0.5;
+  border-radius: 5px;
+}
