@@ -1,0 +1,209 @@
+{
+    "projects": [
+        {
+          "projectName": "360",
+          "teams": [
+            {
+              "memberEmails": [
+                "michael.trehan@berkeley.edu",
+                "nikmandava@berkeley.edu",
+                "prangan.tooteja@berkeley.edu",
+                "jahnvidoshi@berkeley.edu",
+                "d_gonzalez@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "matthew.hallac@berkeley.edu",
+                "j.singh@berkeley.edu",
+                "shiyuan.guo@berkeley.edu",
+                "kelly_han@berkeley.edu",
+                "alexander.manes@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "nhudait@berkeley.edu",
+                "nishikaza@berkeley.edu",
+                "dev.ojha@berkeley.edu",
+                "michael.mcnabb@berkeley.edu",
+                "birkaransachdev@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "isabellezhou@berkeley.edu",
+                "richard.y.liu@berkeley.edu",
+                "akirillo@berkeley.edu",
+                "harishpalani@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "ashvindhawan@berkeley.edu",
+                "aadhrik.kuila@berkeley.edu",
+                "manav.rathod@berkeley.edu",
+                "v.wang@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "austin.jsun@berkeley.edu",
+                "ethanbmehta@berkeley.edu",
+                "elliot.larson@berkeley.edu",
+                "hvinh@berkeley.edu",
+                "ryanwchen@berkeley"
+              ]
+            },
+            {
+              "memberEmails": [
+                "julius.vering@berkeley.edu",
+                "amyguo@berkeley.edu",
+                "rimikabanerjee@berkeley.edu",
+                "sravyab@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "ayush.jain@berkeley.edu",
+                "daniel.jing@berkeley.edu",
+                "erelsaul@berkeley.edu",
+                "k.chorazewicz@berkeley.edu",
+                "rishma.murugan@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "anikar@berkeley.edu",
+                "seanlin2000@berkeley.edu",
+                "alara.guler@berkeley.edu",
+                "quinetnyre@berkeley.edu",
+                "dnavani@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "chenluofei@berkeley.edu",
+                "findaheng@berkeley.edu",
+                "chelsealo@berkeley.edu",
+                "vshirsat@berkeley.edu",
+                "davidshau22@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "charlie.faramarzi@berkeley.edu",
+                "chaigoyal@berkeley.edu",
+                "rahul.hayaran@berkeley.edu",
+                "neha.nagabothu@berkeley.edu",
+                "alfonso47@berkeley.edu"
+              ]
+            }
+          ]
+        },
+        {
+          "projectName": "Attendy",
+          "teams": [
+            {
+              "memberEmails": [
+                "nikmandava@berkeley.edu",
+                "prangan.tooteja@berkeley.edu",
+                "jahnvidoshi@berkeley.edu",
+                "d_gonzalez@berkeley.edu",
+                "quinetnyre@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "j.singh@berkeley.edu",
+                "shiyuan.guo@berkeley.edu",
+                "kelly_han@berkeley.edu",
+                "alexander.manes@berkeley.edu",
+                "akirillo@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "julius.vering@berkeley.edu",
+                "nishikaza@berkeley.edu",
+                "dev.ojha@berkeley.edu",
+                "michael.mcnabb@berkeley.edu",
+                "birkaransachdev@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "dnavani@berkeley.edu",
+                "isabellezhou@berkeley.edu",
+                "richard.y.liu@berkeley.edu",
+                "harishpalani@berkeley.edu",
+                "davidshau22@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "ashvindhawan@berkeley.edu",
+                "aadhrik.kuila@berkeley.edu",
+                "v.wang@berkeley.edu",
+                "vshirsat@berkeley.edu",
+                 "austin.jsun@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "ethanbmehta@berkeley.edu",
+                "elliot.larson@berkeley.edu",
+                "hvinh@berkeley.edu",
+                "ryanwchen@berkeley",
+                "austin.jsun@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "nhudait@berkeley.edu",
+                "amyguo@berkeley.edu",
+                "rimikabanerjee@berkeley.edu",
+                "sravyab@berkeley.edu",
+                "manav.rathod@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "ayush.jain@berkeley.edu",
+                "daniel.jing@berkeley.edu",
+                "erelsaul@berkeley.edu",
+                "k.chorazewicz@berkeley.edu",
+                "neha.nagabothu@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "anikar@berkeley.edu",
+                "seanlin2000@berkeley.edu",
+                "alara.guler@berkeley.edu",
+                "rishma.murugan@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "chenluofei@berkeley.edu",
+                "findaheng@berkeley.edu",
+                "chelsealo@berkeley.edu",
+                "michael.trehan@berkeley.edu"
+              ]
+            },
+            {
+              "memberEmails": [
+                "matthew.hallac@berkeley.edu",
+                "charlie.faramarzi@berkeley.edu",
+                "chaigoyal@berkeley.edu",
+                "rahul.hayaran@berkeley.edu"
+              ]
+            }
+          ]
+        }
+    ]
+  }
+  
+  
+  
