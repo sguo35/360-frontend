@@ -91,7 +91,13 @@ export default
         const comps = []
         console.log("PROMPTS LENGTH" + prompts.length)
         for (let i = 0; i < prompts.length; i++) {
-          comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={prompts[i]} />)
+          comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={prompts[i]} updateEdit={(edit) => {
+            let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
+            promptResponses[index] = edit
+            this.setState({
+              promptResponses: promptResponses
+            })
+          }} />)
         }
         promptComponents = comps;
         this.setState({
@@ -176,7 +182,7 @@ export default
               responses: {
                 [this.props.questionIndex]: {
                   prompts: this.state.prompts,
-                  responses: this.state.responses
+                  promptResponses: this.state.promptResponses
                 }
               },
               grader: this.props.email,
@@ -257,13 +263,80 @@ export default
         if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
           return;
         }
+        const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
 
         if (this.props.questionIndex == 0) {
           this.props.setStudentIndex(this.props.studentIndex - 1)
           this.props.setquestionIndex(2)
+          let projectGrade = await fetch(`${serverUrl}/getProjectGrade`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              grader: this.props.email,
+              graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+              project: this.props.match.params.projectId
+            })
+          })
+          projectGrade = await projectGrade.json();
+          let res = projectGrade[this.props.questionIndex]
+          const comps = []
+          console.log("PROMPTS LENGTH" + res.prompts.length)
+          this.setState({
+            promptResponses: res.promptResponses
+          })
+          for (let i = 0; i < res.prompts.length; i++) {
+            comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
+              let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
+              promptResponses[index] = edit
+              this.setState({
+                promptResponses: promptResponses
+              })
+            }} />)
+          }
+          promptComponents = comps;
+          this.setState({
+            prompts: res.prompts
+          })
           return
         }
         this.props.setquestionIndex(this.props.questionIndex == 0 ? this.props.questionIndex : this.props.questionIndex - 1)
+
+        let projectGrade = await fetch(`${serverUrl}/getProjectGrade`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            grader: this.props.email,
+            graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+            project: this.props.match.params.projectId
+          })
+        })
+        projectGrade = await projectGrade.json();
+        let res = projectGrade[this.props.questionIndex]
+        const comps = []
+        console.log("PROMPTS LENGTH" + res.prompts.length)
+        this.setState({
+          promptResponses: res.promptResponses
+        })
+        for (let i = 0; i < res.prompts.length; i++) {
+          comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
+            let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
+            promptResponses[index] = edit
+            this.setState({
+              promptResponses: promptResponses
+            })
+          }} />)
+        }
+        promptComponents = comps;
+        this.setState({
+          prompts: res.prompts
+        })
+
         this.setState({
           opacity: 0
         })
