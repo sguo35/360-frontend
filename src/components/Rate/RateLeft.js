@@ -135,7 +135,7 @@ export default
                   marginTop: 25,
                   backgroundColor: '#f5222d',
                   borderColor: '#f5222d'
-                }} type='primary'>Due on {dueDate.format('ddd MM/DD, hh:mm a')}</Button>
+                }} type='primary'>{`Due on ${dueDate.format('ddd MM/DD, hh:mm a')}`}</Button>
               </div>
             </Menu>
           </div>
