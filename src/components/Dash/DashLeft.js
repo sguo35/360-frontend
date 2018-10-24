@@ -1,12 +1,15 @@
 import React from 'react';
 import { Menu, Icon, Button, Tag } from 'antd';
 
+let moment = require("moment");
+
 export default class DashLeft extends React.Component {
   onLogoClick = () => {
     alert("Go to dashboard")
   }
 
   render() {
+    let dueDate = moment('10-20-2018, 11:59:59 PM', 'MM-DD-YYYY, hh:mm:ss a');
     return (
       <div className="Dash-left-container">
         <Menu
