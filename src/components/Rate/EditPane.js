@@ -12,12 +12,15 @@ import { store } from '../../redux/store';
 import { serverUrl } from '../../constants';
 
 let promptComponents = [];
+const projects = require("../../projects.json")
+
 
 export default
   connect((state) => {
     return {
       studentIndex: state.pane.studentIndex,
-      questionIndex: state.pane.questionIndex
+      questionIndex: state.pane.questionIndex,
+      email: state.info.emails.length > 0 ? state.info.emails[0].value : ""
     }
   }, (dispatch) => {
     return {
@@ -43,7 +46,7 @@ export default
       constructor(props) {
         super(props);
         this.state = {
-          students: ['Matt', 'Kelly', 'Jaiveer', 'Alex'],
+          students: [],
           nextReady: false,
           opacity: 1,
           prompts: [],
@@ -51,6 +54,15 @@ export default
         };
         this.props.initDeletePrompt(this.deletePrompt)
         this.props.initAddPrompt(this.addPrompt);
+      }
+
+      componentWillReceiveProps = (nextProps) => {
+        const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
+        this.setState({
+          students: team[0]['memberNames'].filter((name, idx) => team[0]['memberEmails'][idx] !== nextProps.email)
+        })
       }
 
 
@@ -93,13 +105,13 @@ export default
         const prompts = [...this.state.prompts, prompt]
         promptComponents = prompts.map((p, index) => {
           return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p}
-           updateEdit={(edit) => {
-            let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
-            promptResponses[index] = edit
-            this.setState({
-              promptResponses: promptResponses
-            })
-          }}
+            updateEdit={(edit) => {
+              let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
+              promptResponses[index] = edit
+              this.setState({
+                promptResponses: promptResponses
+              })
+            }}
           />)
         })
         this.setState({
@@ -150,19 +162,33 @@ export default
           return;
         }
 
+        const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
 
         try {
           await fetch(`${serverUrl}/updateProjectGrade`, {
-          method: "POST",
-          body: JSON.stringify({
-            prompts: this.state.prompts,
-            responses: this.state.responses
-          }),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        })
-        } catch(e) {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              responses: {
+                [this.props.questionIndex]: {
+                  prompts: this.state.prompts,
+                  responses: this.state.responses
+                }
+              },
+              grader: this.props.email,
+              project: this.props.match.params.projectId,
+              graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+              questionIndex: this.props.questionIndex
+            }),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          })
+        } catch (e) {
           console.log(e)
         }
 
@@ -175,6 +201,17 @@ export default
           this.setState({
             prompts: [],
             responses: []
+          })
+          await fetch(`${serverUrl}/submitProjectGrade`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              grader: this.props.email,
+              graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+              project: this.props.match.params.projectId
+            })
           })
           return
         }
@@ -209,56 +246,7 @@ export default
         }
         return (
           <Button block type={type} style={style} icon={icon} onClick={async () => {
-            if (this.state.prompts.length < 2) {
-              return;
-            }
-
-            if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
-              this._submit();
-              return;
-            }
-
-            try {
-              await fetch(`${serverUrl}/updateProjectGrade`, {
-              method: "POST",
-              body: JSON.stringify({
-                prompts: this.state.prompts,
-                responses: this.state.responses
-              }),
-              headers: {
-                "Content-Type": "application/json"
-              }
-            })
-            } catch(e) {
-              console.log(e)
-            }
-
-
-
-            message.info("Responses saved.")
-
-            if (this.props.questionIndex == 2) {
-              this.props.setStudentIndex(this.props.studentIndex + 1)
-              promptComponents = []
-              this.props.setquestionIndex(0)
-              this.setState({
-                prompts: [],
-                responses: []
-              })
-              return
-            }
-            this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
-            this.setState({
-              opacity: 0,
-              prompts: [],
-              responses: []
-            })
-            promptComponents = []
-            setTimeout(() => {
-              this.setState({
-                opacity: 1
-              })
-            }, 400)
+            await this.onBottomButtonClick()
           }}>
             {text}
           </Button>
@@ -314,7 +302,7 @@ export default
 
       debounceEventHandler(...args) {
         const debounced = debounce(...args)
-        return function(e) {
+        return function (e) {
           e.persist()
           e.preventDefault();
           return debounced(e)
@@ -324,7 +312,7 @@ export default
       render = () => {
         console.log(JSON.stringify(this.state.promptResponses))
         return (
-          <div onWheel={this.debounceEventHandler(this.handleWheel, 750, {leading: true})} className="Rate-edit-pane">
+          <div onWheel={this.debounceEventHandler(this.handleWheel, 750, { leading: true })} className="Rate-edit-pane">
             <div style={{
               display: 'flex',
               flexDirection: 'column',
