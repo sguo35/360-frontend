@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu, Icon, Button, Tag } from 'antd';
 
 import { connect } from 'react-redux';
+import { serverUrl } from '../../constants';
 
 const projects = require("../../projects.json")
 
@@ -29,7 +30,7 @@ export default
         }
       }
       onLogoClick = () => {
-        alert("Go to dashboard")
+        window.location.href = serverUrl
       }
 
       componentWillReceiveProps = (nextProps) => {
