@@ -73,13 +73,14 @@ export default
             <Menu
               selectedKeys={[(this.props.studentIndex + 1).toString()]}
               onClick={({ item, key, keyPath }) => {
-                this.props.setStudentIndex(key - 1)
+                
               }}
               mode='vertical'
               theme='dark'
               style={{
                 width: 250,
-                height: '100%'
+                height: '100%',
+                cursor: 'default'
               }}
             >
               <Icon type='redo' style={{
@@ -106,7 +107,8 @@ export default
                     height: '10%',
                     display: 'flex',
                     justifyContent: 'flex-start',
-                    padding: 15
+                    padding: 15,
+                    cursor: 'default'
                   }} >
                     <div style={{
                       display: 'flex',
