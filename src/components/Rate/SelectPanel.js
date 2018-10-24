@@ -60,10 +60,11 @@ class SelectPanel extends React.Component {
           }}
         >
           <div>
-            <h3>Outstanding | A-B</h3>
+            <p>Outstanding | A</p>
             <Scrollbars style={{
               width: '100%',
-              height: '25vh'
+              height: '23vh',
+              marginBottom: 10
             }}>
             {samples.filter((sample) => sample.level === 3 && sample.category === this.props.questionIndex + 1).map((sample) => {
               return (
@@ -77,7 +78,6 @@ class SelectPanel extends React.Component {
             </Scrollbars>
 
 
-            <Divider />
 
             <div
               className="select-panel-card"
@@ -87,10 +87,11 @@ class SelectPanel extends React.Component {
                 overflowY: 'hidden'
               }}
             >
-            <h3>Satisfactory | B-C</h3>
+            <p>Satisfactory | B-C</p>
               <Scrollbars style={{
                 width: '100%',
-                height: '25vh'
+                height: '23vh',
+                marginBottom: 10
               }}>
                 {samples.filter((sample) => sample.level === 2 && sample.category === this.props.questionIndex + 1).map((sample) => {
               return (
@@ -102,7 +103,6 @@ class SelectPanel extends React.Component {
               </Scrollbars>
             </div>
 
-            <Divider />
             <div
               className="select-panel-card"
               style={{
@@ -111,10 +111,11 @@ class SelectPanel extends React.Component {
                 overflowY: 'hidden'
               }}
             >
-            <h3>Needs Improvement | C-F</h3>
+            <p>Developing | C-F</p>
               <Scrollbars style={{
                 width: '100%',
-                height: '25vh'
+                height: '23vh',
+                marginBottom: 10
               }}>
                 {samples.filter((sample) => sample.level === 1 && sample.category === this.props.questionIndex + 1).map((sample) => {
               return (
