@@ -8,7 +8,8 @@ import hardSet from 'redux-persist/lib/stateReconciler/hardSet'
 const persistConfig = {
   key: 'root',
   storage,
-  stateReconciler: hardSet
+  stateReconciler: hardSet,
+  blacklist: ['pane']
 }
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
