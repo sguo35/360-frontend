@@ -291,7 +291,7 @@ export default
           for (let i = 0; i < res.prompts.length; i++) {
             comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
               let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
-              promptResponses[index] = edit
+              promptResponses[i] = edit
               this.setState({
                 promptResponses: promptResponses
               })
@@ -326,7 +326,7 @@ export default
         for (let i = 0; i < res.prompts.length; i++) {
           comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
             let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
-            promptResponses[index] = edit
+            promptResponses[i] = edit
             this.setState({
               promptResponses: promptResponses
             })
