@@ -43,9 +43,6 @@ export default
       }
 
       render() {
-        //TODO Check this grab from the project JSON
-        //Theoretically below code works
-
         const dueDate = moment(
           projects['projects']
           .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
