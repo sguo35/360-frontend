@@ -131,7 +131,7 @@
     {
       "id": "promptP1",
       "ovalTemplate": "oval0",
-      "shortForm": "Delivers consistently and timely",
+      "shortForm": "Delivered consistently and on time",
       "elements": [
         {
           "type": "gradedName",
@@ -139,7 +139,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0is an expert at managing their own workload and fulfilling their project commitments, such as when they\u00A0"
+          "value": "\u00A0was an expert at managing their own workload and fulfilling their project commitments, such as when they\u00A0"
         },
         {
           "type": "fillIn",
@@ -148,14 +148,14 @@
         },
         {
           "type": "text",
-          "value": ". Their execution is always timely and bears evidence of extraordinary effort and thought."
+          "value": ". Their execution was always timely and showed evidence of extraordinary effort and thought."
         }
       ]
     },
     {
       "id": "promptP2",
       "ovalTemplate": "oval0",
-      "shortForm": "Exemplifies extraordinary productivity by...",
+      "shortForm": "Exemplified extraordinary productivity by...",
       "elements": [
         {
           "type": "gradedName",
@@ -163,7 +163,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0executes at an extraordinary level. They went above and beyond by\u00A0"
+          "value": "\u00A0executed at an extraordinary level. They went above and beyond by\u00A0"
         },
         {
           "type": "fillIn",
@@ -216,7 +216,7 @@
     {
       "id": "promptP4",
       "ovalTemplate": "oval0.5",
-      "shortForm": "Promotes productive mindset",
+      "shortForm": "Promoted productive mindset",
       "elements": [
         {
           "type": "gradedName",
@@ -224,7 +224,7 @@
         },
         {
           "type": "text",
-          "value": " understands the importance of staying focused in team meetings. They were not afraid to rein the team in when\u00A0"
+          "value": " understood the importance of staying focused in team meetings. They were not afraid to rein the team in when\u00A0"
         },
         {
           "type": "fillIn",
@@ -272,7 +272,7 @@
     {
       "id": "promptP6",
       "ovalTemplate": "oval1",
-      "shortForm": "Communicates progress on deliverables",
+      "shortForm": "Communicated progress on deliverables",
       "elements": [
         {
           "type": "gradedName",
@@ -280,7 +280,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0checks in fairly frequently on the development of projects and deliverables. However, if they were\u00A0"
+          "value": "\u00A0checked in fairly frequently on the development of projects and deliverables. However, if they were\u00A0"
         },
         {
           "type": "fillIn",
@@ -289,14 +289,14 @@
         },
         {
           "type": "text",
-          "value": ", the team would benefit significantly."
+          "value": ", the team would have benefitted significantly."
         }
       ]
     },
     {
       "id": "promptP7",
       "ovalTemplate": "oval1.5",
-      "shortForm": "Accepts additional work if requested",
+      "shortForm": "Accepted additional work if requested",
       "elements": [
         {
           "type": "gradedName",
@@ -320,7 +320,7 @@
     {
       "id": "promptP8",
       "ovalTemplate": "oval2",
-      "shortForm": "Delivers subpar quality/late work",
+      "shortForm": "Delivered subpar quality/late work",
       "elements": [
         {
           "type": "gradedName",
@@ -328,7 +328,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0delivers late or lacking work on crucial assignments, such as when they were assigned to\u00A0"
+          "value": "\u00A0delivered late or lacking work on crucial assignments, such as when they were assigned to\u00A0"
         },
         {
           "type": "fillIn",
@@ -353,7 +353,7 @@
     {
       "id": "promptP9",
       "ovalTemplate": "oval2.5",
-      "shortForm": "Does not deliver",
+      "shortForm": "Did not deliver",
       "elements": [
         {
           "type": "gradedName",
@@ -385,7 +385,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0is unwilling to take on more responsibilities, even when the team needs them to. In one specific situation,\u00A0"
+          "value": "\u00A0was unwilling to take on more responsibilities, even when the team needed them to. In one specific situation,\u00A0"
         },
         {
           "type": "fillIn",
@@ -401,7 +401,7 @@
     {
       "id": "promptP11",
       "ovalTemplate": "oval2.5",
-      "shortForm": "Distracts team from working",
+      "shortForm": "Distracted team from working",
       "elements": [
         {
           "type": "gradedName",
@@ -409,7 +409,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0is distracting and oftens is a source of disruption in team work settings.\u00A0"
+          "value": "\u00A0was distracting and often was a source of disruption in team work settings.\u00A0"
         },
         {
           "type": "gradedName",
@@ -421,7 +421,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "waiting to talk to their friends and check social media after the meeting was over",
+          "placeholder": "waiting to talk to their friends and check social media until after the meeting was over",
           "value": ""
         },
         {
@@ -433,7 +433,7 @@
     {
       "id": "promptP12",
       "ovalTemplate": "oval2",
-      "shortForm": "Does not prioritize this project",
+      "shortForm": "Did not prioritize this project",
       "elements": [
         {
           "type": "gradedName",
@@ -441,7 +441,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0does not give the team or project the time and effort required of them.\u00A0"
+          "value": "\u00A0did not give the team or project the time and effort required of them.\u00A0"
         },
         {
           "type": "gradedName",
@@ -469,7 +469,7 @@
     {
       "id": "promptL0",
       "ovalTemplate": "oval3",
-      "shortForm": "Does what others are unwilling to do",
+      "shortForm": "Did what others were unwilling to do",
       "elements": [
         {
           "type": "gradedName",
@@ -477,7 +477,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0consistently went the extra mile,"
+          "value": "\u00A0consistently went the extra mile,\u00A0"
         },
         {
           "type": "fillIn",
@@ -502,7 +502,7 @@
     {
       "id": "promptL1",
       "ovalTemplate": "oval3.5",
-      "shortForm": "Creates new opportunities for the team",
+      "shortForm": "Created new opportunities for the team",
       "elements": [
         {
           "type": "gradedName",
@@ -535,7 +535,7 @@
     {
       "id": "promptL2",
       "ovalTemplate": "oval3.5",
-      "shortForm": "Inspires others",
+      "shortForm": "Inspired others",
       "elements": [
         {
           "type": "gradedName",
@@ -559,7 +559,7 @@
     {
       "id": "promptL3",
       "ovalTemplate": "oval3",
-      "shortForm": "Strives for excellence in themselves and others",
+      "shortForm": "Strove for excellence in themselves and others",
       "elements": [
         {
           "type": "gradedName",
@@ -567,7 +567,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0demands the highest quality in their own work but also that of others. \u00A0"
+          "value": "\u00A0demanded the highest quality not only in their own work but also that of others. \u00A0"
         },
         {
           "type": "gradedName",
@@ -591,7 +591,7 @@
     {
       "id": "promptL4",
       "ovalTemplate": "oval3",
-      "shortForm": "Exemplifies quality leadership by...",
+      "shortForm": "Exemplified quality leadership by...",
       "elements": [
         {
           "type": "gradedName",
@@ -599,7 +599,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0is a great example of a leader, as evidenced by their personal parallel to\u00A0"
+          "value": "\u00A0was a great example of a leader, as evidenced by their personal parallel to\u00A0"
         },
         {
           "type": "fillIn",
@@ -615,7 +615,7 @@
     {
       "id": "promptL5",
       "ovalTemplate": "oval4",
-      "shortForm": "Occasionally takes responsibility",
+      "shortForm": "Occasionally took on responsibility",
       "elements": [
         {
           "type": "gradedName",
@@ -627,20 +627,16 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "working on their own project.",
+          "placeholder": "building out the functioning Android app",
           "value": ""
         },
         {
-          "type": "gradedName",
-          "placeholder": "Satisfactory Student"
-        },
-        {
           "type": "text",
-          "value": "\u00A0could be more proactive by\u00A0"
+          "value": ", but they could be more proactive in\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "taking on more responsibility such as compiling their end AND contributing to the brainstorming/user design",
+          "placeholder": "recognizing what else needs to be done and contributing there",
           "value": ""
         },
         {
@@ -664,12 +660,12 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "finding a medium to implement the tech (website, app, form, etc,)",
+          "placeholder": "finding a way to implement the form",
           "value": ""
         },
         {
           "type": "text",
-          "value": ", however,\u00A0"
+          "value": ". However,\u00A0"
         },
         {
           "type": "gradedName",
@@ -681,7 +677,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "spending more time on the creation and putting in more effort",
+          "placeholder": "researching new features to help take the product to the next level",
           "value": ""
         },
         {
@@ -705,20 +701,16 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "working on setting up the database",
+          "placeholder": "setting up the database and backend",
           "value": ""
         },
         {
-          "type": "gradedName",
-          "placeholder": "Satisfactory Student"
-        },
-        {
           "type": "text",
-          "value": "\u00A0, however, could expand their contributions and take on greater responsibility by\u00A0"
+          "value": ", but could expand their contributions and take on greater responsibility by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "helping with UI or contributing to additional features on the tech end",
+          "placeholder": "helping with documentation or taking notes",
           "value": ""
         },
         {
@@ -746,11 +738,11 @@
         },
         {
           "type": "text",
-          "value": "can become more active by"
+          "value": "\u00A0can become more active by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "challenging more ideas or asking clarifying questions so their teammates and themselves understand and are on the same page",
+          "placeholder": "asking clarifying questions so they can help the team incrementally advance",
           "value": ""
         },
         {
@@ -774,17 +766,12 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "be more open to challenging themselves and what they do not know",
+          "placeholder": "challenge themselves by learning something new",
           "value": ""
         },
         {
           "type": "text",
-          "value": "\u00A0or volunteer to take on greater responsibility and tasks to become more involved, such as\u00A0"
-        },
-        {
-          "type": "fillIn",
-          "placeholder": "taking on the task of making an excel sheet",
-          "value": ""
+          "value": ", instead of instantly refusing to take leadership in finishing the project"
         },
         {
           "type": "text",
@@ -795,7 +782,7 @@
     {
       "id": "promptL10",
       "ovalTemplate": "oval5",
-      "shortForm": "Does not engage",
+      "shortForm": "Did not engage",
       "elements": [
         {
           "type": "gradedName",
@@ -803,20 +790,20 @@
         },
         {
           "type": "text",
-          "value": "\u00A0can become more involved by\u00A0"
+          "value": "\u00A0could become more involved by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "actually partaking in the team",
+          "placeholder": "actually partaking in team project work",
           "value": ""
         },
         {
           "type": "text",
-          "value": "\u00A0and taking on the responsibility to\u00A0"
+          "value": "\u00A0and taking on the responsibility of\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "at least show up to meetings and contribute to the iteration of ideas and processes",
+          "placeholder": "showing up to meetings and contributing to ideation",
           "value": ""
         },
         {
@@ -828,7 +815,7 @@
     {
       "id": "promptL11",
       "ovalTemplate": "oval5",
-      "shortForm": "Fosters negative team dynamic",
+      "shortForm": "Fostered negative team dynamic",
       "elements": [
         {
           "type": "gradedName",
@@ -836,7 +823,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0was distracting and/or inspired an unhealthy or uncomfortable team atmosphere.\u00A0"
+          "value": "\u00A0was distracting and led to an unhealthy or uncomfortable team atmosphere.\u00A0"
         },
         {
           "type": "gradedName",
@@ -848,7 +835,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "downplayed others contributions",
+          "placeholder": "downplayed others' contributions",
           "value": ""
         },
         {
@@ -857,7 +844,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "be constructive but not critical when providing feedback on someone's work. Know how others receive feedback and be a little more cognizant of the situation",
+          "placeholder": "be more constructive when providing feedback on someone's work",
           "value": ""
         },
         {
@@ -869,7 +856,7 @@
     {
       "id": "promptL12",
       "ovalTemplate": "oval5",
-      "shortForm": "Can improve leadership by...",
+      "shortForm": "Could improve leadership by...",
       "elements": [
         {
           "type": "gradedName",
@@ -877,11 +864,11 @@
         },
         {
           "type": "text",
-          "value": "\u00A0should be more present and active either in terms of commitment to the project, meetings, or communication. It is hard to inspire and lead others if others do not see your own dedication. Leadership can start small too.\u00A0"
+          "value": "\u00A0did not take any leadership in this project.\u00A0"
         },
         {
           "type": "gradedName",
-          "placeholder": "\u00A0Developing Student"
+          "placeholder": "Developing Student"
         },
         {
           "type": "text",
@@ -889,7 +876,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "speaking up when it comes to brainstorming or taking the initiative to finish a task",
+          "placeholder": "taking the initiative to finish tasks instead of waiting for others to step in",
           "value": ""
         },
         {
@@ -901,7 +888,7 @@
     {
       "id": "promptE0",
       "ovalTemplate": "oval6.5",
-      "shortForm": "Responsive communication outside meetings",
+      "shortForm": "Offered insightful participation",
       "elements": [
         {
           "type": "gradedName",
@@ -909,23 +896,23 @@
         },
         {
           "type": "text",
-          "value": "\u00A0offered great insight and perspective to team goals and discussions such as when he/she proposed\u00A0"
+          "value": "\u00A0offered great insight and perspective on team goals, including\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "to use a high-pitched frequency that phones produce for the attendance project",
+          "placeholder": "their idea to use high-pitched sound waves to transmit data",
           "value": ""
         },
         {
           "type": "text",
-          "value": ", which moved the team forward."
+          "value": ", which gave the team a significant edge moving forward."
         }
       ]
     },
     {
       "id": "promptE1",
       "ovalTemplate": "oval6",
-      "shortForm": "Engaged/insightful/moves team forward",
+      "shortForm": "Responsive to communication",
       "elements": [
         {
           "type": "gradedName",
@@ -945,16 +932,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "available to chat and ready to put aside time to meet",
-          "value": ""
-        },
-        {
-          "type": "text",
-          "value": ", and this benefits our team \u00A0"
-        },
-        {
-          "type": "fillIn",
-          "placeholder": "because it makes communication easier",
+          "placeholder": "available to chat and ready to put aside time to meet, which the team definitely appreciated",
           "value": ""
         },
         {
@@ -974,11 +952,11 @@
         },
         {
           "type": "text",
-          "value": "\u00A0not only contributed to the team, but had a positive effect on the team dynamic as a whole through his/her\u00A0"
+          "value": "\u00A0not only contributed to the team, but had a positive effect on the team dynamic as a whole through their\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "excitability and inclusive behavior. They make sure that everyone is on the same page in terms of information and contributing to the project",
+          "placeholder": "excitability and inclusive behavior. They made sure that everyone was on the same page and that everyone's concerns were heard",
           "value": ""
         },
         {
@@ -998,20 +976,20 @@
         },
         {
           "type": "text",
-          "value": "\u00A0went the extra mile by challenging him/herself out of his/her comfort zone by \u00A0"
+          "value": "\u00A0pushed themslves out of their comfort zone by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "learning how to integrate multiple API's",
+          "placeholder": "learning how to integrate multiple Google APIs",
           "value": ""
         },
         {
           "type": "text",
-          "value": "\u00A0and this \u00A0"
+          "value": "\u00A0a challenge that was critical for\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "was helpful to our team as a whole because we would not have been able to build a website with the tag cloud, real-time updates, etc",
+          "placeholder": "our product to look beautiful and work as users expected it",
           "value": ""
         },
         {
@@ -1031,15 +1009,11 @@
         },
         {
           "type": "text",
-          "value": "\u00A0prioritized this class, and it is obvious through the time they committed, their observational input, and/or the work they produced. For example,\u00A0"
-        },
-        {
-          "type": "gradedName",
-          "placeholder": "Outstanding Student"
+          "value": "\u00A0prioritized this class, a fact made obvious by the\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "\u00A0will spend all the time needed to create a working product, will meet with Stephen and Gwynevere every chance, and will make sure that others feel included and happy in the team",
+          "placeholder": "willingness to disrupt artificial harmony and continuous dedication to the project",
           "value": ""
         },
         {
@@ -1072,7 +1046,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "being critical of ideas or thinking more critically to produce greater insights",
+          "placeholder": "proposing alternatives and participating in healthy conflict during team meetings",
           "value": ""
         },
         {
@@ -1092,20 +1066,20 @@
         },
         {
           "type": "text",
-          "value": "\u00A0 was usually at meetings and on task. However, sometimes he/she did not show up or follow through. Specifically he/she \u00A0"
+          "value": "\u00A0sometimes\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "sometimes didn't show up to meetings",
+          "placeholder": "missed a team meeting",
           "value": ""
         },
         {
           "type": "text",
-          "value": ", and this tended to \u00A0"
+          "value": "without communicating to the team, which led to\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "be counterproductive to finishing the project.",
+          "placeholder": "wasting other members' time",
           "value": ""
         },
         {
@@ -1125,7 +1099,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0was usually at meetings, but was occasionally conducive to tardiness. \u00A0"
+          "value": "\u00A0was usually at meetings, but often was tardy due to personal conflicts. \u00A0"
         },
         {
           "type": "gradedName",
@@ -1133,11 +1107,11 @@
         },
         {
           "type": "text",
-          "value": "\u00A0could perhaps mediate this problem by\u00A0"
+          "value": "\u00A0could reduce their lateness by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "setting multiple alarms or speak up when setting a meeting time to switch it to a better time.",
+          "placeholder": "setting multiple alarms to ensure they actually wake up",
           "value": ""
         },
         {
@@ -1157,19 +1131,11 @@
         },
         {
           "type": "text",
-          "value": "\u00A0clearly does not prioritize meetings. He/she was usually not present physically, consistently late (affecting productivity of team).\u00A0"
-        },
-        {
-          "type": "gradedName",
-          "placeholder": "Developing Student"
-        },
-        {
-          "type": "text",
-          "value": "\u00A0should\u00A0"
+          "value": "\u00A0clearly does not prioritize meetings. They were rarely present physically, or were consistently late, which showed\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "respect the time of others by showing up at least within a reasonable set of time or letting their teammates know why they may be late",
+          "placeholder": "a disregard for the value of everyone else's time and an overall lack of commitment",
           "value": ""
         },
         {
@@ -1189,20 +1155,20 @@
         },
         {
           "type": "text",
-          "value": "\u00A0was uncooperative and didn’t move the team forward through their contributions.  They were not engaged mentally and contributing to discussions by putting in the time or thought. Specifically, he/she\u00A0"
+          "value": "\u00A0was uncooperative and didn’t move the team forward through their contributions.  They were not engaged at all, as evidenced by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "did not do any work and rode off of the hard work of others ",
+          "placeholder": "the complete ambivalence to any ideas proposed and lack of meaningful input",
           "value": ""
         },
         {
           "type": "text",
-          "value": "\u00A0It is challenging to work with because\u00A0"
+          "value": ". It is challenging to work with this person because\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "there is one less contributing member on the team.",
+          "placeholder": "the team has to support a member who won't pull their own weight",
           "value": ""
         },
         {
@@ -1214,7 +1180,7 @@
     {
       "id": "promptE10",
       "ovalTemplate": "oval8",
-      "shortForm": "Unable to easily be reached",
+      "shortForm": "Couldn't be reached",
       "elements": [
         {
           "type": "gradedName",
@@ -1222,20 +1188,20 @@
         },
         {
           "type": "text",
-          "value": "\u00A0 was hard to get ahold of and it was challenging to set up meeting/times that work. Other engagements are understandable, but\u00A0"
+          "value": "\u00A0 was hard to get ahold of, and made it particularly difficult to set up meetings because\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "it was clear that he/she will not make the time for this class in their schedule",
+          "placeholder": "they never responded to the group chat while scheduling, and always had conflicts after times were decided",
           "value": ""
         },
         {
           "type": "text",
-          "value": ". He/she could improve by\u00A0"
+          "value": ". They could improve by\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "setting aside at least some time aside so that the work can be split evenly",
+          "placeholder": "prioritizing team communication higher and blocking time just for this class",
           "value": ""
         },
         {
@@ -1255,7 +1221,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0clearly does not prioritize this class, and it showed in their presence as well as their engagement to meetings and work.\u00A0"
+          "value": "\u00A0did not put in the effort a class like this requires.\u00A0"
         },
         {
           "type": "gradedName",
@@ -1267,7 +1233,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "coming to meetings, at the very least, and inputting some sort of opinion during conversations because more discussion is conducive to greater ideas",
+          "placeholder": "coming to meetings and vocalizing their opinions enough to make their presence heard",
           "value": ""
         },
         {
@@ -1279,7 +1245,7 @@
     {
       "id": "promptE12",
       "ovalTemplate": "oval8.5",
-      "shortForm": "Could improve participation...",
+      "shortForm": "Could improve participation by...",
       "elements": [
         {
           "type": "gradedName",
@@ -1287,7 +1253,7 @@
         },
         {
           "type": "text",
-          "value": "\u00A0did not participating at the minimum standard, and it was detrimental to the entire team.\u00A0"
+          "value": "\u00A0did not participate at the minimum standard, which was detrimental to the whole team.\u00A0"
         },
         {
           "type": "gradedName",
@@ -1295,18 +1261,26 @@
         },
         {
           "type": "text",
-          "value": "\u00A0should work on\u00A0"
+          "value": "\u00A0should recognize that\u00A0"
         },
         {
           "type": "fillIn",
-          "placeholder": "engaging to contribute at least some sort of work to the project. They have done nothing, and it is is frustrating to the whole team",
+          "placeholder": "the team only functions well when everyone is engaged",
           "value": ""
         },
         {
           "type": "text",
-          "value": "."
+          "value": ", and should aim to\u00A0"
+        },
+        {
+          "type": "fillIn",
+          "placeholder": "actively participate more",
+          "value": ""
+        },
+        {
+          "type": "text",
+          "value": "\u00A0moving forward."
         }
-
       ]
     }
   ]
