@@ -9,7 +9,7 @@ export default
   connect((state) => {
     return {
       studentIndex: state.pane.studentIndex,
-      email: state.info ? (state.info.emails ? state.emails[0].value : undefined) : undefined
+      email: state.info.emails.length > 0 ? state.info.emails[0].value : ""
     }
   }, (dispatch) => {
     return {
@@ -41,6 +41,12 @@ export default
       }
 
       render() {
+        console.log(this.props.match.params.projectId)
+        console.log(this.props.email)
+        const team = projects['projects']
+        .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
+        console.log(team)
         return (
           <div className="Rate-left-container">
             <Menu
@@ -73,13 +79,14 @@ export default
 
               {(() => {
                 let arr = []
-                for (let i = 1; i < this.props.studentIndex + 2; i++) {
+                for (let i = 1; i < team[0]['memberNames'].length + 1; i++) {
+                  if (team[0]['memberEmails'][i - 1] !== this.props.email)
                   arr.push(<Menu.Item key={i.toString()} style={{
                     height: '10%',
                     display: 'flex',
                     justifyContent: 'flex-start',
                     padding: 15
-                  }}>
+                  }} disabled={!(this.state.unlocked[i] || (i == 1 || (arr.length == 0 && i == 2)))}>
                     <div style={{
                       display: 'flex',
                       justifyContent: 'center',
@@ -98,45 +105,9 @@ export default
                       <p style={{
                         margin: 20,
                         marginTop: 15
-                      }}>{projects['projects']
-                      .filter((project) => project['projectName'] === this.props.match.params.projectId)
-                      [0]['teams'].filter((team) => team.memberEmails.includes(this.props.email))
-                      [0]['memberNames'][i - 1]}</p>
+                      }}>{team[0]['memberNames'][i - 1]}</p>
                     </div>
-                  </Menu.Item>)
-                }
-
-                for (let i = this.props.studentIndex + 2; i < 5; i++) {
-                  arr.push(<Menu.Item key={i.toString()} style={{
-                    height: '10%',
-                    display: 'flex',
-                    justifyContent: 'flex-start',
-                    padding: 15
-                  }} disabled={!this.state.unlocked[i]}>
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      flexDirection: 'column'
-                    }}><Icon type='user' theme='outlined' style={{
-                      fontSize: 32,
-                      marginLeft: 12
-                    }} />
-                    </div>
-
-                    <div style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      flexDirection: 'column'
-                    }}>
-                      <p style={{
-                        margin: 20,
-                        marginTop: 15
-                      }}>{projects['projects']
-                      .filter((project) => project['projectName'] === this.props.match.params.projectId)
-                      [0]['teams'].filter((team) => team.memberEmails.includes(this.props.email))
-                      [0]['memberNames'][i - 1]}</p>
-                    </div>
-                    {!this.state.unlocked[i] ? (<div style={{
+                    {!(this.state.unlocked[i] || (i == 1 || (arr.length == 0 && i == 2))) ? (<div style={{
                       display: 'flex',
                       justifyContent: 'center',
                       flexDirection: 'column',
@@ -144,7 +115,6 @@ export default
                     }}>
                       <Icon style={{margin : 0}} type='lock' />
                     </div>) : null}
-
                   </Menu.Item>)
                 }
                 return arr

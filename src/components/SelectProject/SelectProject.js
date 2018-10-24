@@ -37,7 +37,7 @@ export default class SelectProject extends React.Component {
         console.log(this.props);
         return (
             <div className="Rate-parent-container">
-                <SelectProjectCenter />
+                <SelectProjectCenter history={this.props.history} />
             </div>
         );
     }
