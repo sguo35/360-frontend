@@ -51,7 +51,7 @@ export default class SelectProjectCenter extends React.Component {
                   display: 'flex',
                   justifyContent: 'center',
                   flexDirection: 'column'
-                }}><Icon type='hourglass' theme='outlined' style={{
+                }}><Icon type={project['icon']} theme='outlined' style={{
                   fontSize: 32,
                   marginLeft: 12
                 }} />

@@ -163,14 +163,29 @@ export default
           return;
         }
 
-        if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
-          this._submit();
-          return;
-        }
-
         const team = projects['projects']
           .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
+
+        if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+          this._submit();
+          await fetch(`${serverUrl}/submitProjectGrade`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              grader: this.props.email,
+              graded: team[0]['memberEmails'][this.props.studentIndex],
+              project: this.props.match.params.projectId
+            })
+          })
+          return;
+        }
+
+        console.log(team)
+
+        console.log(team[0]['memberEmails'][this.props.studentIndex])
 
         try {
           await fetch(`${serverUrl}/updateProjectGrade`, {
@@ -187,7 +202,7 @@ export default
               },
               grader: this.props.email,
               project: this.props.match.params.projectId,
-              graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+              graded: team[0]['memberEmails'][this.props.studentIndex],
               questionIndex: this.props.questionIndex
             }),
             headers: {
@@ -215,7 +230,7 @@ export default
             },
             body: JSON.stringify({
               grader: this.props.email,
-              graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+              graded: team[0]['memberEmails'][this.props.studentIndex],
               project: this.props.match.params.projectId
             })
           })
@@ -277,11 +292,12 @@ export default
             },
             body: JSON.stringify({
               grader: this.props.email,
-              graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+              graded: team[0]['memberEmails'][this.props.studentIndex],
               project: this.props.match.params.projectId
             })
           })
           projectGrade = await projectGrade.json();
+          projectGrade = projectGrade[0]['responses']
           let res = projectGrade[this.props.questionIndex]
           const comps = []
           console.log("PROMPTS LENGTH" + res.prompts.length)
@@ -312,14 +328,14 @@ export default
           },
           body: JSON.stringify({
             grader: this.props.email,
-            graded: team[0]['memberEmails'].filter((name, idx) => team[0]['memberNames'][idx] === this.state.students[this.props.studentIndex])[0],
+            graded: team[0]['memberEmails'][this.props.studentIndex],
             project: this.props.match.params.projectId
           })
         })
         projectGrade = await projectGrade.json();
+        projectGrade = projectGrade[0]['responses']
         let res = projectGrade[this.props.questionIndex]
         const comps = []
-        console.log("PROMPTS LENGTH" + res.prompts.length)
         this.setState({
           promptResponses: res.promptResponses
         })
