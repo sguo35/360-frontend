@@ -91,6 +91,33 @@ export default class DashLeft extends React.Component {
               }}>Attendy</p>
             </div>
           </Menu.Item>
+          <Menu.Item key='3' style={{
+            height: '10%',
+            display: 'flex',
+            justifyContent: 'flex-start',
+            padding: 15
+          }}>
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}><Icon type='folder-open' theme='outlined' style={{
+              fontSize: 32,
+              marginLeft: 12
+            }} />
+            </div>
+
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column'
+            }}>
+              <p style={{
+                margin: 20,
+                marginTop: 15
+              }}>Icebreakers</p>
+            </div>
+          </Menu.Item>
         </Menu>
       </div>
     )

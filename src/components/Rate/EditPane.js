@@ -3,7 +3,8 @@ import React from 'react';
 import { Card, Tag, Button, message } from 'antd';
 import Brief from './Brief';
 import Prompt from '../Prompt/Prompt';
-import throttle from 'lodash/throttle';
+import debounce from 'lodash/throttle';
+
 
 import { connect } from 'react-redux';
 import { store } from '../../redux/store';
@@ -49,8 +50,9 @@ export default
           promptResponses: []
         };
         this.props.initDeletePrompt(this.deletePrompt)
-        this.props.initAddPrompt(this.addPrompt)
+        this.props.initAddPrompt(this.addPrompt);
       }
+
 
       _submit = () => {
         message.success("Submitted!")
@@ -148,6 +150,7 @@ export default
           return;
         }
 
+
         try {
           await fetch(`${serverUrl}/updateProjectGrade`, {
           method: "POST",
@@ -230,7 +233,7 @@ export default
               console.log(e)
             }
 
-            
+
 
             message.info("Responses saved.")
 
@@ -299,20 +302,29 @@ export default
         );
       }
 
-      handleWheel = throttle((event) => {
-        if (event.deltaY > 50) {
-          console.log(event.deltaY);
+      handleWheel = (event) => {
+        if (event.deltaY > 10) {
+          console.log('scroll down');
           this.onBottomButtonClick();
-        } else if (event.deltaY < -50) {
-          console.log(event.deltaY);
+        } else if (event.deltaY < -10) {
+          console.log('scroll up');
           this.onTopButtonClick();
         }
-      }, 1000);
+      };
+
+      debounceEventHandler(...args) {
+        const debounced = debounce(...args)
+        return function(e) {
+          e.persist()
+          e.preventDefault();
+          return debounced(e)
+        }
+      }
 
       render = () => {
         console.log(JSON.stringify(this.state.promptResponses))
         return (
-          <div onWheel={this.handleWheel} className="Rate-edit-pane">
+          <div onWheel={this.debounceEventHandler(this.handleWheel, 750, {leading: true})} className="Rate-edit-pane">
             <div style={{
               display: 'flex',
               flexDirection: 'column',
