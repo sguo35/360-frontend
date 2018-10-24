@@ -60,6 +60,7 @@ class SelectPanel extends React.Component {
           }}
         >
           <div>
+            <h3>Outstanding | A-B</h3>
             <Scrollbars style={{
               width: '100%',
               height: '25vh'
@@ -86,6 +87,7 @@ class SelectPanel extends React.Component {
                 overflowY: 'hidden'
               }}
             >
+            <h3>Satisfactory | B-C</h3>
               <Scrollbars style={{
                 width: '100%',
                 height: '25vh'
@@ -109,6 +111,7 @@ class SelectPanel extends React.Component {
                 overflowY: 'hidden'
               }}
             >
+            <h3>Needs Improvement | C-F</h3>
               <Scrollbars style={{
                 width: '100%',
                 height: '25vh'

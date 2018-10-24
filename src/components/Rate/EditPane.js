@@ -65,12 +65,25 @@ export default
         })
       }
 
+      componentDidMount = () => {
+        setTimeout(() => {
+          const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
+        this.setState({
+          students: team[0]['memberNames'].filter((name, idx) => team[0]['memberEmails'][idx] !== this.props.email)
+        })
+        }, 100)
+      }
 
       _submit = () => {
         message.success("Submitted!")
       }
 
       deletePrompt = (prompt) => {
+        const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         prompt = JSON.parse(JSON.stringify(prompt))
         console.log(prompt.shortForm)
         let prompts = JSON.parse(JSON.stringify(this.state.prompts))
@@ -91,7 +104,7 @@ export default
         const comps = []
         console.log("PROMPTS LENGTH" + prompts.length)
         for (let i = 0; i < prompts.length; i++) {
-          comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={prompts[i]} updateEdit={(edit) => {
+          comps.push(<Prompt gradedName={team[0]['memberNames'][this.props.studentIndex]} prompt={prompts[i]} updateEdit={(edit) => {
             let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
             promptResponses[index] = edit
             this.setState({
@@ -108,9 +121,16 @@ export default
       }
 
       addPrompt = (prompt) => {
+        const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
+        this.setState({
+          students: team[0]['memberNames'].filter((name, idx) => team[0]['memberEmails'][idx] !== this.props.email)
+        })
+
         const prompts = [...this.state.prompts, prompt]
         promptComponents = prompts.map((p, index) => {
-          return (<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={p}
+          return (<Prompt gradedName={team[0]['memberNames'][this.props.studentIndex]} prompt={p}
             updateEdit={(edit) => {
               let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
               promptResponses[index] = edit
@@ -308,7 +328,7 @@ export default
             promptResponses: res.promptResponses
           })
           for (let i = 0; i < res.prompts.length; i++) {
-            comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
+            comps.push(<Prompt gradedName={team[0]['memberNames'][this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
               let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
               promptResponses[i] = edit
               this.setState({
@@ -343,7 +363,7 @@ export default
           promptResponses: res.promptResponses
         })
         for (let i = 0; i < res.prompts.length; i++) {
-          comps.push(<Prompt gradedName={this.state.students[this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
+          comps.push(<Prompt gradedName={team[0]['memberNames'][this.props.studentIndex]} prompt={res.prompts[i]} updateEdit={(edit) => {
             let promptResponses = JSON.parse(JSON.stringify(this.state.promptResponses))
             promptResponses[i] = edit
             this.setState({
