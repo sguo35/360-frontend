@@ -11,18 +11,23 @@ import { Provider } from 'react-redux';
 import { store } from './redux/store';
 
 import 'antd/dist/antd.css';
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor } from './redux/store'
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/dashboard" component={Dash} />
-            <Route path="/selectProject/:info" component={SelectProject} />
-            <Route path="/project/:projectId" component={Rate} />
-          </Switch>
-        </BrowserRouter>
+        <PersistGate loading={null} persistor={persistor} >
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Login} />
+              <Route exact path="/dashboard" component={Dash} />
+              <Route path="/selectProject/:info" component={SelectProject} />
+              <Route path="/project/:projectId" component={Rate} />
+            </Switch>
+          </BrowserRouter>
+        </PersistGate>
       </Provider>
     );
   }
