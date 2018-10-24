@@ -4,6 +4,12 @@ import { Button, Icon } from 'antd';
 import { serverUrl } from '../../constants';
 
 export default class Login extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading: false
+        }
+    }
     render() {
         return (
             <div style={{
@@ -27,7 +33,10 @@ export default class Login extends React.Component {
                 }} >360FACTORS</p>
             <Button type='primary' style={{
                 marginTop: 25
-            }} onClick={async () => {
+            }} loading={this.state.loading} onClick={async () => {
+                this.setState({
+                    loading: true
+                })
                 let url = await fetch(`${serverUrl}/oauth`, {
                     method: 'POST',
                     headers: {

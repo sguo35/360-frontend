@@ -167,7 +167,7 @@ export default
           .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
 
-        if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length) {
+        if (this.props.questionIndex == 2 && team[0]['memberNames'][this.props.studentIndex] == this.state.students[this.state.students.length - 1]) {
           this._submit();
           await fetch(`${serverUrl}/submitProjectGrade`, {
             method: "POST",
@@ -251,12 +251,15 @@ export default
       }
 
       renderBottomButton = () => {
+        const team = projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+        [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         let type = 'primary', icon = 'down', text = '';
         let style = { flexGrow: 1 };
         if (this.state.prompts.length < 2) {
           type = 'disabled';
           icon = 'close';
-        } else if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length) {
+        } else if (this.props.questionIndex == 2 && team[0]['memberNames'][this.props.studentIndex] == this.state.students[this.state.students.length - 1]) {
           icon = '';
           text = 'Submit';
           style['backgroundColor'] = '#52c41a';
