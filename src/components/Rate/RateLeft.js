@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 
 const projects = require("../../projects.json")
 
+let moment = require("moment");
+
 export default
   connect((state) => {
     return {
@@ -41,6 +43,15 @@ export default
       }
 
       render() {
+        //TODO Check this grab from the project JSON
+        //Theoretically below code works
+
+        const dueDate = moment(
+          projects['projects']
+          .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+          [0]['dueDate'],
+          'MM-DD-YYYY, hh:mm:ss a');
+
         console.log(this.props.match.params.projectId)
         console.log(this.props.email)
         const team = projects['projects']
@@ -124,7 +135,7 @@ export default
                   marginTop: 25,
                   backgroundColor: '#f5222d',
                   borderColor: '#f5222d'
-                }} type='primary'>Due on 11/1/18 at 11:59 pm</Button>
+                }} type='primary'>Due on {dueDate.format('ddd MM/DD, hh:mm a')}</Button>
               </div>
             </Menu>
           </div>

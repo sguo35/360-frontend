@@ -4,6 +4,7 @@ import { Menu, Icon, Button } from 'antd';
 import { serverUrl } from '../../constants';
 
 let projects = require('../../projects.json')
+let moment = require("moment");
 
 export default class SelectProjectCenter extends React.Component {
   onLogoClick = () => {
@@ -14,9 +15,6 @@ export default class SelectProjectCenter extends React.Component {
     return (
       <div className="Rate-left-container">
         <Menu
-          onClick={({ item, key, keyPath }) => { 
-            this.props.history.push("/project/:" + key)
-          }}
           mode='vertical'
           theme='dark'
           style={{
@@ -42,11 +40,20 @@ export default class SelectProjectCenter extends React.Component {
           {projects['projects'].map((project) => {
             return (
               <Menu.Item key={project['projectName']} style={{
-                height: '10%',
-                display: 'flex',
-                justifyContent: 'flex-start',
-                padding: 15
-              }}>
+                  height: '10%',
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  padding: 15
+                }}
+                onClick={() => {
+                  let dueDate = moment(project['dueDate'], 'MM-DD-YYYY, hh:mm:ss a');
+                  if(moment().isBefore(dueDate)) {
+                    this.props.history.push("/project/:" + project['projectName'])
+                  } else {
+                    this.props.history.push("/dashboard/:" + project['projectName'])
+                  }
+                }}
+              >
                 <div style={{
                   display: 'flex',
                   justifyContent: 'center',
@@ -56,7 +63,7 @@ export default class SelectProjectCenter extends React.Component {
                   marginLeft: 12
                 }} />
                 </div>
-    
+
                 <div style={{
                   display: 'flex',
                   justifyContent: 'center',
@@ -70,10 +77,9 @@ export default class SelectProjectCenter extends React.Component {
               </Menu.Item>
             )
           })}
-          
+
         </Menu>
       </div>
     )
   }
 }
-
