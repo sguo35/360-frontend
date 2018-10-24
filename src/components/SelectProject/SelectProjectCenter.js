@@ -15,7 +15,7 @@ export default class SelectProjectCenter extends React.Component {
       <div className="Rate-left-container">
         <Menu
           onClick={({ item, key, keyPath }) => { 
-            window.location.href = serverUrl + "/project/:" + key
+            this.props.history.push("/project/:" + key)
           }}
           mode='vertical'
           theme='dark'

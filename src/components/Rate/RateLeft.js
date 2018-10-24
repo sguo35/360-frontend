@@ -3,12 +3,13 @@ import { Menu, Icon, Button, Tag } from 'antd';
 
 import { connect } from 'react-redux';
 
-const testNames = [0, 'Matt Halloc', 'Kelly Han', 'Jaiveer Singh', 'Alexander Manes']
+const projects = require("../../projects.json")
 
 export default
   connect((state) => {
     return {
-      studentIndex: state.pane.studentIndex
+      studentIndex: state.pane.studentIndex,
+      email: state.info ? (state.info.emails ? state.emails[0].value : undefined) : undefined
     }
   }, (dispatch) => {
     return {
@@ -97,7 +98,10 @@ export default
                       <p style={{
                         margin: 20,
                         marginTop: 15
-                      }}>Matt Hallac</p>
+                      }}>{projects['projects']
+                      .filter((project) => project['projectName'] === this.props.match.params.projectId)
+                      [0]['teams'].filter((team) => team.memberEmails.includes(this.props.email))
+                      [0]['memberNames'][i - 1]}</p>
                     </div>
                   </Menu.Item>)
                 }
@@ -127,7 +131,10 @@ export default
                       <p style={{
                         margin: 20,
                         marginTop: 15
-                      }}>{testNames[i]}</p>
+                      }}>{projects['projects']
+                      .filter((project) => project['projectName'] === this.props.match.params.projectId)
+                      [0]['teams'].filter((team) => team.memberEmails.includes(this.props.email))
+                      [0]['memberNames'][i - 1]}</p>
                     </div>
                     {!this.state.unlocked[i] ? (<div style={{
                       display: 'flex',
