@@ -66,7 +66,7 @@ class PromptFillIn extends Component {
             if (this.spanRef.current.textContent === this.props.placeholder) {
               this.spanRef.current.textContent = ''
             }
-            
+
             this.setState({
               value: this.state.value !== this.props.placeholder ? this.state.value : ''
             })
@@ -82,11 +82,11 @@ class PromptFillIn extends Component {
           ref={this.spanRef}
           html={this.props.placeholder}
           tagName="span"
-          style={{
+          style={{ //TODO Check that this code actually makes sense - I made some edits
             color: this.state.value ? 'grey' : 'rgb(200, 200, 200)',
-            display: this.state.value === '' ? 'inline' : 'inline-block',
+            display: this.state.value === '' ? 'inline-block' : 'inline',
             textDecoration: 'underline',
-            minWidth: this.state.value === '' ? 100 : 0
+            minWidth: 100
           }}
         >
         {""}
