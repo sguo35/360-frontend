@@ -17,7 +17,7 @@ export default class RateRight extends React.Component {
         <div className="Rate-right-container" style={{
           padding: 10
         }}>
-          <EditPane />
+          <EditPane match={this.props.match} />
           <SelectPanel />
         </div>
       </DragDropContext>

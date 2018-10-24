@@ -10,7 +10,7 @@ export default class Rate extends React.Component {
     return (
       <div className="Rate-parent-container">
           <RateLeft match={this.props.match} />
-          <RateRight/>
+          <RateRight match={this.props.match}/>
       </div>
     );
   }
