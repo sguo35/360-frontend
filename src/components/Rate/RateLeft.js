@@ -86,7 +86,7 @@ export default
                     display: 'flex',
                     justifyContent: 'flex-start',
                     padding: 15
-                  }} disabled={!(this.state.unlocked[i] || (i == 1 || (arr.length == 0 && i == 2)))}>
+                  }} >
                     <div style={{
                       display: 'flex',
                       justifyContent: 'center',
@@ -107,14 +107,6 @@ export default
                         marginTop: 15
                       }}>{team[0]['memberNames'][i - 1]}</p>
                     </div>
-                    {!(this.state.unlocked[i] || (i == 1 || (arr.length == 0 && i == 2))) ? (<div style={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      flexDirection: 'column',
-                      marginLeft: 'auto'
-                    }}>
-                      <Icon style={{margin : 0}} type='lock' />
-                    </div>) : null}
                   </Menu.Item>)
                 }
                 return arr
