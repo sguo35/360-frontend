@@ -167,7 +167,7 @@ export default
           .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
 
-        if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+        if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length) {
           this._submit();
           await fetch(`${serverUrl}/submitProjectGrade`, {
             method: "POST",
@@ -256,7 +256,7 @@ export default
         if (this.state.prompts.length < 2) {
           type = 'disabled';
           icon = 'close';
-        } else if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length - 1) {
+        } else if (this.props.questionIndex == 2 && this.props.studentIndex == this.state.students.length) {
           icon = '';
           text = 'Submit';
           style['backgroundColor'] = '#52c41a';
