@@ -648,7 +648,7 @@
     {
       "id": "promptL6",
       "ovalTemplate": "oval4",
-      "shortForm": "Doesn’t inspire or detract teammates",
+      "shortForm": "Does not usually inspire teammates",
       "elements": [
         {
           "type": "gradedName",
