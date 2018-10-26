@@ -835,7 +835,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "downplayed others' contributions",
+          "placeholder": "downplayed the contributions of others",
           "value": ""
         },
         {
@@ -1168,7 +1168,7 @@
         },
         {
           "type": "fillIn",
-          "placeholder": "the team has to support a member who won't pull their own weight",
+          "placeholder": "the team has to support a member who will not pull their own weight",
           "value": ""
         },
         {
@@ -1180,7 +1180,7 @@
     {
       "id": "promptE10",
       "ovalTemplate": "oval8",
-      "shortForm": "Couldn't be reached",
+      "shortForm": "Could not be reached",
       "elements": [
         {
           "type": "gradedName",
