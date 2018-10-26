@@ -56,7 +56,7 @@ export default
             if (this.state.startedEditing) {
               nextElement = <span className="prompt-element prompt-element__name" {...opts}>{this.props.gradedName}</span>;
             } else {
-              nextElement = <span className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
+              nextElement = <span style={{ color: this.props.prompt.level === 3 ? '#52c41a' : (this.props.prompt.level === 2 ? '#faad14' : '#f5222d') }} className="prompt-element prompt-element__name prompt-element__name-placeholder" {...opts}>{element.placeholder}</span>;
             }
             break;
           case 'fillIn':
