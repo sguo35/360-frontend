@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.10.1",
+    "google-spreadsheet": "^2.0.6",
     "gramophone": "^0.0.3",
     "lodash": "^4.17.11",
     "react": "^16.5.2",
@@ -20,6 +21,7 @@
     "react-wordcloud": "https://github.com/chrisrzhou/react-wordcloud.git",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
+    "request": "^2.88.0",
     "throttle-debounce": "^2.0.1",
     "uuid": "^3.3.2"
   },
