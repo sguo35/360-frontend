@@ -3,7 +3,7 @@
       {
         "projectName": "360",
         "icon":"sync",
-        "dueDate": "10-28-2018, 11:59:59 PM",
+        "dueDate": "11-04-2018, 11:59:59 PM",
         "teams": [
           {
             "memberNames": [
@@ -44,7 +44,7 @@
               "Dev Ojha",
               "Michael McNabb",
               "Birkaran Sachdev"
-            ],          
+            ],
             "memberEmails": [
               "nhudait@berkeley.edu",
               "nishikaza@berkeley.edu",
@@ -194,7 +194,7 @@
       {
         "projectName": "Attendy",
         "icon": "usergroup-add",
-        "dueDate": "10-28-2018, 11:59:59 PM",
+        "dueDate": "11-04-2018, 11:59:59 PM",
         "teams": [
           {
             "memberNames": [
@@ -235,7 +235,7 @@
               "Dev Ojha",
               "Michael McNabb",
               "Birkaran Sachdev"
-            ],       
+            ],
             "memberEmails": [
               "julius.vering@berkeley.edu",
               "nishikaza@berkeley.edu",
@@ -384,7 +384,7 @@
       },{
         "projectName": "Icebreakers",
         "icon":"folder-open",
-        "dueDate": "10-28-2018, 11:59:59 PM",
+        "dueDate": "11-04-2018, 11:59:59 PM",
         "teams": [
           {
             "memberNames": [
@@ -425,7 +425,7 @@
               "Dev Ojha",
               "Michael McNabb",
               "Birkaran Sachdev"
-            ],       
+            ],
             "memberEmails": [
               "julius.vering@berkeley.edu",
               "nishikaza@berkeley.edu",
@@ -574,5 +574,3 @@
       }
   ]
 }
-
-
