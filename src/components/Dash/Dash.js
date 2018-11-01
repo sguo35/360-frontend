@@ -9,8 +9,8 @@ export default class Dash extends React.Component {
   render = () => {
     return (
       <div className="Dash-parent-container">
-          <DashLeft />
-          <DashRight/>
+          <DashLeft match={this.props.match}/>
+          <DashRight match={this.props.match}/>
       </div>
     );
   }
