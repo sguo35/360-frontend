@@ -1,535 +1,535 @@
 {
   "projects": [
-      {
-        "projectName": "360",
-        "icon":"sync",
-        "dueDate": "10-28-2018, 11:59:59 PM",
-        "teams": [
-          {
-            "memberNames": [
-              "Michael Trehan",
-              "Nikhil Mandava",
-              "Prangan Tooteja",
-              "Jahnvi Doshi",
-              "Diego Gonzalez"
-            ],
-            "memberEmails": [
-              "michael.trehan@berkeley.edu",
-              "nikmandava@berkeley.edu",
-              "prangan.tooteja@berkeley.edu",
-              "jahnvidoshi@berkeley.edu",
-              "d_gonzalez@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Matthew Hallac",
-              "Jaiveer Singh",
-              "Jeff Guo",
-              "Kelly Han",
-              "Alexander Manes"
-            ],
-            "memberEmails": [
-              "matthew.hallac@berkeley.edu",
-              "j.singh@berkeley.edu",
-              "shiyuan.guo@berkeley.edu",
-              "kelly_han@berkeley.edu",
-              "alexander.manes@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Neha Hudait",
-              "Nishi Kaza",
-              "Dev Ojha",
-              "Michael McNabb",
-              "Birkaran Sachdev"
-            ],          
-            "memberEmails": [
-              "nhudait@berkeley.edu",
-              "nishikaza@berkeley.edu",
-              "dev.ojha@berkeley.edu",
-              "michael.mcnabb@berkeley.edu",
-              "birkaransachdev@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Isabelle Zhou",
-              "Richard Liu",
-              "Andrew Kirillov",
-              "Harish Palani"
-            ],
-            "memberEmails": [
-              "isabellezhou@berkeley.edu",
-              "richard.y.liu@berkeley.edu",
-              "akirillo@berkeley.edu",
-              "harishpalani@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ashvin Dhawan",
-              "Aadhrik Kuila",
-              "Manav Rathod",
-              "Vincent Wang"
-            ],
-            "memberEmails": [
-              "ashvindhawan@berkeley.edu",
-              "aadhrik.kuila@berkeley.edu",
-              "manav.rathod@berkeley.edu",
-              "v.wang@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Austin Sun",
-              "Ethan Mehta",
-              "Elliot Larson",
-              "Hannah Vinh",
-              "Ryan Chen"
-            ],
-            "memberEmails": [
-              "austin.jsun@berkeley.edu",
-              "ethanbmehta@berkeley.edu",
-              "elliot.larson@berkeley.edu",
-              "hvinh@berkeley.edu",
-              "ryanwchen@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Julius Vering",
-              "Amy Guo",
-              "Rimika Banerjee",
-              "Sravya Basvapatri"
-            ],
-            "memberEmails": [
-              "julius.vering@berkeley.edu",
-              "amyguo@berkeley.edu",
-              "rimikabanerjee@berkeley.edu",
-              "sravyab@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ayush Jain",
-              "Daniel Jing",
-              "Erel Saul",
-              "Kai Chorazewicz",
-              "Rishma Murugan"
-            ],
-            "memberEmails": [
-              "ayush.jain@berkeley.edu",
-              "daniel.jing@berkeley.edu",
-              "erelsaul@berkeley.edu",
-              "k.chorazewicz@berkeley.edu",
-              "rishma.murugan@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Anika Ramachandran",
-              "Sean Lin",
-              "Alara Guler",
-              "Quin Etnyre",
-              "Deven Navani"
-            ],
-            "memberEmails": [
-              "anikar@berkeley.edu",
-              "seanlin2000@berkeley.edu",
-              "alara.guler@berkeley.edu",
-              "quinetnyre@berkeley.edu",
-              "dnavani@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Luofei Chen",
-              "Francis Indaheng",
-              "Chelsea Lo",
-              "Vikram Shirsat",
-              "David Shau"
-            ],
-            "memberEmails": [
-              "chenluofei@berkeley.edu",
-              "findaheng@berkeley.edu",
-              "chelsealo@berkeley.edu",
-              "vshirsat@berkeley.edu",
-              "davidshau22@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Charlie Faramarzi",
-              "Chai Goyal",
-              "Rahul Hayaran",
-              "Neha Nagabothu",
-              "Alfonso Aguirre"
-            ],
-            "memberEmails": [
-              "charlie.faramarzi@berkeley.edu",
-              "chaigoyal@berkeley.edu",
-              "rahul.hayaran@berkeley.edu",
-              "neha.nagabothu@berkeley.edu",
-              "alfonso47@berkeley.edu"
-            ]
-          }
-        ]
-      },
-      {
-        "projectName": "Attendy",
-        "icon": "usergroup-add",
-        "dueDate": "10-28-2018, 11:59:59 PM",
-        "teams": [
-          {
-            "memberNames": [
-              "Nikhil Mandava",
-              "Prangan Tooteja",
-              "Jahnvi Doshi",
-              "Diego Gonzalez",
-              "Quin Etnyre"
-            ],
-            "memberEmails": [
-              "nikmandava@berkeley.edu",
-              "prangan.tooteja@berkeley.edu",
-              "jahnvidoshi@berkeley.edu",
-              "d_gonzalez@berkeley.edu",
-              "quinetnyre@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Jaiveer Singh",
-              "Jeff Guo",
-              "Kelly Han",
-              "Alexander Manes",
-              "Andrew Kirillov"
-            ],
-            "memberEmails": [
-              "j.singh@berkeley.edu",
-              "shiyuan.guo@berkeley.edu",
-              "kelly_han@berkeley.edu",
-              "alexander.manes@berkeley.edu",
-              "akirillo@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Julius Vering",
-              "Nishi Kaza",
-              "Dev Ojha",
-              "Michael McNabb",
-              "Birkaran Sachdev"
-            ],       
-            "memberEmails": [
-              "julius.vering@berkeley.edu",
-              "nishikaza@berkeley.edu",
-              "dev.ojha@berkeley.edu",
-              "michael.mcnabb@berkeley.edu",
-              "birkaransachdev@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Deven Navani",
-              "Isabelle Zhou",
-              "Richard Liu",
-              "Harish Palani",
-              "David Shau"
-            ],
-            "memberEmails": [
-              "dnavani@berkeley.edu",
-              "isabellezhou@berkeley.edu",
-              "richard.y.liu@berkeley.edu",
-              "harishpalani@berkeley.edu",
-              "davidshau22@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ashvin Dhawan",
-              "Aadhrik Kuila",
-              "Vincent Wang",
-              "Vikram Shirsat",
-              "Austin Sun"
-            ],
-            "memberEmails": [
-              "ashvindhawan@berkeley.edu",
-              "aadhrik.kuila@berkeley.edu",
-              "v.wang@berkeley.edu",
-              "vshirsat@berkeley.edu",
-              "austin.jsun@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ethan Mehta",
-              "Elliot Larson",
-              "Hannah Vinh",
-              "Ryan Chen",
-              "Austin Sun"
-            ],
-            "memberEmails": [
-              "ethanbmehta@berkeley.edu",
-              "elliot.larson@berkeley.edu",
-              "hvinh@berkeley.edu",
-              "ryanwchen@berkeley.edu",
-              "austin.jsun@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Neha Hudait",
-              "Amy Guo",
-              "Rimika Banerjee",
-              "Sravya Basvapatri",
-              "Manav Rathod"
-            ],
-            "memberEmails": [
-              "nhudait@berkeley.edu",
-              "amyguo@berkeley.edu",
-              "rimikabanerjee@berkeley.edu",
-              "sravyab@berkeley.edu",
-              "manav.rathod@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ayush Jain",
-              "Daniel Jing",
-              "Erel Saul",
-              "Kai Chorazewicz",
-              "Neha Nagabothu"
-            ],
-            "memberEmails": [
-              "ayush.jain@berkeley.edu",
-              "daniel.jing@berkeley.edu",
-              "erelsaul@berkeley.edu",
-              "k.chorazewicz@berkeley.edu",
-              "neha.nagabothu@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Anika Ramachandran",
-              "Sean Lin",
-              "Alara Guler",
-              "Rishma Murugan"
-            ],
-            "memberEmails": [
-              "anikar@berkeley.edu",
-              "seanlin2000@berkeley.edu",
-              "alara.guler@berkeley.edu",
-              "rishma.murugan@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Luofei Chen",
-              "Francis Indaheng",
-              "Chelsea Lo",
-              "Michael Trehan"
-            ],
-            "memberEmails": [
-              "chenluofei@berkeley.edu",
-              "findaheng@berkeley.edu",
-              "chelsealo@berkeley.edu",
-              "michael.trehan@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Matthew Hallac",
-              "Charlie Faramarzi",
-              "Chai Goyal",
-              "Rahul Hayaran"
-            ],
-            "memberEmails": [
-              "matthew.hallac@berkeley.edu",
-              "charlie.faramarzi@berkeley.edu",
-              "chaigoyal@berkeley.edu",
-              "rahul.hayaran@berkeley.edu"
-            ]
-          }
-        ]
-      },{
-        "projectName": "Icebreakers",
-        "icon":"folder-open",
-        "dueDate": "10-28-2018, 11:59:59 PM",
-        "teams": [
-          {
-            "memberNames": [
-              "Nikhil Mandava",
-              "Prangan Tooteja",
-              "Jahnvi Doshi",
-              "Diego Gonzalez",
-              "Quin Etnyre"
-            ],
-            "memberEmails": [
-              "nikmandava@berkeley.edu",
-              "prangan.tooteja@berkeley.edu",
-              "jahnvidoshi@berkeley.edu",
-              "d_gonzalez@berkeley.edu",
-              "quinetnyre@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Jaiveer Singh",
-              "Jeff Guo",
-              "Kelly Han",
-              "Alexander Manes",
-              "Andrew Kirillov"
-            ],
-            "memberEmails": [
-              "j.singh@berkeley.edu",
-              "shiyuan.guo@berkeley.edu",
-              "kelly_han@berkeley.edu",
-              "alexander.manes@berkeley.edu",
-              "akirillo@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Julius Vering",
-              "Nishi Kaza",
-              "Dev Ojha",
-              "Michael McNabb",
-              "Birkaran Sachdev"
-            ],       
-            "memberEmails": [
-              "julius.vering@berkeley.edu",
-              "nishikaza@berkeley.edu",
-              "dev.ojha@berkeley.edu",
-              "michael.mcnabb@berkeley.edu",
-              "birkaransachdev@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Deven Navani",
-              "Isabelle Zhou",
-              "Richard Liu",
-              "Harish Palani",
-              "David Shau"
-            ],
-            "memberEmails": [
-              "dnavani@berkeley.edu",
-              "isabellezhou@berkeley.edu",
-              "richard.y.liu@berkeley.edu",
-              "harishpalani@berkeley.edu",
-              "davidshau22@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ashvin Dhawan",
-              "Aadhrik Kuila",
-              "Vincent Wang",
-              "Vikram Shirsat",
-              "Austin Sun"
-            ],
-            "memberEmails": [
-              "ashvindhawan@berkeley.edu",
-              "aadhrik.kuila@berkeley.edu",
-              "v.wang@berkeley.edu",
-              "vshirsat@berkeley.edu",
-              "austin.jsun@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ethan Mehta",
-              "Elliot Larson",
-              "Hannah Vinh",
-              "Ryan Chen",
-              "Austin Sun"
-            ],
-            "memberEmails": [
-              "ethanbmehta@berkeley.edu",
-              "elliot.larson@berkeley.edu",
-              "hvinh@berkeley.edu",
-              "ryanwchen@berkeley.edu",
-              "austin.jsun@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Neha Hudait",
-              "Amy Guo",
-              "Rimika Banerjee",
-              "Sravya Basvapatri",
-              "Manav Rathod"
-            ],
-            "memberEmails": [
-              "nhudait@berkeley.edu",
-              "amyguo@berkeley.edu",
-              "rimikabanerjee@berkeley.edu",
-              "sravyab@berkeley.edu",
-              "manav.rathod@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Ayush Jain",
-              "Daniel Jing",
-              "Erel Saul",
-              "Kai Chorazewicz",
-              "Neha Nagabothu"
-            ],
-            "memberEmails": [
-              "ayush.jain@berkeley.edu",
-              "daniel.jing@berkeley.edu",
-              "erelsaul@berkeley.edu",
-              "k.chorazewicz@berkeley.edu",
-              "neha.nagabothu@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Anika Ramachandran",
-              "Sean Lin",
-              "Alara Guler",
-              "Rishma Murugan"
-            ],
-            "memberEmails": [
-              "anikar@berkeley.edu",
-              "seanlin2000@berkeley.edu",
-              "alara.guler@berkeley.edu",
-              "rishma.murugan@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Luofei Chen",
-              "Francis Indaheng",
-              "Chelsea Lo",
-              "Michael Trehan"
-            ],
-            "memberEmails": [
-              "chenluofei@berkeley.edu",
-              "findaheng@berkeley.edu",
-              "chelsealo@berkeley.edu",
-              "michael.trehan@berkeley.edu"
-            ]
-          },
-          {
-            "memberNames": [
-              "Matthew Hallac",
-              "Charlie Faramarzi",
-              "Chai Goyal",
-              "Rahul Hayaran"
-            ],
-            "memberEmails": [
-              "matthew.hallac@berkeley.edu",
-              "charlie.faramarzi@berkeley.edu",
-              "chaigoyal@berkeley.edu",
-              "rahul.hayaran@berkeley.edu"
-            ]
-          }
-        ]
-      }
+    {
+      "projectName": "Icebreakers",
+      "icon": "folder-open",
+      "dueDate": "10-28-2018, 11:59:59 PM",
+      "teams": [
+        {
+          "memberNames": [
+            "Nikhil Mandava",
+            "Prangan Tooteja",
+            "Jahnvi Doshi",
+            "Diego Gonzalez",
+            "Quin Etnyre"
+          ],
+          "memberEmails": [
+            "nikmandava@berkeley.edu",
+            "prangan.tooteja@berkeley.edu",
+            "jahnvidoshi@berkeley.edu",
+            "d_gonzalez@berkeley.edu",
+            "quinetnyre@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Jaiveer Singh",
+            "Jeff Guo",
+            "Kelly Han",
+            "Alexander Manes",
+            "Andrew Kirillov"
+          ],
+          "memberEmails": [
+            "j.singh@berkeley.edu",
+            "shiyuan.guo@berkeley.edu",
+            "kelly_han@berkeley.edu",
+            "alexander.manes@berkeley.edu",
+            "akirillo@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Julius Vering",
+            "Nishi Kaza",
+            "Dev Ojha",
+            "Michael McNabb",
+            "Birkaran Sachdev"
+          ],
+          "memberEmails": [
+            "julius.vering@berkeley.edu",
+            "nishikaza@berkeley.edu",
+            "dev.ojha@berkeley.edu",
+            "michael.mcnabb@berkeley.edu",
+            "birkaransachdev@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Deven Navani",
+            "Isabelle Zhou",
+            "Richard Liu",
+            "Harish Palani",
+            "David Shau"
+          ],
+          "memberEmails": [
+            "dnavani@berkeley.edu",
+            "isabellezhou@berkeley.edu",
+            "richard.y.liu@berkeley.edu",
+            "harishpalani@berkeley.edu",
+            "davidshau22@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ashvin Dhawan",
+            "Aadhrik Kuila",
+            "Vincent Wang",
+            "Vikram Shirsat",
+            "Austin Sun"
+          ],
+          "memberEmails": [
+            "ashvindhawan@berkeley.edu",
+            "aadhrik.kuila@berkeley.edu",
+            "v.wang@berkeley.edu",
+            "vshirsat@berkeley.edu",
+            "austin.jsun@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ethan Mehta",
+            "Elliot Larson",
+            "Hannah Vinh",
+            "Ryan Chen",
+            "Austin Sun"
+          ],
+          "memberEmails": [
+            "ethanbmehta@berkeley.edu",
+            "elliot.larson@berkeley.edu",
+            "hvinh@berkeley.edu",
+            "ryanwchen@berkeley.edu",
+            "austin.jsun@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Neha Hudait",
+            "Amy Guo",
+            "Rimika Banerjee",
+            "Sravya Basvapatri",
+            "Manav Rathod"
+          ],
+          "memberEmails": [
+            "nhudait@berkeley.edu",
+            "amyguo@berkeley.edu",
+            "rimikabanerjee@berkeley.edu",
+            "sravyab@berkeley.edu",
+            "manav.rathod@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ayush Jain",
+            "Daniel Jing",
+            "Erel Saul",
+            "Kai Chorazewicz",
+            "Neha Nagabothu"
+          ],
+          "memberEmails": [
+            "ayush.jain@berkeley.edu",
+            "daniel.jing@berkeley.edu",
+            "erelsaul@berkeley.edu",
+            "k.chorazewicz@berkeley.edu",
+            "neha.nagabothu@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Anika Ramachandran",
+            "Sean Lin",
+            "Alara Guler",
+            "Rishma Murugan"
+          ],
+          "memberEmails": [
+            "anikar@berkeley.edu",
+            "seanlin2000@berkeley.edu",
+            "alara.guler@berkeley.edu",
+            "rishma.murugan@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Luofei Chen",
+            "Francis Indaheng",
+            "Chelsea Lo",
+            "Michael Trehan"
+          ],
+          "memberEmails": [
+            "chenluofei@berkeley.edu",
+            "findaheng@berkeley.edu",
+            "chelsealo@berkeley.edu",
+            "michael.trehan@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Matthew Hallac",
+            "Charlie Faramarzi",
+            "Chai Goyal",
+            "Rahul Hayaran"
+          ],
+          "memberEmails": [
+            "matthew.hallac@berkeley.edu",
+            "charlie.faramarzi@berkeley.edu",
+            "chaigoyal@berkeley.edu",
+            "rahul.hayaran@berkeley.edu"
+          ]
+        }
+      ]
+    },
+    {
+      "projectName": "360",
+      "icon": "sync",
+      "dueDate": "10-28-2018, 11:59:59 PM",
+      "teams": [
+        {
+          "memberNames": [
+            "Michael Trehan",
+            "Nikhil Mandava",
+            "Prangan Tooteja",
+            "Jahnvi Doshi",
+            "Diego Gonzalez"
+          ],
+          "memberEmails": [
+            "michael.trehan@berkeley.edu",
+            "nikmandava@berkeley.edu",
+            "prangan.tooteja@berkeley.edu",
+            "jahnvidoshi@berkeley.edu",
+            "d_gonzalez@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Matthew Hallac",
+            "Jaiveer Singh",
+            "Jeff Guo",
+            "Kelly Han",
+            "Alexander Manes"
+          ],
+          "memberEmails": [
+            "matthew.hallac@berkeley.edu",
+            "j.singh@berkeley.edu",
+            "shiyuan.guo@berkeley.edu",
+            "kelly_han@berkeley.edu",
+            "alexander.manes@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Neha Hudait",
+            "Nishi Kaza",
+            "Dev Ojha",
+            "Michael McNabb",
+            "Birkaran Sachdev"
+          ],
+          "memberEmails": [
+            "nhudait@berkeley.edu",
+            "nishikaza@berkeley.edu",
+            "dev.ojha@berkeley.edu",
+            "michael.mcnabb@berkeley.edu",
+            "birkaransachdev@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Isabelle Zhou",
+            "Richard Liu",
+            "Andrew Kirillov",
+            "Harish Palani"
+          ],
+          "memberEmails": [
+            "isabellezhou@berkeley.edu",
+            "richard.y.liu@berkeley.edu",
+            "akirillo@berkeley.edu",
+            "harishpalani@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ashvin Dhawan",
+            "Aadhrik Kuila",
+            "Manav Rathod",
+            "Vincent Wang"
+          ],
+          "memberEmails": [
+            "ashvindhawan@berkeley.edu",
+            "aadhrik.kuila@berkeley.edu",
+            "manav.rathod@berkeley.edu",
+            "v.wang@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Austin Sun",
+            "Ethan Mehta",
+            "Elliot Larson",
+            "Hannah Vinh",
+            "Ryan Chen"
+          ],
+          "memberEmails": [
+            "austin.jsun@berkeley.edu",
+            "ethanbmehta@berkeley.edu",
+            "elliot.larson@berkeley.edu",
+            "hvinh@berkeley.edu",
+            "ryanwchen@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Julius Vering",
+            "Amy Guo",
+            "Rimika Banerjee",
+            "Sravya Basvapatri"
+          ],
+          "memberEmails": [
+            "julius.vering@berkeley.edu",
+            "amyguo@berkeley.edu",
+            "rimikabanerjee@berkeley.edu",
+            "sravyab@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ayush Jain",
+            "Daniel Jing",
+            "Erel Saul",
+            "Kai Chorazewicz",
+            "Rishma Murugan"
+          ],
+          "memberEmails": [
+            "ayush.jain@berkeley.edu",
+            "daniel.jing@berkeley.edu",
+            "erelsaul@berkeley.edu",
+            "k.chorazewicz@berkeley.edu",
+            "rishma.murugan@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Anika Ramachandran",
+            "Sean Lin",
+            "Alara Guler",
+            "Quin Etnyre",
+            "Deven Navani"
+          ],
+          "memberEmails": [
+            "anikar@berkeley.edu",
+            "seanlin2000@berkeley.edu",
+            "alara.guler@berkeley.edu",
+            "quinetnyre@berkeley.edu",
+            "dnavani@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Luofei Chen",
+            "Francis Indaheng",
+            "Chelsea Lo",
+            "Vikram Shirsat",
+            "David Shau"
+          ],
+          "memberEmails": [
+            "chenluofei@berkeley.edu",
+            "findaheng@berkeley.edu",
+            "chelsealo@berkeley.edu",
+            "vshirsat@berkeley.edu",
+            "davidshau22@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Charlie Faramarzi",
+            "Chai Goyal",
+            "Rahul Hayaran",
+            "Neha Nagabothu",
+            "Alfonso Aguirre"
+          ],
+          "memberEmails": [
+            "charlie.faramarzi@berkeley.edu",
+            "chaigoyal@berkeley.edu",
+            "rahul.hayaran@berkeley.edu",
+            "neha.nagabothu@berkeley.edu",
+            "alfonso47@berkeley.edu"
+          ]
+        }
+      ]
+    },
+    {
+      "projectName": "Attendy",
+      "icon": "usergroup-add",
+      "dueDate": "10-28-2018, 11:59:59 PM",
+      "teams": [
+        {
+          "memberNames": [
+            "Nikhil Mandava",
+            "Prangan Tooteja",
+            "Jahnvi Doshi",
+            "Diego Gonzalez",
+            "Quin Etnyre"
+          ],
+          "memberEmails": [
+            "nikmandava@berkeley.edu",
+            "prangan.tooteja@berkeley.edu",
+            "jahnvidoshi@berkeley.edu",
+            "d_gonzalez@berkeley.edu",
+            "quinetnyre@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Jaiveer Singh",
+            "Jeff Guo",
+            "Kelly Han",
+            "Alexander Manes",
+            "Andrew Kirillov"
+          ],
+          "memberEmails": [
+            "j.singh@berkeley.edu",
+            "shiyuan.guo@berkeley.edu",
+            "kelly_han@berkeley.edu",
+            "alexander.manes@berkeley.edu",
+            "akirillo@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Julius Vering",
+            "Nishi Kaza",
+            "Dev Ojha",
+            "Michael McNabb",
+            "Birkaran Sachdev"
+          ],
+          "memberEmails": [
+            "julius.vering@berkeley.edu",
+            "nishikaza@berkeley.edu",
+            "dev.ojha@berkeley.edu",
+            "michael.mcnabb@berkeley.edu",
+            "birkaransachdev@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Deven Navani",
+            "Isabelle Zhou",
+            "Richard Liu",
+            "Harish Palani",
+            "David Shau"
+          ],
+          "memberEmails": [
+            "dnavani@berkeley.edu",
+            "isabellezhou@berkeley.edu",
+            "richard.y.liu@berkeley.edu",
+            "harishpalani@berkeley.edu",
+            "davidshau22@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ashvin Dhawan",
+            "Aadhrik Kuila",
+            "Vincent Wang",
+            "Vikram Shirsat",
+            "Austin Sun"
+          ],
+          "memberEmails": [
+            "ashvindhawan@berkeley.edu",
+            "aadhrik.kuila@berkeley.edu",
+            "v.wang@berkeley.edu",
+            "vshirsat@berkeley.edu",
+            "austin.jsun@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ethan Mehta",
+            "Elliot Larson",
+            "Hannah Vinh",
+            "Ryan Chen",
+            "Austin Sun"
+          ],
+          "memberEmails": [
+            "ethanbmehta@berkeley.edu",
+            "elliot.larson@berkeley.edu",
+            "hvinh@berkeley.edu",
+            "ryanwchen@berkeley.edu",
+            "austin.jsun@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Neha Hudait",
+            "Amy Guo",
+            "Rimika Banerjee",
+            "Sravya Basvapatri",
+            "Manav Rathod"
+          ],
+          "memberEmails": [
+            "nhudait@berkeley.edu",
+            "amyguo@berkeley.edu",
+            "rimikabanerjee@berkeley.edu",
+            "sravyab@berkeley.edu",
+            "manav.rathod@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Ayush Jain",
+            "Daniel Jing",
+            "Erel Saul",
+            "Kai Chorazewicz",
+            "Neha Nagabothu"
+          ],
+          "memberEmails": [
+            "ayush.jain@berkeley.edu",
+            "daniel.jing@berkeley.edu",
+            "erelsaul@berkeley.edu",
+            "k.chorazewicz@berkeley.edu",
+            "neha.nagabothu@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Anika Ramachandran",
+            "Sean Lin",
+            "Alara Guler",
+            "Rishma Murugan"
+          ],
+          "memberEmails": [
+            "anikar@berkeley.edu",
+            "seanlin2000@berkeley.edu",
+            "alara.guler@berkeley.edu",
+            "rishma.murugan@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Luofei Chen",
+            "Francis Indaheng",
+            "Chelsea Lo",
+            "Michael Trehan"
+          ],
+          "memberEmails": [
+            "chenluofei@berkeley.edu",
+            "findaheng@berkeley.edu",
+            "chelsealo@berkeley.edu",
+            "michael.trehan@berkeley.edu"
+          ]
+        },
+        {
+          "memberNames": [
+            "Matthew Hallac",
+            "Charlie Faramarzi",
+            "Chai Goyal",
+            "Rahul Hayaran"
+          ],
+          "memberEmails": [
+            "matthew.hallac@berkeley.edu",
+            "charlie.faramarzi@berkeley.edu",
+            "chaigoyal@berkeley.edu",
+            "rahul.hayaran@berkeley.edu"
+          ]
+        }
+      ]
+    }
   ]
 }
-
