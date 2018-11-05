@@ -388,7 +388,7 @@ export default
 
       renderTopButton = () => {
         let type = 'primary', icon = 'up', text = '';
-        if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
+        if (this.props.questionIndex == 0 && (this.props.studentIndex == 0 || this.props.firstBugCatch) {
           icon = 'close';
           type = 'disabled';
         } else if (this.props.questionIndex == 0) {
