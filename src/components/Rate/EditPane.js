@@ -424,7 +424,7 @@ export default
       render = () => {
         console.log(JSON.stringify(this.state.promptResponses))
         return (
-          <div onWheel={this.debounceEventHandler(this.handleWheel, 750, { leading: true })} className="Rate-edit-pane">
+          <div className="Rate-edit-pane">
             <div style={{
               display: 'flex',
               flexDirection: 'column',
