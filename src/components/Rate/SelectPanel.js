@@ -8,7 +8,7 @@ import Brief from "./Brief";
 
 import { connect } from 'react-redux';
 
-const prmpts = require('../../prompts.json')
+import { prompts as prmpts } from '../Rate/RateLeft';
 const promptTemplateLookup = {}
 
 for (let element of prmpts.ovalTemplates) {
