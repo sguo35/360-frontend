@@ -4,7 +4,7 @@ import { Menu, Icon, Button, Tag } from 'antd';
 import { connect } from 'react-redux';
 import { serverUrl } from '../../constants';
 
-const projects = require("../../projects.json")
+var projects = require("../../projects.json")
 
 let moment = require("moment");
 
@@ -47,8 +47,16 @@ export default
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         if (team[0]['memberEmails'][this.props.studentIndex] === this.props.email){
           if(this.props.studentIndex === 0 || this.props.studentIndex === team[0]['memberEmails'].length - 1) {
-            [team[0]['memberEmails'][this.props.studentIndex], team[0]['memberEmails'][1]] =
-            [team[0]['memberEmails'][1], team[0]['memberEmails'][this.props.studentIndex]];
+            [projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][this.props.studentIndex], projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][1]] =
+            [projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][1], projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][this.props.studentIndex]];
           } else {
             this.props.setStudentIndex(this.props.studentIndex + 1)
           }
