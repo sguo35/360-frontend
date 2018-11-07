@@ -445,7 +445,6 @@ export default
                 marginLeft: -10,
                 zIndex: 1
               }}>
-                {this.renderTopButton()}
               </div>
               <Card
                 style={{
