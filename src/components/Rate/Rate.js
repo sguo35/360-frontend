@@ -6,20 +6,11 @@ import RateRight from './RateRight';
 import './Rate.css';
 
 export default class Rate extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {firstBugCatch : false};
-  }
-
-  setFirstBugFlag = () => {
-    this.setState({firstBugCatch : false});
-  }
-
   render = () => {
     return (
       <div className="Rate-parent-container">
-          <RateLeft match={this.props.match} setFirstBugFlag={}/>
-          <RateRight match={this.props.match} firstBugCatch={this.state.firstBugCatch}/>
+          <RateLeft match={this.props.match} />
+          <RateRight match={this.props.match}/>
       </div>
     );
   }

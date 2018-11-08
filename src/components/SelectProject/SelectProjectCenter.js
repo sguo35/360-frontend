@@ -3,7 +3,7 @@ import { Menu, Icon, Button } from 'antd';
 
 import { serverUrl } from '../../constants';
 
-import { projects } from '../Rate/RateLeft';
+let projects = require('../../projects.json')
 let moment = require("moment");
 
 export default class SelectProjectCenter extends React.Component {

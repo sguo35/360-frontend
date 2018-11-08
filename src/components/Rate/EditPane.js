@@ -10,10 +10,10 @@ import { connect } from 'react-redux';
 import { store } from '../../redux/store';
 
 import { serverUrl } from '../../constants';
-import { projects } from '../Rate/RateLeft';
-
 
 let promptComponents = [];
+const projects = require("../../projects.json")
+
 
 export default
   connect((state) => {
@@ -389,7 +389,7 @@ export default
 
       renderTopButton = () => {
         let type = 'primary', icon = 'up', text = '';
-        if (this.props.questionIndex == 0 && (this.props.studentIndex == 0 || this.props.firstBugCatch) {
+        if (this.props.questionIndex == 0 && this.props.studentIndex == 0) {
           icon = 'close';
           type = 'disabled';
         } else if (this.props.questionIndex == 0) {

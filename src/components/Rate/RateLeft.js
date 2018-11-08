@@ -4,7 +4,7 @@ import { Menu, Icon, Button, Tag } from 'antd';
 import { connect } from 'react-redux';
 import { serverUrl } from '../../constants';
 
-export let projects = require("../../projects.json")
+const projects = require("../../projects.json")
 
 let moment = require("moment");
 
@@ -73,7 +73,7 @@ export default
             <Menu
               selectedKeys={[(this.props.studentIndex + 1).toString()]}
               onClick={({ item, key, keyPath }) => {
-
+                
               }}
               mode='vertical'
               theme='dark'
