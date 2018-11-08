@@ -42,15 +42,11 @@ export default
           })
         }
 
-        var team = projects['projects']
+        const team = projects['projects']
         .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         if (team[0]['memberEmails'][this.props.studentIndex] === this.props.email){
-          if(this.props.studentIndex === 0) {
-            this.props.setFirstBugFlag();
-          } else {
             this.props.setStudentIndex(this.props.studentIndex + 1)
-          }
         }
       }
 

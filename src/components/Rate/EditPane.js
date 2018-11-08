@@ -182,6 +182,7 @@ export default
         if (this.state.prompts.length < 2) {
           return;
         }
+        this.setState({loading:true});
 
         const team = projects['projects']
           .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
@@ -289,7 +290,7 @@ export default
           text = 'Next Student';
         }
         return (
-          <Button block type={type} style={style} icon={icon} onClick={async () => {
+          <Button block type={type} style={style} icon={icon} loading={this.state.loading} onClick={async () => {
             await this.onBottomButtonClick()
           }}>
             {text}
@@ -445,7 +446,7 @@ export default
                 marginLeft: -10,
                 zIndex: 1
               }}>
-                
+
               </div>
               <Card
                 style={{
