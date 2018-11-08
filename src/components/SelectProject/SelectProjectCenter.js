@@ -50,8 +50,7 @@ export default class SelectProjectCenter extends React.Component {
                   if(moment().isBefore(dueDate)) {
                     this.props.history.push("/project/:" + project['projectName'])
                   } else {
-                    //this.props.history.push("/dashboard/:" + project['projectName'])
-                    this.props.history.push("/processing")
+                    this.props.history.push("/dashboard/:" + project['projectName'])
                   }
                 }}
               >

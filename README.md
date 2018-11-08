@@ -1,7 +1,3 @@
-![](https://github.com/sguo35/360-frontend/blob/master/360screen1.PNG)
-![](https://github.com/sguo35/360-frontend/blob/master/360screen3.PNG)
-![](https://github.com/sguo35/360-frontend/blob/master/360screen2.PNG)
-
 ## Getting Started
 
 To get started, run the following commands inside the cloned directory:

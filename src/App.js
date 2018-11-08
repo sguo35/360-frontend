@@ -6,7 +6,6 @@ import Rate from './components/Rate/Rate';
 import SelectProject from './components/SelectProject/SelectProject';
 import Login from './components/Login/Login';
 import Dash from './components/Dash/Dash';
-import Processing from './components/Processing/Processing';
 
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
@@ -26,7 +25,6 @@ class App extends Component {
               <Route exact path="/dashboard/:projectId" component={Dash} />
               <Route path="/selectProject/:info" component={SelectProject} />
               <Route path="/project/:projectId" component={Rate} />
-              <Route path="/processing" component={Processing} />
             </Switch>
           </BrowserRouter>
         </PersistGate>

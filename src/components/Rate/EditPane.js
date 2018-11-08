@@ -50,8 +50,7 @@ export default
           nextReady: false,
           opacity: 1,
           prompts: [],
-          promptResponses: [],
-          loading: false
+          promptResponses: []
         };
         this.props.initDeletePrompt(this.deletePrompt)
         this.props.initAddPrompt(this.addPrompt);
@@ -184,10 +183,6 @@ export default
           return;
         }
 
-        this.setState({
-          loading: true
-        })
-
         const team = projects['projects']
           .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
@@ -238,6 +233,8 @@ export default
           console.log(e)
         }
 
+        message.info("Responses saved.")
+
         if (this.props.questionIndex == 2) {
           this.props.setStudentIndex(this.props.studentIndex + 1)
           promptComponents = []
@@ -257,21 +254,15 @@ export default
               project: this.props.match.params.projectId
             })
           })
-          message.info("Responses saved.")
-          this.setState({
-            loading: false
-          })
           return
         }
         this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
         this.setState({
           opacity: 0,
           prompts: [],
-          responses: [],
-          loading: false
+          responses: []
         })
         promptComponents = []
-        message.info("Responses saved.")
         setTimeout(() => {
           this.setState({
             opacity: 1
@@ -285,7 +276,7 @@ export default
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         let type = 'primary', icon = 'down', text = '';
         let style = { flexGrow: 1 };
-        if (this.state.prompts.length < 2 || this.state.loading) {
+        if (this.state.prompts.length < 2) {
           type = 'disabled';
           icon = 'close';
         } else if (this.props.questionIndex == 2 && team[0]['memberNames'][this.props.studentIndex] == this.state.students[this.state.students.length - 1]) {
@@ -454,6 +445,7 @@ export default
                 marginLeft: -10,
                 zIndex: 1
               }}>
+                
               </div>
               <Card
                 style={{
