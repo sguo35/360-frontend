@@ -42,16 +42,11 @@ export default
           })
         }
 
-        var team = projects['projects']
+        const team = projects['projects']
         .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         if (team[0]['memberEmails'][this.props.studentIndex] === this.props.email){
-          if(this.props.studentIndex === 0 || this.props.studentIndex === team[0]['memberEmails'].length - 1) {
-            [team[0]['memberEmails'][this.props.studentIndex], team[0]['memberEmails'][1]] =
-            [team[0]['memberEmails'][1], team[0]['memberEmails'][this.props.studentIndex]];
-          } else {
             this.props.setStudentIndex(this.props.studentIndex + 1)
-          }
         }
       }
 
@@ -78,7 +73,7 @@ export default
             <Menu
               selectedKeys={[(this.props.studentIndex + 1).toString()]}
               onClick={({ item, key, keyPath }) => {
-
+                
               }}
               mode='vertical'
               theme='dark'
