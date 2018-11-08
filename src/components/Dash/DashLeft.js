@@ -4,7 +4,7 @@ import { Menu, Icon, Button, Tag } from 'antd';
 import { connect } from 'react-redux';
 import { serverUrl } from '../../constants'
 
-import { projects } from '../Rate/RateLeft';
+const projects = require("../../projects.json")
 
 let moment = require("moment");
 

@@ -10,10 +10,10 @@ import { connect } from 'react-redux';
 import { store } from '../../redux/store';
 
 import { serverUrl } from '../../constants';
-import { projects } from '../Rate/RateLeft';
-
 
 let promptComponents = [];
+const projects = require("../../projects.json")
+
 
 export default
   connect((state) => {
