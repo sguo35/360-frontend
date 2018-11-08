@@ -46,8 +46,17 @@ export default
         .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         if (team[0]['memberEmails'][this.props.studentIndex] === this.props.email){
-          if(this.props.studentIndex === 0) {
-            this.props.setFirstBugFlag();
+          if(this.props.studentIndex === 0 || this.props.studentIndex === team[0]['memberEmails'].length - 1) {
+            [projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][this.props.studentIndex], projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][1]] =
+            [projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][1], projects['projects']
+            .filter((project) => project['projectName'] === this.props.match.params.projectId.substring(1))
+            [0]['teams'][this.props.studentIndex]];
           } else {
             this.props.setStudentIndex(this.props.studentIndex + 1)
           }
