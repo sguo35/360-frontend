@@ -10,19 +10,19 @@
       "id": "oval0.5",
       "category": "productivity",
       "level": "Outstanding",
-      "points": 13
+      "points": 13.5
     },
     {
       "id": "oval1",
       "category": "productivity",
       "level": "Satisfactory",
-      "points": 10
+      "points": 12
     },
     {
       "id": "oval1.5",
       "category": "productivity",
       "level": "Satisfactory",
-      "points": 8
+      "points": 11
     },
     {
       "id": "oval2",
@@ -46,19 +46,19 @@
       "id": "oval3.5",
       "category": "leadership",
       "level": "Outstanding",
-      "points": 8
+      "points": 9.3
     },
     {
       "id": "oval4",
       "category": "leadership",
       "level": "Satisfactory",
-      "points": 5
+      "points": 8.5
     },
     {
       "id": "oval4.5",
       "category": "leadership",
       "level": "Satisfactory",
-      "points": 3
+      "points": 8
     },
     {
       "id": "oval5",
@@ -76,19 +76,19 @@
       "id": "oval6.5",
       "category": "engagement",
       "level": "Outstanding",
-      "points": 23
+      "points": 23.5
     },
     {
       "id": "oval7",
       "category": "engagement",
       "level": "Satisfactory",
-      "points": 20
+      "points": 22
     },
     {
       "id": "oval7.5",
       "category": "engagement",
       "level": "Satisfactory",
-      "points": 28
+      "points": 21
     },
     {
       "id": "oval8",
