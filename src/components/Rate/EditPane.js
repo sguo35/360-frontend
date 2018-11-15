@@ -189,7 +189,6 @@ export default
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
 
         if (this.props.questionIndex == 2 && team[0]['memberNames'][this.props.studentIndex] == this.state.students[this.state.students.length - 1]) {
-          this._submit();
           await fetch(`${serverUrl}/submitProjectGrade`, {
             method: "POST",
             headers: {
@@ -200,6 +199,10 @@ export default
               graded: team[0]['memberEmails'][this.props.studentIndex],
               project: this.props.match.params.projectId
             })
+          })
+          this._submit();
+          this.setState({
+            loading: false
           })
           return;
         }
