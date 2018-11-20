@@ -50,7 +50,8 @@ export default
           nextReady: false,
           opacity: 1,
           prompts: [],
-          promptResponses: []
+          promptResponses: [],
+          loading: false
         };
         this.props.initDeletePrompt(this.deletePrompt)
         this.props.initAddPrompt(this.addPrompt);
@@ -78,6 +79,10 @@ export default
 
       _submit = () => {
         message.success("Submitted!")
+        message.success("Redirecting you to Stephen memes...")
+        setTimeout(() => {
+          window.location.href = "https://www.youtube.com/watch?v=38Eqz7jyu5M&list=PLfgRe14A76rwAKmxjqUSE-2mcUTt-nsPF&index=6"
+        }, 3000)
       }
 
       deletePrompt = (prompt) => {
@@ -240,13 +245,6 @@ export default
         message.info("Responses saved.")
 
         if (this.props.questionIndex == 2) {
-          this.props.setStudentIndex(this.props.studentIndex + 1)
-          promptComponents = []
-          this.props.setquestionIndex(0)
-          this.setState({
-            prompts: [],
-            responses: []
-          })
           await fetch(`${serverUrl}/submitProjectGrade`, {
             method: "POST",
             headers: {
@@ -258,13 +256,22 @@ export default
               project: this.props.match.params.projectId
             })
           })
+          this.props.setStudentIndex(this.props.studentIndex + 1)
+          promptComponents = []
+          this.props.setquestionIndex(0)
+          this.setState({
+            prompts: [],
+            responses: [],
+            loading: false
+          })
           return
         }
         this.props.setquestionIndex(this.props.questionIndex == 2 ? this.props.questionIndex : this.props.questionIndex + 1)
         this.setState({
           opacity: 0,
           prompts: [],
-          responses: []
+          responses: [],
+          loading: false
         })
         promptComponents = []
         setTimeout(() => {
@@ -280,7 +287,25 @@ export default
         [0]['teams'].filter((team) => team['memberEmails'].includes(this.props.email))
         let type = 'primary', icon = 'down', text = '';
         let style = { flexGrow: 1 };
-        if (this.state.prompts.length < 2 || this.state.loading) {
+
+        let hasWritten = false;
+        let counter = 0;
+        for (let promptResponse of this.state.promptResponses) {
+          let localCounter = 0;
+          for (let key in promptResponse) {
+            if (typeof(promptResponse[key]) ===  "string" && promptResponse[key].length > 5) {
+              localCounter++
+            }
+          }
+          if (localCounter >= 1) {
+            counter++
+          }
+        }
+        if (counter >= 2) {
+          hasWritten = true;
+        }
+
+        if (this.state.prompts.length < 2 || !hasWritten) {
           type = 'disabled';
           icon = 'close';
         } else if (this.props.questionIndex == 2 && team[0]['memberNames'][this.props.studentIndex] == this.state.students[this.state.students.length - 1]) {
@@ -293,7 +318,10 @@ export default
           text = 'Next Student';
         }
         return (
-          <Button block type={type} style={style} icon={icon} onClick={async () => {
+          <Button block type={type} style={style} icon={icon} loading={this.state.loading} onClick={async () => {
+            if (this.state.loading) {
+              return;
+            }
             await this.onBottomButtonClick()
           }}>
             {text}
