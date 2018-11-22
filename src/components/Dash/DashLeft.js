@@ -15,7 +15,7 @@ export default
     }
   }, (dispatch) => {
     return {
-      setStudentIndex: (index) => dispatch({
+      setProjectIndex: (index) => dispatch({
         type: "SET_PROJECT_INDEX", //TODO I made a change here from Student to Project
         index: index
       })
