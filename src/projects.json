@@ -1,5 +1,339 @@
 {
   "projects": [
+    {
+      "projectName": "Sports Tech Final",
+      "icon": "check-circle",
+      "dueDate": "12-03-2018, 11:59:59 PM",
+      "teams": [
+          {
+            "memberNames": [
+              "Marcella	Depunzio",
+              "Alex	Nakagawa",
+              "Santosh	Subramanian",
+              "Charlie Xu"
+            ],
+            "memberEmails": [
+              "marmay@berkeley.edu",
+              "alex.nakagawa@berkeley.edu",
+              "santhosh97@berkeley.edu",
+              "charlie_xu21@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Kyle Qi",
+              "Alex Yi",
+              "Kunal Singh",
+              "Eric Hovagim",
+              "Max Han"
+            ],
+            "memberEmails": [
+              "qikyle@berkeley.edu",
+              "alexyi1234@berkeley.edu",
+              "kunalsingh@berkeley.edu",
+              "ehovagim20@berkeley.edu",
+              "maxhan32@gmail.com"
+            ]
+          },
+          {
+            "memberNames": [
+              "Marissa Fong",
+              "Zi Jun Kan",
+              "Alec Li",
+              "Sean Hollinshead",
+              "Christian Medina"
+            ],
+            "memberEmails": [
+              "marissafong@berkeley.edu",
+              "kanzijun@berkeley.edu",
+              "alecli@berkeley.edu",
+              "shollins@berkeley.edu",
+              "cmedina415@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Pranav Sekhar",
+              "Rohan Divate",
+              "Ethan Barnhart"
+            ],
+            "memberEmails": [
+              "pranavsekhar@berkeley.edu",
+              "rdivate@berkeley.edu",
+              "ethanjbarnhart@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Kat Friday",
+              "Kyana George",
+              "Karson Yu",
+              "Eric Pillai"
+            ],
+            "memberEmails": [
+              "katfriday@berkeley.edu",
+              "kageorge98@berkeley.edu",
+              "kcyu@berkeley.edu",
+              "eric.pillai@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Benedict En Lui",
+              "Paul Shin",
+              "Andres Izquierdo",
+              "Davin Bokaie"
+            ],
+            "memberEmails": [
+              "blui001@berkeley.edu",
+              "phs.astrounit00@berkeley.edu",
+              "andres.e.izquierdo@berkeley.edu",
+              "davinbokaie@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Stephen Varacalli",
+              "Lawrence Zhao",
+              "Nathan Chan",
+              "James Choi"
+            ],
+            "memberEmails": [
+              "steve_varacalli@berkeley.edu",
+              "larry1998@berkeley.edu",
+              "nathanwc@berkeley.edu",
+              "qlelwltjd@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Harshdeep Nanda",
+              "Esha Sheth",
+              "John Connolly",
+              "Adriana Vanegas",
+              "Samuel Darvish"
+            ],
+            "memberEmails": [
+              "harshdeep.nanda@berkeley.edu",
+              "eshasheth@berkeley.edu",
+              "johnconnolly@berkeley.edu",
+              "avanegas@berkeley.edu",
+              "samueldarvish@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Ismail Azam",
+              "Mike Devlin",
+              "Cassidy Keelen",
+              "Zachary Lim",
+              "Kaautam Uthaya Suriyan"
+            ],
+            "memberEmails": [
+              "ismailazam@berkeley.edu",
+              "mikedevlin@mba.berkeley.edu",
+              "cassidyk@berkeley.edu",
+              "zlim060@berkeley.edu",
+              "kaautam96@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Nicolas Camhi",
+              "Rachael Mastrangelo",
+              "Lauren Hickman",
+              "Juan Palomares",
+              "Steve Cao"
+            ],
+            "memberEmails": [
+              "ndcamhi@berkeley.edu",
+              "rachaelmm@berkeley.edu",
+              "lauren.hickman@berkeley.edu",
+              "dpalomares10@berkeley.edu",
+              "stevecao@berkeley.edu"
+            ]
+          },
+          {
+            "memberNames": [
+              "Jaiveer Singh",
+              "Jeff Guo",
+              "Matt Hallac"
+            ],
+            "memberEmails": [
+              "j.singh@berkeley.edu",
+              "shiyuan.guo@berkeley.edu",
+              "matthew.hallac@berkeley.edu"
+            ]
+          }
+        ]
+      },
+      {
+        "projectName": "Sports Tech Midpoint",
+        "icon": "clock-circle",
+        "dueDate": "12-03-2018, 11:59:59 PM",
+        "teams": [
+            {
+              "memberNames": [
+                "Marcella	Depunzio",
+                "Alex	Nakagawa",
+                "Santosh	Subramanian"
+              ],
+              "memberEmails": [
+                "marmay@berkeley.edu",
+                "alex.nakagawa@berkeley.edu",
+                "santhosh97@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Kyle Qi",
+                "Alex Yi",
+                "Kunal Singh",
+                "Eric Hovagim",
+                "Max Han"
+              ],
+              "memberEmails": [
+                "qikyle@berkeley.edu",
+                "alexyi1234@berkeley.edu",
+                "kunalsingh@berkeley.edu",
+                "ehovagim20@berkeley.edu",
+                "maxhan32@gmail.com"
+              ]
+            },
+            {
+              "memberNames": [
+                "Marissa Fong",
+                "Zi Jun Kan",
+                "Alec Li",
+                "Sean Hollinshead",
+                "Christian Medina"
+              ],
+              "memberEmails": [
+                "marissafong@berkeley.edu",
+                "kanzijun@berkeley.edu",
+                "alecli@berkeley.edu",
+                "shollins@berkeley.edu",
+                "cmedina415@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Pranav Sekhar",
+                "Rohan Divate",
+                "Ethan Barnhart"
+              ],
+              "memberEmails": [
+                "pranavsekhar@berkeley.edu",
+                "rdivate@berkeley.edu",
+                "ethanjbarnhart@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Kat Friday",
+                "Kyana George",
+                "Karson Yu",
+                "Eric Pillai"
+              ],
+              "memberEmails": [
+                "katfriday@berkeley.edu",
+                "kageorge98@berkeley.edu",
+                "kcyu@berkeley.edu",
+                "eric.pillai@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Benedict En Lui",
+                "Paul Shin",
+                "Andres Izquierdo",
+                "Charlie Xu",
+                "Davin Bokaie"
+              ],
+              "memberEmails": [
+                "blui001@berkeley.edu",
+                "phs.astrounit00@berkeley.edu",
+                "andres.e.izquierdo@berkeley.edu",
+                "qikyle@berkeley.edu",
+                "davinbokaie@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Stephen Varacalli",
+                "Lawrence Zhao",
+                "Nathan Chan",
+                "James Choi"
+              ],
+              "memberEmails": [
+                "steve_varacalli@berkeley.edu",
+                "larry1998@berkeley.edu",
+                "nathanwc@berkeley.edu",
+                "qlelwltjd@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Harshdeep Nanda",
+                "Esha Sheth",
+                "John Connolly",
+                "Adriana Vanegas",
+                "Samuel Darvish"
+              ],
+              "memberEmails": [
+                "harshdeep.nanda@berkeley.edu",
+                "eshasheth@berkeley.edu",
+                "johnconnolly@berkeley.edu",
+                "avanegas@berkeley.edu",
+                "samueldarvish@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Ismail Azam",
+                "Mike Devlin",
+                "Cassidy Keelen",
+                "Zachary Lim",
+                "Kaautam Uthaya Suriyan"
+              ],
+              "memberEmails": [
+                "ismailazam@berkeley.edu",
+                "mikedevlin@mba.berkeley.edu",
+                "cassidyk@berkeley.edu",
+                "zlim060@berkeley.edu",
+                "kaautam96@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Nicolas Camhi",
+                "Rachael Mastrangelo",
+                "Lauren Hickman",
+                "Juan Palomares",
+                "Steve Cao"
+              ],
+              "memberEmails": [
+                "ndcamhi@berkeley.edu",
+                "rachaelmm@berkeley.edu",
+                "lauren.hickman@berkeley.edu",
+                "dpalomares10@berkeley.edu",
+                "stevecao@berkeley.edu"
+              ]
+            },
+            {
+              "memberNames": [
+                "Jaiveer Singh",
+                "Jeff Guo",
+                "Matt Hallac"
+              ],
+              "memberEmails": [
+                "j.singh@berkeley.edu",
+                "shiyuan.guo@berkeley.edu",
+                "matthew.hallac@berkeley.edu"
+              ]
+            }
+        ]
+      },
       {
         "projectName": "EL Video",
         "icon":"youtube",
